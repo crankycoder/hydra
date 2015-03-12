@@ -1,0 +1,48 @@
+Hydra: The Python Bloom Filter.
+
+Compile with Cython 0.13 or higher.  That means trunk as of
+2010/04/21.
+
+You should get no warnings, errors or other crap when compiling this
+module.  If you do - something has gone wrong.
+
+---
+
+Hydra is a high performance bloom filter.  It's basically a port of
+the Cassandra bloom filter with some fun Cython hackery.
+
+1) It's persistent using memory mapped io.  On Linux, the mmap uses
+the MAP_POPULATE flag so the entire file is loaded into kernel space
+virtual memory.  In other words - fast.
+
+2) The hash function uses the MurmurHash2A algorithm.  I'm using the
+original code base in raw C - so it's blazing fast and has excellent
+key distribution and avalanche properties.
+
+3) The filter exports a set-like interface. Use .add(..), .contains()
+or use the "in" operator.
+
+4) Correctness is built-in - with test cases.
+
+5) Did I say it's fast?  It's stupidly fast. 200,000 lookups per
+second on my 1.6Ghz netbook.
+
+The filter supports periodic forced synchronization to disk using
+fdatasync(), or you can just let the deallocator flush everything to
+disk when your filter goes out of scope, or your process terminates.
+
+Hydras are snakes with multiple heads.  They're also bad dudes with
+snake logos on their chest who regularly try to beat on Nick Fury.
+Now it's a bloom filter.  
+
+Mostly, I couldn't bear to make this yet another PySomeLibraryName
+library.
+
+
+Running tests:
+
+Install nose.
+
+Go into the tests directory and do :
+
+nosetests

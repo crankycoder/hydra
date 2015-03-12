@@ -1,3 +1,9 @@
+hydra (2.1-1) unstable; urgency=medium
+
+  * bumped to 2.1 and updated the URL to github from bitbucket
+
+ -- Victor Ng <victor@crankycoder.com>  Thu, 12 Mar 2015 15:12:50 -0300
+
 hydra (2.0-1) unstable; urgency=medium
 
   * Upstream version 2.0

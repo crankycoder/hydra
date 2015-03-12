@@ -1,0 +1,12 @@
+Source: hydra
+Maintainer: Victor Ng <crankycoder@gmail.com>
+Section: python
+Priority: optional
+Build-Depends: python-setuptools (>= 0.6b3), python-all-dev (>= 2.6.6-3), debhelper (>= 7), cython
+Standards-Version: 3.9.1
+
+Package: python-hydra
+Architecture: any
+Depends: ${misc:Depends}, ${python:Depends}, ${shlibs:Depends}
+Description: A high performance persistent bloom filter
+

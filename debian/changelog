@@ -1,0 +1,11 @@
+hydra (2.0-1) unstable; urgency=medium
+
+  * Upstream version 2.0
+
+ -- Henry Stern <stern@fsi.io>  Thu, 12 Mar 2015 13:59:22 -0300
+
+hydra (1.1-1) unstable; urgency=low
+
+  * source package automatically created by stdeb 0.6.0+git
+
+ -- Victor Ng <crankycoder@gmail.com>  Mon, 03 Feb 2014 20:10:50 +0000

@@ -6,8 +6,8 @@ from hydra import WritingBloomFilter
 from helpers import KeyGenerator
 
 keygen = KeyGenerator()
-input_keys = [keygen.random_string() for i in xrange(20000)]
-other_keys = [keygen.random_string() for i in xrange(20000)]
+input_keys = [keygen.random_string() for i in range(20000)]
+other_keys = [keygen.random_string() for i in range(20000)]
 
 ELEMENTS = 10000000
 MAX_FAILURE_RATE = 0.1

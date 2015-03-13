@@ -61,8 +61,8 @@ class TestBloomFilter(object):
             BloomCalculations.PROBS[spec.bucketsPerElement][spec.K]) * 100
         assert fp_ratio < 103, "Over 103% of the maximum expected false " \
             "positives found. {:0.3f}%".format(fp_ratio)
-        print "OK: Got {:0.3f}% of the expected false positives ".format(
-            fp_ratio)
+        print("OK: Got {:0.3f}% of the expected false positives ".format(
+            fp_ratio))
 
         # False negatives never occur - this should always work
         for k in keys:
@@ -92,7 +92,7 @@ class TestBloomFilter(object):
     def testFalsePositivesInt(self):
         keygen = KeyGenerator()
         self._testFalsePositives(self.bf,
-                                 [str(x) for x in xrange(10000)],
+                                 [str(x) for x in range(10000)],
                                  keygen.randomKeys(10000))
 
     def testFalsePositivesRandom(self):
@@ -150,7 +150,7 @@ class TestHugeBloom():
 
 def test_murmur():
     # Just make sure we can run the hash function from pure python
-    print murmur_hash('food')
+    print(murmur_hash('food'))
 
 
 def test_unicrap():

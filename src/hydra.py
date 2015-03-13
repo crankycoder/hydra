@@ -70,7 +70,7 @@ class Bitmap(object):
         if start_fresh:
             if exists(filename):
                 unlink(filename)
-        self._file = file(filename, 'wb+')
+        self._file = open(filename, 'wb+')
 
         self._bitsize = bitsize
 

@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/crankycoder/hydra.png)](https://travis-ci.org/crankycoder/hydra.png)
+[![Build Status](https://travis-ci.org/crankycoder/hydra.svg?branch=master)](https://travis-ci.org/crankycoder/hydra)
 
 Hydra: The Python Bloom Filter.
 

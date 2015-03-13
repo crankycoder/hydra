@@ -1,5 +1,6 @@
-from _hydra import *
+from _hydra import MMapBitField
 import tempfile
+
 
 def test_ro_segfault():
     tf = tempfile.NamedTemporaryFile(delete=True)
@@ -10,6 +11,7 @@ def test_ro_segfault():
         ro_field[0] = 1
     except ValueError:
         pass
+
 
 def test_setitem():
     tf = tempfile.NamedTemporaryFile(delete=True)

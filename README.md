@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/crankycoder/hydra.png)](https://travis-ci.org/mozilla/hydra.png)
+
 Hydra: The Python Bloom Filter.
 
 Compile with Cython 0.22 or higher.

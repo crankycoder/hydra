@@ -2,11 +2,12 @@ import string
 import random
 from os.path import join, dirname
 
+
 class KeyGenerator(object):
-    def __init__(self, seed = 314519):
+    def __init__(self, seed=314519):
         fname = join(dirname(__file__), 'words')
         self._fname = fname
-        self._lines = open(fname,'r').readlines()
+        self._lines = open(fname, 'r').readlines()
         self._linecount = len(self._lines)
         self.ELEMENTS = 10000
 
@@ -23,7 +24,8 @@ class KeyGenerator(object):
         return self._lines[start:stop:step]
 
     def random_string(self, length=16):
-        return "".join([self._r1.choice(string.letters+string.digits) for x in range(1, length)])
+        return "".join([self._r1.choice(string.letters+string.digits)
+                       for x in range(1, length)])
 
     def randomKeys(self, num_elem=None):
         '''
@@ -32,4 +34,3 @@ class KeyGenerator(object):
         if not num_elem:
             num_elem = self.ELEMENTS
         return self._r1.sample(self._lines, num_elem)
-

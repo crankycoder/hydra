@@ -13,6 +13,7 @@ ELEMENTS = 10000000
 MAX_FAILURE_RATE = 0.1
 bf = WritingBloomFilter(ELEMENTS, MAX_FAILURE_RATE)
 
+
 def test_one():
     for key in input_keys:
         bf.add(key)

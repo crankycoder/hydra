@@ -6,7 +6,8 @@ def test__hydra():
     # This test will probably fail on big-endian machines
     h1 = _hydra.hash('foo')
     h2 = _hydra.hash('foo', h1 & 0xFFFFFFFF)
-    assert (-39287385592190013122878999397579195001, -73964642705803263641983394469427790275) == (h1, h2)
+    assert (-39287385592190013122878999397579195001,
+            -73964642705803263641983394469427790275) == (h1, h2)
 
 
 def test_collisions():

@@ -133,7 +133,7 @@ cdef class MMapIter:
         raise StopIteration
 
 
-class UnsupportedOperationException(StandardError): pass
+class UnsupportedOperationException(Exception): pass
 
 class BloomSpecification:
     """
@@ -427,7 +427,7 @@ cdef class BloomFilter:
     def bulkload_text(self, char* filename):
         cdef FILE* file_in = fopen( filename, "r")
         cdef char line[128]
-        if file:
+        if file_in:
             while fgets(line, 128, file_in):
                 self._strip_newline(line, len(line))
                 self.add(line)

@@ -283,7 +283,7 @@ cdef class BloomFilter:
     @classmethod
     def _maxBucketsPerElement(cls, numElements):
         numElements = max(1, numElements)
-        v = (sys.maxint - cls.EXCESS) / float(numElements)
+        v = (sys.maxsize - cls.EXCESS) / float(numElements)
         if v < 1.0:
             msg = "Cannot compute probabilities for %s elements."
             raise UnsupportedOperationException, msg % numElements
@@ -292,7 +292,7 @@ cdef class BloomFilter:
     @classmethod
     def _bucketsFor(cls, numElements, bucketsPer, filename, read_only, want_lock=False):
         numBits = numElements * bucketsPer + cls.EXCESS
-        bf_size = min(sys.maxint, numBits)
+        bf_size = min(sys.maxsize, numBits)
         return MMapBitField(filename, bf_size, read_only, want_lock=want_lock)
 
     @classmethod

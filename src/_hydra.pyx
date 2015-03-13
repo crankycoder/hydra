@@ -35,7 +35,7 @@ def hash(key, int seed=0):
     """ This function hashes a string using the Murmur3 hash algorithm"""
     cdef long result[2]
     MurmurHash3_x64_128(<char*>key, len(key), seed, result)
-    return result[0]
+    return long(result[0]) << 64 | (long(result[1]) & 0xFFFFFFFFFFFFFFFF)
 
 cdef class MMapBitField:
     cdef char* _filename

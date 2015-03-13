@@ -1,6 +1,7 @@
 import random
 from hydra import Bitmap
 
+
 def test_simple_bitmap():
     x = Bitmap('/tmp/foo', 15)
     x[1] = 1
@@ -15,6 +16,7 @@ def test_simple_bitmap():
     x[1] = 0
     for bit in x:
         assert not bit
+
 
 def test_giant_bitmap():
     bf_size = 10000

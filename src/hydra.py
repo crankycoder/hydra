@@ -4,52 +4,60 @@ import struct
 from os.path import exists
 from os import unlink
 
+
 def ReadingBloomFilter(filename, want_lock=False):
     """
     Create a read-only bloom filter with an upperbound of
     (num_elements, max_fp_prob) as a specification and using filename
     as the backing datastore.
     """
-    descriptor = open('%s.desc' % filename, 'r')
+    descriptor = open('{}.desc'.format(filename), 'r')
     num_elements = int(descriptor.readline())
     max_fp_prob = float(descriptor.readline())
     ignore_case = int(descriptor.readline())
 
-    return _hydra.BloomFilter.getFilter(num_elements, max_fp_prob,
-            filename=filename, ignore_case=ignore_case,
-            read_only=True, want_lock=want_lock)
+    return _hydra.BloomFilter.getFilter(
+        num_elements, max_fp_prob,
+        filename=filename, ignore_case=ignore_case,
+        read_only=True, want_lock=want_lock)
+
 
 def UpdatingBloomFilter(filename, want_lock=False):
     """
     Load an existing bloom filter in read-write mode using filename
     as the backing datastore.
     """
-    descriptor = open('%s.desc' % filename, 'r')
+    descriptor = open('{}.desc'.format(filename), 'r')
     num_elements = int(descriptor.readline())
     max_fp_prob = float(descriptor.readline())
     ignore_case = int(descriptor.readline())
 
-    return _hydra.BloomFilter.getFilter(num_elements, max_fp_prob,
-            filename=filename, ignore_case=ignore_case,
-            read_only=False, want_lock=want_lock)
+    return _hydra.BloomFilter.getFilter(
+        num_elements, max_fp_prob,
+        filename=filename, ignore_case=ignore_case,
+        read_only=False, want_lock=want_lock)
 
-def WritingBloomFilter(num_elements, max_fp_prob, filename=None, ignore_case=False, want_lock=False):
+
+def WritingBloomFilter(num_elements, max_fp_prob, filename=None,
+                       ignore_case=False, want_lock=False):
     """
     Create a read/write bloom filter with an upperbound of
     (num_elements, max_fp_prob) as a specification and using filename
     as the backing datastore.
     """
     if filename:
-        with open('%s.desc' % filename, 'w') as descriptor:
-            descriptor.write("%d\n" % num_elements)
-            descriptor.write("%0.8f\n" % max_fp_prob)
-            descriptor.write("%s\n" % int(ignore_case))
-    return _hydra.BloomFilter.getFilter(num_elements, max_fp_prob,
-            filename=filename, ignore_case=ignore_case,
-            read_only=False, want_lock=want_lock)
+        with open('{}.desc'.format(filename), 'w') as descriptor:
+            descriptor.write("{}\n".format(num_elements))
+            descriptor.write("{:0.8f}\n".format(max_fp_prob))
+            descriptor.write("{:d}\n".format(ignore_case))
+    return _hydra.BloomFilter.getFilter(
+        num_elements, max_fp_prob,
+        filename=filename, ignore_case=ignore_case,
+        read_only=False, want_lock=want_lock)
 
 # Expose the murmur hash
-murmur_hash=_hydra.hash
+murmur_hash = _hydra.hash
+
 
 class Bitmap(object):
     """
@@ -78,7 +86,9 @@ class Bitmap(object):
 
     def __setitem__(self, k, v):
         if k >= self._bitsize:
-            raise RuntimeError, "OutOfBounds! Max bit is : %d, requested: %d" % (self._bitsize, k)
+            raise RuntimeError(
+                "OutOfBounds! Max bit is : {}, requested: {}".format(
+                    self._bitsize, k))
         byte_offset = k / 8
         old_bitmask = struct.unpack('B', self._mfile[byte_offset])[0]
         if v:
@@ -91,4 +101,3 @@ class Bitmap(object):
         byte_offset = k / 8
         old_bitmask = struct.unpack('B', self._mfile[byte_offset])[0]
         return bool(old_bitmask & 2**(k % 8))
-

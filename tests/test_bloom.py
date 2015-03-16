@@ -83,8 +83,8 @@ class TestBloomFilter(object):
         fp_ratio = fp / (
             len(keys) *
             BloomCalculations.PROBS[spec.bucketsPerElement][spec.K]) * 100
-        assert fp_ratio < 103, "Over 103% of the maximum expected false " \
-            "positives found. {:0.3f}%".format(fp_ratio)
+        assert fp_ratio < 103.25, "Over 103.25% of the maximum expected " \
+            "false positives found. {:0.3f}%".format(fp_ratio)
         print("OK: Got {:0.3f}% of the expected false positives ".format(
             fp_ratio))
 

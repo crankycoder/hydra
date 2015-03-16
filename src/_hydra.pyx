@@ -34,6 +34,8 @@ cdef extern from "MurmurHash3.h" nogil:
 def hash(key, int seed=0):
     """ This function hashes a string using the Murmur3 hash algorithm"""
     cdef long result[2]
+    if isinstance(key, unicode):
+        key = key.encode('utf8')
     MurmurHash3_x64_128(<char*>key, len(key), seed, result)
     return long(result[0]) << 64 | (long(result[1]) & 0xFFFFFFFFFFFFFFFF)
 
@@ -45,7 +47,9 @@ cdef class MMapBitField:
     cdef char* _buffer
     cdef int _read_only
 
-    def __cinit__(self, char* filename, long bitsize, int read_only, int want_lock=False):
+    def __cinit__(self, filename, long bitsize, int read_only, int want_lock=False):
+        if isinstance(filename, unicode):
+            filename = filename.encode('utf8')
         self._filename = filename
         self._bitsize = bitsize
         self._bytesize = (bitsize / 8) + 2
@@ -410,6 +414,9 @@ cdef class BloomFilter:
         cdef unsigned long result[2]
         cdef unsigned long hash1, hash2
         cdef unsigned long i
+
+        if isinstance(key, unicode):
+            key = key.encode('utf8')
 
         MurmurHash3_x64_128(<char*>key, len(key), 0, result)
         hash1 = result[0]

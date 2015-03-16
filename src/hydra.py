@@ -1,8 +1,4 @@
 import _hydra
-import mmap
-import struct
-from os.path import exists
-from os import unlink
 
 
 def ReadingBloomFilter(filename, want_lock=False):

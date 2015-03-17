@@ -248,7 +248,6 @@ cdef class BloomFilter:
     cdef unsigned int _hashCount
     cdef MMapBitField _bitmap
     cdef int _ignore_case
-    cdef unsigned long long _bucket_indexes[1000]
 
     def __cinit__(self, unsigned int hashes, MMapBitField bitmap, int ignore_case):
         cdef int i
@@ -256,9 +255,6 @@ cdef class BloomFilter:
         self._hashCount = hashes
         self._bitmap = bitmap
         self._ignore_case = ignore_case
-
-        for i in range(self._hashCount):
-            self._bucket_indexes[i]=0
 
     def __enter__(self):
         return self
@@ -354,6 +350,7 @@ cdef class BloomFilter:
     def add(self, ustring):
         """ Add a key into the filter.  Just like a set.  """
         cdef unsigned long long i
+        cdef unsigned long long _bucket_indexes[1000]
 
         if isinstance(ustring, unicode):
             key = ustring.encode('utf8')
@@ -363,13 +360,14 @@ cdef class BloomFilter:
         if self._ignore_case:
             c_lcase(key);
 
-        self._get_hash_buckets(key, self._hashCount, self.buckets())
+        self._get_hash_buckets(key, _bucket_indexes, self._hashCount, self.buckets())
         for i in range(self._hashCount):
-            self._bitmap[self._bucket_indexes[i]] = 1
+            self._bitmap[_bucket_indexes[i]] = 1
 
     @cython.boundscheck(False)
     def contains(self, ustring):
         """ Check if a key is in the bloom filter.  May return a false positive. """
+        cdef unsigned long long _bucket_indexes[1000]
         cdef unsigned long long i
 
         if isinstance(ustring, unicode):
@@ -379,9 +377,9 @@ cdef class BloomFilter:
 
         if self._ignore_case:
             c_lcase(key);
-        self._get_hash_buckets(key, self._hashCount, self.buckets())
+        self._get_hash_buckets(key, _bucket_indexes, self._hashCount, self.buckets())
         for i in range(self._hashCount):
-            if not self._bitmap[self._bucket_indexes[i]]:
+            if not self._bitmap[_bucket_indexes[i]]:
                 return False
         return True
 
@@ -391,15 +389,16 @@ cdef class BloomFilter:
 
     def getHashBuckets(self, key, unsigned int hashCount, unsigned long long max):
         """ This method is just available for test purposes.  Not actually useful for normal users. """
+        cdef unsigned long long _bucket_indexes[1000]
 
-        self._get_hash_buckets(key, hashCount, max)
+        self._get_hash_buckets(key, _bucket_indexes, hashCount, max)
         result = []
         for i in range(hashCount):
-            result.append(self._bucket_indexes[i])
+            result.append(_bucket_indexes[i])
         return result
 
     @cython.boundscheck(False)
-    cdef void _get_hash_buckets(self, key, unsigned int hashCount, unsigned long max):
+    cdef void _get_hash_buckets(self, key, unsigned long long * _bucket_indexes, unsigned int hashCount, unsigned long max):
         """
         Murmur is faster than an SHA-based approach and provides as-good collision
         resistance.  The combinatorial generation approach described in
@@ -417,7 +416,7 @@ cdef class BloomFilter:
         hash2 = result[0]
 
         for i in range(hashCount):
-            self._bucket_indexes[i] = llabs((hash1 + i * hash2) % max)
+            _bucket_indexes[i] = llabs((hash1 + i * hash2) % max)
 
     cdef void _strip_newline(self, char *buffer, unsigned int size):
         """

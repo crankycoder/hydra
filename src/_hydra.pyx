@@ -34,6 +34,8 @@ cdef extern from "MurmurHash3.h" nogil:
 def hash(key, int seed=0):
     """ This function hashes a string using the Murmur3 hash algorithm"""
     cdef long result[2]
+    if isinstance(key, unicode):
+        key = key.encode('utf8')
     MurmurHash3_x64_128(<char*>key, len(key), seed, result)
     return long(result[0]) << 64 | (long(result[1]) & 0xFFFFFFFFFFFFFFFF)
 
@@ -45,7 +47,9 @@ cdef class MMapBitField:
     cdef char* _buffer
     cdef int _read_only
 
-    def __cinit__(self, char* filename, long bitsize, int read_only, int want_lock=False):
+    def __cinit__(self, filename, long bitsize, int read_only, int want_lock=False):
+        if isinstance(filename, unicode):
+            filename = filename.encode('utf8')
         self._filename = filename
         self._bitsize = bitsize
         self._bytesize = (bitsize / 8) + 2
@@ -279,7 +283,7 @@ cdef class BloomFilter:
     @classmethod
     def _maxBucketsPerElement(cls, numElements):
         numElements = max(1, numElements)
-        v = (sys.maxint - cls.EXCESS) / float(numElements)
+        v = (sys.maxsize - cls.EXCESS) / float(numElements)
         if v < 1.0:
             msg = "Cannot compute probabilities for %s elements."
             raise UnsupportedOperationException, msg % numElements
@@ -288,7 +292,7 @@ cdef class BloomFilter:
     @classmethod
     def _bucketsFor(cls, numElements, bucketsPer, filename, read_only, want_lock=False):
         numBits = numElements * bucketsPer + cls.EXCESS
-        bf_size = min(sys.maxint, numBits)
+        bf_size = min(sys.maxsize, numBits)
         return MMapBitField(filename, bf_size, read_only, want_lock=want_lock)
 
     @classmethod
@@ -409,6 +413,9 @@ cdef class BloomFilter:
         cdef unsigned long result[2]
         cdef unsigned long hash1, hash2
         cdef unsigned long i
+
+        if isinstance(key, unicode):
+            key = key.encode('utf8')
 
         MurmurHash3_x64_128(<char*>key, len(key), 0, result)
         hash1 = result[0]

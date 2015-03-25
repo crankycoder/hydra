@@ -74,7 +74,8 @@ cdef class MMapBitField:
 
     def close(self):
         if self._fd >= 0 and self._buffer:
-            flush_to_disk(self._fd)
+            if not self._read_only:
+                flush_to_disk(self._fd)
             unmap_file(self._buffer, self._bytesize)
             close_file(self._fd)
             self._fd = -1
@@ -84,6 +85,9 @@ cdef class MMapBitField:
         """ Flush everything to disk """
         if self._fd < 0 or not self._buffer:
             raise ValueError('I/O operation on closed file')
+
+        if self._read_only:
+            raise ValueError('bit field is read only')
 
         flush_to_disk(self._fd)
 

@@ -46,14 +46,16 @@ cdef class MMapBitField:
     cdef long _bytesize
     cdef char* _buffer
     cdef int _read_only
+    cdef int _fdatasync_on_close
 
-    def __cinit__(self, filename, long bitsize, int read_only, int want_lock=False):
+    def __cinit__(self, filename, long bitsize, int read_only, int want_lock=False, int fdatasync_on_close=True):
         if isinstance(filename, unicode):
             filename = filename.encode('utf8')
         self._filename = filename
         self._bitsize = bitsize
         self._bytesize = (bitsize / 8) + 2
         self._read_only = read_only
+        self._fdatasync_on_close = fdatasync_on_close
 
         # Now setup the file and mmap
         if read_only:
@@ -74,7 +76,7 @@ cdef class MMapBitField:
 
     def close(self):
         if self._fd >= 0 and self._buffer:
-            if not self._read_only:
+            if not self._read_only and self._fdatasync_on_close:
                 flush_to_disk(self._fd)
             unmap_file(self._buffer, self._bytesize)
             close_file(self._fd)
@@ -295,10 +297,12 @@ cdef class BloomFilter:
         return min(len(BloomCalculations.PROBS) - 1, int(v))
 
     @classmethod
-    def _bucketsFor(cls, numElements, bucketsPer, filename, read_only, want_lock=False):
+    def _bucketsFor(cls, numElements, bucketsPer, filename, read_only, want_lock=False, fdatasync_on_close=True):
         numBits = numElements * bucketsPer + cls.EXCESS
         bf_size = min(sys.maxsize, numBits)
-        return MMapBitField(filename, bf_size, read_only, want_lock=want_lock)
+        return MMapBitField(filename, bf_size, read_only,
+                            want_lock=want_lock,
+                            fdatasync_on_close=fdatasync_on_close)
 
     @classmethod
     def getFilter(cls, numElements, maxFalsePosProbability, **kwargs):
@@ -327,8 +331,9 @@ cdef class BloomFilter:
         ignore_case = kwargs.get('ignore_case', 0)
         read_only = kwargs.get('read_only', 0)
         want_lock = kwargs.get('want_lock', False)
+        fdatasync_on_close = kwargs.get('fdatasync_on_close', True)
 
-        for k in ['filename', 'ignore_case', 'read_only', 'want_lock']:
+        for k in ['filename', 'ignore_case', 'read_only', 'want_lock', 'fdatasync_on_close']:
             if kwargs.has_key(k):
                 del kwargs[k]
         if kwargs:
@@ -342,7 +347,7 @@ cdef class BloomFilter:
         assert 0 < maxFalsePosProbability <= 1.0, "Invalid probability"
         bucketsPerElement = cls._maxBucketsPerElement(numElements)
         spec = BloomCalculations.computeBloomSpec2(bucketsPerElement, maxFalsePosProbability)
-        bitmap = cls._bucketsFor(numElements, spec.bucketsPerElement, filename, read_only, want_lock)
+        bitmap = cls._bucketsFor(numElements, spec.bucketsPerElement, filename, read_only, want_lock, fdatasync_on_close)
         bf = BloomFilter(spec.K, bitmap, ignore_case)
         if not filename:
             bf._tempfile = fileobj

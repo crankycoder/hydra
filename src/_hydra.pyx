@@ -347,7 +347,7 @@ cdef class BloomFilter:
         assert 0 < maxFalsePosProbability <= 1.0, "Invalid probability"
         bucketsPerElement = cls._maxBucketsPerElement(numElements)
         spec = BloomCalculations.computeBloomSpec2(bucketsPerElement, maxFalsePosProbability)
-        bitmap = cls._bucketsFor(numElements, spec.bucketsPerElement, filename, read_only, want_lock, fdatasync_on_close)
+        bitmap = cls._bucketsFor(numElements, spec.bucketsPerElement, filename, read_only, want_lock=want_lock, fdatasync_on_close=fdatasync_on_close)
         bf = BloomFilter(spec.K, bitmap, ignore_case)
         if not filename:
             bf._tempfile = fileobj

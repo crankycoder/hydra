@@ -5,6 +5,7 @@
 #include <unistd.h>
 #include <fcntl.h>
 #include <sys/mman.h>
+#include <errno.h>
 
 #include <Python.h>
 
@@ -40,33 +41,13 @@ int open_mmap_file_rw(char* filename, size_t bytesize)
     /* Stretch the file size to the size of the (mmapped) array of
      * ints
      * */
-    result = lseek(fd, bytesize-1, SEEK_SET);
-    if (result == -1) {
+    result = posix_fallocate(fd, 0, bytesize);
+    if (result) {
+        errno = result;
         PyErr_SetFromErrnoWithFilename(PyExc_OSError,
                            "Error calling lseek() to 'stretch' the file");
         close(fd);
-         return -1;
-    }
-
-    /* Something needs to be written at the end of the file to
-     * * have the file actually have the new size.
-     * * Just writing an empty string at the current file position
-     * will do.
-     * *
-     * * Note:
-     * * - The current position in the file is at the end of the
-     * stretched
-     * * file due to the call to lseek().
-     * * - An empty string is actually a single '\0' character, so a
-     * zero-byte
-     * * will be written at the last byte of the file.
-     * */
-    result = write(fd, "", 1);
-    if (result != 1) {
-        close(fd);
-        PyErr_SetFromErrnoWithFilename(PyExc_OSError,
-                           "Error writing last byte of the file");
-         return -1;
+        return -1;
     }
 
     return fd;

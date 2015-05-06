@@ -5,6 +5,7 @@
 #include <unistd.h>
 #include <fcntl.h>
 #include <sys/mman.h>
+#include <errno.h>
 
 #include <Python.h>
 
@@ -37,6 +38,19 @@ int open_mmap_file_rw(char* filename, size_t bytesize)
          return -1;
     }
 
+#ifdef __linux__
+    /* Stretch the file size to the size of the (mmapped) array of
+     * ints
+     * */
+    result = posix_fallocate(fd, 0, bytesize);
+    if (result) {
+        errno = result;
+        PyErr_SetFromErrnoWithFilename(PyExc_OSError,
+                           "Error calling lseek() to 'stretch' the file");
+        close(fd);
+        return -1;
+    }
+#else
     /* Stretch the file size to the size of the (mmapped) array of
      * ints
      * */
@@ -68,6 +82,7 @@ int open_mmap_file_rw(char* filename, size_t bytesize)
                            "Error writing last byte of the file");
          return -1;
     }
+#endif
 
     return fd;
 }

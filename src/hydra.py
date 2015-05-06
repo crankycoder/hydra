@@ -41,15 +41,16 @@ def WritingBloomFilter(num_elements, max_fp_prob, filename=None,
     (num_elements, max_fp_prob) as a specification and using filename
     as the backing datastore.
     """
+    new_filter = _hydra.BloomFilter.getFilter(
+        num_elements, max_fp_prob,
+        filename=filename, ignore_case=ignore_case,
+        read_only=False, want_lock=want_lock)
     if filename:
         with open('{}.desc'.format(filename), 'w') as descriptor:
             descriptor.write("{}\n".format(num_elements))
             descriptor.write("{:0.8f}\n".format(max_fp_prob))
             descriptor.write("{:d}\n".format(ignore_case))
-    return _hydra.BloomFilter.getFilter(
-        num_elements, max_fp_prob,
-        filename=filename, ignore_case=ignore_case,
-        read_only=False, want_lock=want_lock)
+    return new_filter
 
 # Expose the murmur hash
 murmur_hash = _hydra.hash

@@ -252,6 +252,7 @@ cdef class BloomFilter:
     cdef unsigned int _hashCount
     cdef MMapBitField _bitmap
     cdef int _ignore_case
+    cdef object _tempfile
 
     def __cinit__(self, unsigned int hashes, MMapBitField bitmap, int ignore_case):
         cdef int i
@@ -330,15 +331,17 @@ cdef class BloomFilter:
             raise RuntimeError, "Unexpected kwargs: %s" % str(kwargs)
 
         if not filename:
-            fd, filename = tempfile.mkstemp()
-            tfile = os.fdopen(fd)
-            tfile.close()
+            fileobj = tempfile.NamedTemporaryFile(delete=True)
+            fileobj.file.close()
+            filename = fileobj.name
 
         assert 0 < maxFalsePosProbability <= 1.0, "Invalid probability"
         bucketsPerElement = cls._maxBucketsPerElement(numElements)
         spec = BloomCalculations.computeBloomSpec2(bucketsPerElement, maxFalsePosProbability)
         bitmap = cls._bucketsFor(numElements, spec.bucketsPerElement, filename, read_only, want_lock)
         bf = BloomFilter(spec.K, bitmap, ignore_case)
+        if not filename:
+            bf._tempfile = fileobj
         return bf
 
     def __setitem__(self, key, int ignored):

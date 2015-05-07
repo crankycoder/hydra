@@ -8,4 +8,4 @@ install:
 script:
   - "python setup.py build_ext --inplace"
   - "flake8 src tests"
-  - "nosetests -v"
+  - "python setup.py test"

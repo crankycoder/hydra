@@ -31,7 +31,7 @@ int open_mmap_file_rw(char* filename, size_t bytesize)
      * * Note: "O_WRONLY" mode is not sufficient when mmaping.
      * */
 
-    fd = open(filename, O_RDWR | O_CREAT, (mode_t)0600);
+    fd = open(filename, O_RDWR | O_CREAT, (mode_t)0644);
     if (fd == -1) {
         PyErr_SetFromErrnoWithFilename(PyExc_OSError,
                            "Error opening file for writing");

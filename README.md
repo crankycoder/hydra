@@ -37,4 +37,4 @@ Build, install a dev build and test:
 
 $ pip install -r requirements.txt
 $ python setup.py develop
-$ nosetests
+$ python setup.py test

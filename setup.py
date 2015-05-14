@@ -30,4 +30,5 @@ setup(name='Hydra',
       zip_safe=False,
       package_dir={'': 'src'},
       py_modules=['hydra'],
-      ext_modules=ext_modules)
+      ext_modules=ext_modules,
+      test_suite='nose.collector')

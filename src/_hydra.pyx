@@ -107,9 +107,10 @@ cdef class MMapBitField:
         bitmask = 2 ** (key % 8)
         if value:
             bitval = self._buffer[byte_offset] | bitmask
-            self._buffer[byte_offset] = bitval
         else:
-            self._buffer[byte_offset] &= ~bitmask
+            bitval = self._buffer[byte_offset] & ~bitmask
+        if bitval != self._buffer[byte_offset]:
+            self._buffer[byte_offset] = bitval
 
     def __getitem__(self, size_t key):
         cdef size_t byte_offset = key / 8

@@ -6,6 +6,10 @@ _hydra.c
 *.so
 *.swp
 *egg-info
+bin
 build
 dist
+include
 javabloom
+lib
+man

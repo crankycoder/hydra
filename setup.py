@@ -5,6 +5,8 @@ from os.path import join
 
 import os
 
+__version__ = '2.4.dev0'
+
 ext_modules = [Extension("_hydra",
                          extra_compile_args=['-std=gnu99',
                                              '-O2',
@@ -24,11 +26,22 @@ setup(name='Hydra',
       author_email='crankycoder@gmail.com',
       description='A high performance persistent bloom filter',
       url="http://github.com/crankycoder/Hydra",
-      version='2.2',
+      version=__version__,
       license='MIT License',
       cmdclass={'build_ext': build_ext},
       zip_safe=False,
       package_dir={'': 'src'},
       py_modules=['hydra'],
       ext_modules=ext_modules,
-      test_suite='nose.collector')
+      test_suite='nose.collector',
+      classifiers=[
+          'License :: OSI Approved :: MIT License',
+          'Programming Language :: Python',
+          'Programming Language :: Python :: 2',
+          'Programming Language :: Python :: 2.7',
+          'Programming Language :: Python :: 3',
+          'Programming Language :: Python :: 3.4',
+          'Programming Language :: Python :: 3.5',
+          'Programming Language :: Python :: Implementation :: CPython',
+      ],
+)

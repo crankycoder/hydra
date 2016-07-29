@@ -1,6 +1,5 @@
 from setuptools import setup
 from setuptools.extension import Extension
-from Cython.Distutils import build_ext
 from os.path import join
 
 import os
@@ -9,7 +8,7 @@ ext_modules = [Extension("_hydra",
                          extra_compile_args=['-std=gnu99',
                                              '-O2',
                                              '-D_LARGEFILE64_SOURCE'],
-                         sources=["src/_hydra.pyx",
+                         sources=["src/_hydra.c",
                                   'src/mmap_writer.c',
                                   'src/MurmurHash3.c'],
 
@@ -26,7 +25,6 @@ setup(name='Hydra',
       url="http://github.com/crankycoder/Hydra",
       version='2.2',
       license='MIT License',
-      cmdclass={'build_ext': build_ext},
       zip_safe=False,
       package_dir={'': 'src'},
       py_modules=['hydra'],

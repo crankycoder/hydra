@@ -1,6 +1,5 @@
 a.out
 *.a
-_hydra.c
 *.o
 *.pyc
 *.so

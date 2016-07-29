@@ -35,7 +35,7 @@ library.
 
 Build, install a dev build and test:
 
-$ pip install -r requirements.txt
-$ cythonize src/_hydra.pyx
-$ python setup.py develop
-$ python setup.py test
+    $ pip install -r requirements.txt
+    $ cythonize src/_hydra.pyx
+    $ python setup.py develop
+    $ python setup.py test

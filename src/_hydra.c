@@ -4,10 +4,10 @@
 {
     "distutils": {
         "depends": [
-            "/opt/mozilla/hydra/src/MurmurHash3.h",
+            "/opt/mozilla/hydra/src/MurmurHash3.h", 
             "/opt/mozilla/hydra/src/mmap_writer.h"
         ]
-    },
+    }, 
     "module_name": "_hydra"
 }
 END: Cython Metadata */
@@ -555,8 +555,8 @@ struct __pyx_obj_6_hydra_MMapBitField {
 };
 
 
-/* "_hydra.pyx":136
- *         return self._bitsize
+/* "_hydra.pyx":140
+ * 
  * 
  * cdef class MMapIter:             # <<<<<<<<<<<<<<
  *     cdef size_t _idx
@@ -569,7 +569,7 @@ struct __pyx_obj_6_hydra_MMapIter {
 };
 
 
-/* "_hydra.pyx":169
+/* "_hydra.pyx":173
  *         return c1 and c2
  * 
  * cdef class BloomCalculations:             # <<<<<<<<<<<<<<
@@ -581,7 +581,7 @@ struct __pyx_obj_6_hydra_BloomCalculations {
 };
 
 
-/* "_hydra.pyx":257
+/* "_hydra.pyx":261
  *         return BloomSpecification(K, bucketsPerElement)
  * 
  * cdef class BloomFilter:             # <<<<<<<<<<<<<<
@@ -610,11 +610,14 @@ struct __pyx_obj_6_hydra_BloomFilter {
 struct __pyx_vtabstruct_6_hydra_MMapBitField {
   void (*open_rw_buffer)(struct __pyx_obj_6_hydra_MMapBitField *, struct __pyx_opt_args_6_hydra_12MMapBitField_open_rw_buffer *__pyx_optional_args);
   void (*open_ro_buffer)(struct __pyx_obj_6_hydra_MMapBitField *, struct __pyx_opt_args_6_hydra_12MMapBitField_open_ro_buffer *__pyx_optional_args);
+  PyObject *(*close)(struct __pyx_obj_6_hydra_MMapBitField *, int __pyx_skip_dispatch);
+  PyObject *(*fdatasync)(struct __pyx_obj_6_hydra_MMapBitField *, int __pyx_skip_dispatch);
+  PyObject *(*size)(struct __pyx_obj_6_hydra_MMapBitField *, int __pyx_skip_dispatch);
 };
 static struct __pyx_vtabstruct_6_hydra_MMapBitField *__pyx_vtabptr_6_hydra_MMapBitField;
 
 
-/* "_hydra.pyx":257
+/* "_hydra.pyx":261
  *         return BloomSpecification(K, bucketsPerElement)
  * 
  * cdef class BloomFilter:             # <<<<<<<<<<<<<<
@@ -623,6 +626,11 @@ static struct __pyx_vtabstruct_6_hydra_MMapBitField *__pyx_vtabptr_6_hydra_MMapB
  */
 
 struct __pyx_vtabstruct_6_hydra_BloomFilter {
+  PyObject *(*close)(struct __pyx_obj_6_hydra_BloomFilter *, int __pyx_skip_dispatch);
+  PyObject *(*fdatasync)(struct __pyx_obj_6_hydra_BloomFilter *, int __pyx_skip_dispatch);
+  PyObject *(*add)(struct __pyx_obj_6_hydra_BloomFilter *, PyObject *, int __pyx_skip_dispatch);
+  PyObject *(*contains)(struct __pyx_obj_6_hydra_BloomFilter *, PyObject *, int __pyx_skip_dispatch);
+  PyObject *(*buckets)(struct __pyx_obj_6_hydra_BloomFilter *, int __pyx_skip_dispatch);
   void (*_get_hash_buckets)(struct __pyx_obj_6_hydra_BloomFilter *, PyObject *, unsigned PY_LONG_LONG *, unsigned int, unsigned long);
   void (*_strip_newline)(struct __pyx_obj_6_hydra_BloomFilter *, char *, unsigned int);
 };
@@ -1050,6 +1058,14 @@ static int __Pyx_InitStrings(__Pyx_StringTabEntry *t);
 
 static void __pyx_f_6_hydra_12MMapBitField_open_rw_buffer(struct __pyx_obj_6_hydra_MMapBitField *__pyx_v_self, struct __pyx_opt_args_6_hydra_12MMapBitField_open_rw_buffer *__pyx_optional_args); /* proto*/
 static void __pyx_f_6_hydra_12MMapBitField_open_ro_buffer(struct __pyx_obj_6_hydra_MMapBitField *__pyx_v_self, struct __pyx_opt_args_6_hydra_12MMapBitField_open_ro_buffer *__pyx_optional_args); /* proto*/
+static PyObject *__pyx_f_6_hydra_12MMapBitField_close(struct __pyx_obj_6_hydra_MMapBitField *__pyx_v_self, int __pyx_skip_dispatch); /* proto*/
+static PyObject *__pyx_f_6_hydra_12MMapBitField_fdatasync(struct __pyx_obj_6_hydra_MMapBitField *__pyx_v_self, int __pyx_skip_dispatch); /* proto*/
+static PyObject *__pyx_f_6_hydra_12MMapBitField_size(struct __pyx_obj_6_hydra_MMapBitField *__pyx_v_self, int __pyx_skip_dispatch); /* proto*/
+static PyObject *__pyx_f_6_hydra_11BloomFilter_close(struct __pyx_obj_6_hydra_BloomFilter *__pyx_v_self, int __pyx_skip_dispatch); /* proto*/
+static PyObject *__pyx_f_6_hydra_11BloomFilter_fdatasync(struct __pyx_obj_6_hydra_BloomFilter *__pyx_v_self, int __pyx_skip_dispatch); /* proto*/
+static PyObject *__pyx_f_6_hydra_11BloomFilter_add(struct __pyx_obj_6_hydra_BloomFilter *__pyx_v_self, PyObject *__pyx_v_ustring, int __pyx_skip_dispatch); /* proto*/
+static PyObject *__pyx_f_6_hydra_11BloomFilter_contains(struct __pyx_obj_6_hydra_BloomFilter *__pyx_v_self, PyObject *__pyx_v_ustring, int __pyx_skip_dispatch); /* proto*/
+static PyObject *__pyx_f_6_hydra_11BloomFilter_buckets(struct __pyx_obj_6_hydra_BloomFilter *__pyx_v_self, int __pyx_skip_dispatch); /* proto*/
 static void __pyx_f_6_hydra_11BloomFilter__get_hash_buckets(CYTHON_UNUSED struct __pyx_obj_6_hydra_BloomFilter *__pyx_v_self, PyObject *__pyx_v_key, unsigned PY_LONG_LONG *__pyx_v__bucket_indexes, unsigned int __pyx_v_hashCount, unsigned long __pyx_v_max); /* proto*/
 static void __pyx_f_6_hydra_11BloomFilter__strip_newline(CYTHON_UNUSED struct __pyx_obj_6_hydra_BloomFilter *__pyx_v_self, char *__pyx_v_buffer, unsigned int __pyx_v_size); /* proto*/
 
@@ -1093,6 +1109,7 @@ static const char __pyx_k_minK[] = "minK";
 static const char __pyx_k_name[] = "name";
 static const char __pyx_k_seed[] = "seed";
 static const char __pyx_k_self[] = "self";
+static const char __pyx_k_size[] = "size";
 static const char __pyx_k_test[] = "__test__";
 static const char __pyx_k_utf8[] = "utf8";
 static const char __pyx_k_PROBS[] = "PROBS";
@@ -1113,6 +1130,7 @@ static const char __pyx_k_bitsize[] = "bitsize";
 static const char __pyx_k_buckets[] = "buckets";
 static const char __pyx_k_maxsize[] = "maxsize";
 static const char __pyx_k_prepare[] = "__prepare__";
+static const char __pyx_k_ustring[] = "ustring";
 static const char __pyx_k_bitfield[] = "bitfield";
 static const char __pyx_k_contains[] = "contains";
 static const char __pyx_k_filename[] = "filename";
@@ -1241,9 +1259,11 @@ static PyObject *__pyx_n_s_read_only;
 static PyObject *__pyx_n_s_result;
 static PyObject *__pyx_n_s_seed;
 static PyObject *__pyx_n_s_self;
+static PyObject *__pyx_n_s_size;
 static PyObject *__pyx_n_s_sys;
 static PyObject *__pyx_n_s_tempfile;
 static PyObject *__pyx_n_s_test;
+static PyObject *__pyx_n_s_ustring;
 static PyObject *__pyx_n_s_utf8;
 static PyObject *__pyx_n_s_want_lock;
 static PyObject *__pyx_pf_6_hydra_hash(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_key, int __pyx_v_seed); /* proto */
@@ -1255,6 +1275,7 @@ static int __pyx_pf_6_hydra_12MMapBitField_8__setitem__(struct __pyx_obj_6_hydra
 static PyObject *__pyx_pf_6_hydra_12MMapBitField_10__getitem__(struct __pyx_obj_6_hydra_MMapBitField *__pyx_v_self, size_t __pyx_v_key); /* proto */
 static PyObject *__pyx_pf_6_hydra_12MMapBitField_12__iter__(struct __pyx_obj_6_hydra_MMapBitField *__pyx_v_self); /* proto */
 static Py_ssize_t __pyx_pf_6_hydra_12MMapBitField_14__len__(struct __pyx_obj_6_hydra_MMapBitField *__pyx_v_self); /* proto */
+static PyObject *__pyx_pf_6_hydra_12MMapBitField_16size(struct __pyx_obj_6_hydra_MMapBitField *__pyx_v_self); /* proto */
 static int __pyx_pf_6_hydra_8MMapIter___cinit__(struct __pyx_obj_6_hydra_MMapIter *__pyx_v_self, PyObject *__pyx_v_bitfield); /* proto */
 static PyObject *__pyx_pf_6_hydra_8MMapIter_2__next__(struct __pyx_obj_6_hydra_MMapIter *__pyx_v_self); /* proto */
 static PyObject *__pyx_pf_6_hydra_18BloomSpecification___init__(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_self, PyObject *__pyx_v_k, PyObject *__pyx_v_bucketsPerElement); /* proto */
@@ -1276,7 +1297,7 @@ static int __pyx_pf_6_hydra_11BloomFilter_22__contains__(struct __pyx_obj_6_hydr
 static PyObject *__pyx_pf_6_hydra_11BloomFilter_24add(struct __pyx_obj_6_hydra_BloomFilter *__pyx_v_self, PyObject *__pyx_v_ustring); /* proto */
 static PyObject *__pyx_pf_6_hydra_11BloomFilter_26contains(struct __pyx_obj_6_hydra_BloomFilter *__pyx_v_self, PyObject *__pyx_v_ustring); /* proto */
 static PyObject *__pyx_pf_6_hydra_11BloomFilter_28buckets(struct __pyx_obj_6_hydra_BloomFilter *__pyx_v_self); /* proto */
-static PyObject *__pyx_pf_6_hydra_11BloomFilter_30getHashBuckets(struct __pyx_obj_6_hydra_BloomFilter *__pyx_v_self, PyObject *__pyx_v_key, unsigned int __pyx_v_hashCount, unsigned PY_LONG_LONG __pyx_v_max); /* proto */
+static PyObject *__pyx_pf_6_hydra_11BloomFilter_30getHashBuckets(struct __pyx_obj_6_hydra_BloomFilter *__pyx_v_self, PyObject *__pyx_v_ustring, unsigned int __pyx_v_hashCount, unsigned PY_LONG_LONG __pyx_v_max); /* proto */
 static PyObject *__pyx_pf_6_hydra_11BloomFilter_32bulkload_text(struct __pyx_obj_6_hydra_BloomFilter *__pyx_v_self, char *__pyx_v_filename); /* proto */
 static PyObject *__pyx_tp_new_6_hydra_MMapBitField(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
 static PyObject *__pyx_tp_new_6_hydra_MMapIter(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
@@ -2069,8 +2090,6 @@ static void __pyx_pw_6_hydra_12MMapBitField_3__dealloc__(PyObject *__pyx_v_self)
 static void __pyx_pf_6_hydra_12MMapBitField_2__dealloc__(struct __pyx_obj_6_hydra_MMapBitField *__pyx_v_self) {
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
-  PyObject *__pyx_t_2 = NULL;
-  PyObject *__pyx_t_3 = NULL;
   __Pyx_RefNannySetupContext("__dealloc__", 0);
 
   /* "_hydra.pyx":75
@@ -2078,28 +2097,10 @@ static void __pyx_pf_6_hydra_12MMapBitField_2__dealloc__(struct __pyx_obj_6_hydr
  *     def __dealloc__(self):
  *         self.close()             # <<<<<<<<<<<<<<
  * 
- *     def close(self):
+ *     cpdef close(self):
  */
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_close); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 75, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_3 = NULL;
-  if (CYTHON_COMPILING_IN_CPYTHON && likely(PyMethod_Check(__pyx_t_2))) {
-    __pyx_t_3 = PyMethod_GET_SELF(__pyx_t_2);
-    if (likely(__pyx_t_3)) {
-      PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_2);
-      __Pyx_INCREF(__pyx_t_3);
-      __Pyx_INCREF(function);
-      __Pyx_DECREF_SET(__pyx_t_2, function);
-    }
-  }
-  if (__pyx_t_3) {
-    __pyx_t_1 = __Pyx_PyObject_CallOneArg(__pyx_t_2, __pyx_t_3); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 75, __pyx_L1_error)
-    __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  } else {
-    __pyx_t_1 = __Pyx_PyObject_CallNoArg(__pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 75, __pyx_L1_error)
-  }
+  __pyx_t_1 = ((struct __pyx_vtabstruct_6_hydra_MMapBitField *)__pyx_v_self->__pyx_vtab)->close(__pyx_v_self, 0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 75, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
   /* "_hydra.pyx":74
@@ -2114,8 +2115,6 @@ static void __pyx_pf_6_hydra_12MMapBitField_2__dealloc__(struct __pyx_obj_6_hydr
   goto __pyx_L0;
   __pyx_L1_error:;
   __Pyx_XDECREF(__pyx_t_1);
-  __Pyx_XDECREF(__pyx_t_2);
-  __Pyx_XDECREF(__pyx_t_3);
   __Pyx_WriteUnraisable("_hydra.MMapBitField.__dealloc__", __pyx_clineno, __pyx_lineno, __pyx_filename, 0, 0);
   __pyx_L0:;
   __Pyx_RefNannyFinishContext();
@@ -2124,10 +2123,180 @@ static void __pyx_pf_6_hydra_12MMapBitField_2__dealloc__(struct __pyx_obj_6_hydr
 /* "_hydra.pyx":77
  *         self.close()
  * 
- *     def close(self):             # <<<<<<<<<<<<<<
+ *     cpdef close(self):             # <<<<<<<<<<<<<<
  *         if self._fd >= 0 and self._buffer:
  *             if not self._read_only and self._fdatasync_on_close:
  */
+
+static PyObject *__pyx_pw_6_hydra_12MMapBitField_5close(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused); /*proto*/
+static PyObject *__pyx_f_6_hydra_12MMapBitField_close(struct __pyx_obj_6_hydra_MMapBitField *__pyx_v_self, int __pyx_skip_dispatch) {
+  PyObject *__pyx_r = NULL;
+  __Pyx_RefNannyDeclarations
+  PyObject *__pyx_t_1 = NULL;
+  PyObject *__pyx_t_2 = NULL;
+  PyObject *__pyx_t_3 = NULL;
+  PyObject *__pyx_t_4 = NULL;
+  int __pyx_t_5;
+  int __pyx_t_6;
+  int __pyx_t_7;
+  __Pyx_RefNannySetupContext("close", 0);
+  /* Check if called by wrapper */
+  if (unlikely(__pyx_skip_dispatch)) ;
+  /* Check if overridden in Python */
+  else if (unlikely(Py_TYPE(((PyObject *)__pyx_v_self))->tp_dictoffset != 0)) {
+    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_close); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 77, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_1);
+    if (!PyCFunction_Check(__pyx_t_1) || (PyCFunction_GET_FUNCTION(__pyx_t_1) != (PyCFunction)__pyx_pw_6_hydra_12MMapBitField_5close)) {
+      __Pyx_XDECREF(__pyx_r);
+      __Pyx_INCREF(__pyx_t_1);
+      __pyx_t_3 = __pyx_t_1; __pyx_t_4 = NULL;
+      if (CYTHON_COMPILING_IN_CPYTHON && unlikely(PyMethod_Check(__pyx_t_3))) {
+        __pyx_t_4 = PyMethod_GET_SELF(__pyx_t_3);
+        if (likely(__pyx_t_4)) {
+          PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_3);
+          __Pyx_INCREF(__pyx_t_4);
+          __Pyx_INCREF(function);
+          __Pyx_DECREF_SET(__pyx_t_3, function);
+        }
+      }
+      if (__pyx_t_4) {
+        __pyx_t_2 = __Pyx_PyObject_CallOneArg(__pyx_t_3, __pyx_t_4); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 77, __pyx_L1_error)
+        __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+      } else {
+        __pyx_t_2 = __Pyx_PyObject_CallNoArg(__pyx_t_3); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 77, __pyx_L1_error)
+      }
+      __Pyx_GOTREF(__pyx_t_2);
+      __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+      __pyx_r = __pyx_t_2;
+      __pyx_t_2 = 0;
+      __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+      goto __pyx_L0;
+    }
+    __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+  }
+
+  /* "_hydra.pyx":78
+ * 
+ *     cpdef close(self):
+ *         if self._fd >= 0 and self._buffer:             # <<<<<<<<<<<<<<
+ *             if not self._read_only and self._fdatasync_on_close:
+ *                 flush_to_disk(self._fd)
+ */
+  __pyx_t_6 = ((__pyx_v_self->_fd >= 0) != 0);
+  if (__pyx_t_6) {
+  } else {
+    __pyx_t_5 = __pyx_t_6;
+    goto __pyx_L4_bool_binop_done;
+  }
+  __pyx_t_6 = (__pyx_v_self->_buffer != 0);
+  __pyx_t_5 = __pyx_t_6;
+  __pyx_L4_bool_binop_done:;
+  if (__pyx_t_5) {
+
+    /* "_hydra.pyx":79
+ *     cpdef close(self):
+ *         if self._fd >= 0 and self._buffer:
+ *             if not self._read_only and self._fdatasync_on_close:             # <<<<<<<<<<<<<<
+ *                 flush_to_disk(self._fd)
+ *             unmap_file(self._buffer, self._bytesize)
+ */
+    __pyx_t_6 = ((!(__pyx_v_self->_read_only != 0)) != 0);
+    if (__pyx_t_6) {
+    } else {
+      __pyx_t_5 = __pyx_t_6;
+      goto __pyx_L7_bool_binop_done;
+    }
+    __pyx_t_6 = (__pyx_v_self->_fdatasync_on_close != 0);
+    __pyx_t_5 = __pyx_t_6;
+    __pyx_L7_bool_binop_done:;
+    if (__pyx_t_5) {
+
+      /* "_hydra.pyx":80
+ *         if self._fd >= 0 and self._buffer:
+ *             if not self._read_only and self._fdatasync_on_close:
+ *                 flush_to_disk(self._fd)             # <<<<<<<<<<<<<<
+ *             unmap_file(self._buffer, self._bytesize)
+ *             close_file(self._fd)
+ */
+      __pyx_t_7 = flush_to_disk(__pyx_v_self->_fd); if (unlikely(__pyx_t_7 == -1)) __PYX_ERR(0, 80, __pyx_L1_error)
+
+      /* "_hydra.pyx":79
+ *     cpdef close(self):
+ *         if self._fd >= 0 and self._buffer:
+ *             if not self._read_only and self._fdatasync_on_close:             # <<<<<<<<<<<<<<
+ *                 flush_to_disk(self._fd)
+ *             unmap_file(self._buffer, self._bytesize)
+ */
+    }
+
+    /* "_hydra.pyx":81
+ *             if not self._read_only and self._fdatasync_on_close:
+ *                 flush_to_disk(self._fd)
+ *             unmap_file(self._buffer, self._bytesize)             # <<<<<<<<<<<<<<
+ *             close_file(self._fd)
+ *             self._fd = -1
+ */
+    __pyx_t_7 = unmap_file(__pyx_v_self->_buffer, __pyx_v_self->_bytesize); if (unlikely(__pyx_t_7 == -1)) __PYX_ERR(0, 81, __pyx_L1_error)
+
+    /* "_hydra.pyx":82
+ *                 flush_to_disk(self._fd)
+ *             unmap_file(self._buffer, self._bytesize)
+ *             close_file(self._fd)             # <<<<<<<<<<<<<<
+ *             self._fd = -1
+ *             self._buffer = NULL
+ */
+    __pyx_t_7 = close_file(__pyx_v_self->_fd); if (unlikely(__pyx_t_7 == -1)) __PYX_ERR(0, 82, __pyx_L1_error)
+
+    /* "_hydra.pyx":83
+ *             unmap_file(self._buffer, self._bytesize)
+ *             close_file(self._fd)
+ *             self._fd = -1             # <<<<<<<<<<<<<<
+ *             self._buffer = NULL
+ * 
+ */
+    __pyx_v_self->_fd = -1;
+
+    /* "_hydra.pyx":84
+ *             close_file(self._fd)
+ *             self._fd = -1
+ *             self._buffer = NULL             # <<<<<<<<<<<<<<
+ * 
+ *     cpdef fdatasync(self):
+ */
+    __pyx_v_self->_buffer = NULL;
+
+    /* "_hydra.pyx":78
+ * 
+ *     cpdef close(self):
+ *         if self._fd >= 0 and self._buffer:             # <<<<<<<<<<<<<<
+ *             if not self._read_only and self._fdatasync_on_close:
+ *                 flush_to_disk(self._fd)
+ */
+  }
+
+  /* "_hydra.pyx":77
+ *         self.close()
+ * 
+ *     cpdef close(self):             # <<<<<<<<<<<<<<
+ *         if self._fd >= 0 and self._buffer:
+ *             if not self._read_only and self._fdatasync_on_close:
+ */
+
+  /* function exit code */
+  __pyx_r = Py_None; __Pyx_INCREF(Py_None);
+  goto __pyx_L0;
+  __pyx_L1_error:;
+  __Pyx_XDECREF(__pyx_t_1);
+  __Pyx_XDECREF(__pyx_t_2);
+  __Pyx_XDECREF(__pyx_t_3);
+  __Pyx_XDECREF(__pyx_t_4);
+  __Pyx_AddTraceback("_hydra.MMapBitField.close", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = 0;
+  __pyx_L0:;
+  __Pyx_XGIVEREF(__pyx_r);
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
 
 /* Python wrapper */
 static PyObject *__pyx_pw_6_hydra_12MMapBitField_5close(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused); /*proto*/
@@ -2145,122 +2314,18 @@ static PyObject *__pyx_pw_6_hydra_12MMapBitField_5close(PyObject *__pyx_v_self, 
 static PyObject *__pyx_pf_6_hydra_12MMapBitField_4close(struct __pyx_obj_6_hydra_MMapBitField *__pyx_v_self) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
-  int __pyx_t_1;
-  int __pyx_t_2;
-  int __pyx_t_3;
+  PyObject *__pyx_t_1 = NULL;
   __Pyx_RefNannySetupContext("close", 0);
-
-  /* "_hydra.pyx":78
- * 
- *     def close(self):
- *         if self._fd >= 0 and self._buffer:             # <<<<<<<<<<<<<<
- *             if not self._read_only and self._fdatasync_on_close:
- *                 flush_to_disk(self._fd)
- */
-  __pyx_t_2 = ((__pyx_v_self->_fd >= 0) != 0);
-  if (__pyx_t_2) {
-  } else {
-    __pyx_t_1 = __pyx_t_2;
-    goto __pyx_L4_bool_binop_done;
-  }
-  __pyx_t_2 = (__pyx_v_self->_buffer != 0);
-  __pyx_t_1 = __pyx_t_2;
-  __pyx_L4_bool_binop_done:;
-  if (__pyx_t_1) {
-
-    /* "_hydra.pyx":79
- *     def close(self):
- *         if self._fd >= 0 and self._buffer:
- *             if not self._read_only and self._fdatasync_on_close:             # <<<<<<<<<<<<<<
- *                 flush_to_disk(self._fd)
- *             unmap_file(self._buffer, self._bytesize)
- */
-    __pyx_t_2 = ((!(__pyx_v_self->_read_only != 0)) != 0);
-    if (__pyx_t_2) {
-    } else {
-      __pyx_t_1 = __pyx_t_2;
-      goto __pyx_L7_bool_binop_done;
-    }
-    __pyx_t_2 = (__pyx_v_self->_fdatasync_on_close != 0);
-    __pyx_t_1 = __pyx_t_2;
-    __pyx_L7_bool_binop_done:;
-    if (__pyx_t_1) {
-
-      /* "_hydra.pyx":80
- *         if self._fd >= 0 and self._buffer:
- *             if not self._read_only and self._fdatasync_on_close:
- *                 flush_to_disk(self._fd)             # <<<<<<<<<<<<<<
- *             unmap_file(self._buffer, self._bytesize)
- *             close_file(self._fd)
- */
-      __pyx_t_3 = flush_to_disk(__pyx_v_self->_fd); if (unlikely(__pyx_t_3 == -1)) __PYX_ERR(0, 80, __pyx_L1_error)
-
-      /* "_hydra.pyx":79
- *     def close(self):
- *         if self._fd >= 0 and self._buffer:
- *             if not self._read_only and self._fdatasync_on_close:             # <<<<<<<<<<<<<<
- *                 flush_to_disk(self._fd)
- *             unmap_file(self._buffer, self._bytesize)
- */
-    }
-
-    /* "_hydra.pyx":81
- *             if not self._read_only and self._fdatasync_on_close:
- *                 flush_to_disk(self._fd)
- *             unmap_file(self._buffer, self._bytesize)             # <<<<<<<<<<<<<<
- *             close_file(self._fd)
- *             self._fd = -1
- */
-    __pyx_t_3 = unmap_file(__pyx_v_self->_buffer, __pyx_v_self->_bytesize); if (unlikely(__pyx_t_3 == -1)) __PYX_ERR(0, 81, __pyx_L1_error)
-
-    /* "_hydra.pyx":82
- *                 flush_to_disk(self._fd)
- *             unmap_file(self._buffer, self._bytesize)
- *             close_file(self._fd)             # <<<<<<<<<<<<<<
- *             self._fd = -1
- *             self._buffer = NULL
- */
-    __pyx_t_3 = close_file(__pyx_v_self->_fd); if (unlikely(__pyx_t_3 == -1)) __PYX_ERR(0, 82, __pyx_L1_error)
-
-    /* "_hydra.pyx":83
- *             unmap_file(self._buffer, self._bytesize)
- *             close_file(self._fd)
- *             self._fd = -1             # <<<<<<<<<<<<<<
- *             self._buffer = NULL
- * 
- */
-    __pyx_v_self->_fd = -1;
-
-    /* "_hydra.pyx":84
- *             close_file(self._fd)
- *             self._fd = -1
- *             self._buffer = NULL             # <<<<<<<<<<<<<<
- * 
- *     def fdatasync(self):
- */
-    __pyx_v_self->_buffer = NULL;
-
-    /* "_hydra.pyx":78
- * 
- *     def close(self):
- *         if self._fd >= 0 and self._buffer:             # <<<<<<<<<<<<<<
- *             if not self._read_only and self._fdatasync_on_close:
- *                 flush_to_disk(self._fd)
- */
-  }
-
-  /* "_hydra.pyx":77
- *         self.close()
- * 
- *     def close(self):             # <<<<<<<<<<<<<<
- *         if self._fd >= 0 and self._buffer:
- *             if not self._read_only and self._fdatasync_on_close:
- */
+  __Pyx_XDECREF(__pyx_r);
+  __pyx_t_1 = __pyx_f_6_hydra_12MMapBitField_close(__pyx_v_self, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 77, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __pyx_r = __pyx_t_1;
+  __pyx_t_1 = 0;
+  goto __pyx_L0;
 
   /* function exit code */
-  __pyx_r = Py_None; __Pyx_INCREF(Py_None);
-  goto __pyx_L0;
   __pyx_L1_error:;
+  __Pyx_XDECREF(__pyx_t_1);
   __Pyx_AddTraceback("_hydra.MMapBitField.close", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
@@ -2272,51 +2337,75 @@ static PyObject *__pyx_pf_6_hydra_12MMapBitField_4close(struct __pyx_obj_6_hydra
 /* "_hydra.pyx":86
  *             self._buffer = NULL
  * 
- *     def fdatasync(self):             # <<<<<<<<<<<<<<
+ *     cpdef fdatasync(self):             # <<<<<<<<<<<<<<
  *         """ Flush everything to disk """
  *         if self._fd < 0 or not self._buffer:
  */
 
-/* Python wrapper */
 static PyObject *__pyx_pw_6_hydra_12MMapBitField_7fdatasync(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused); /*proto*/
-static char __pyx_doc_6_hydra_12MMapBitField_6fdatasync[] = " Flush everything to disk ";
-static PyObject *__pyx_pw_6_hydra_12MMapBitField_7fdatasync(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused) {
-  PyObject *__pyx_r = 0;
-  __Pyx_RefNannyDeclarations
-  __Pyx_RefNannySetupContext("fdatasync (wrapper)", 0);
-  __pyx_r = __pyx_pf_6_hydra_12MMapBitField_6fdatasync(((struct __pyx_obj_6_hydra_MMapBitField *)__pyx_v_self));
-
-  /* function exit code */
-  __Pyx_RefNannyFinishContext();
-  return __pyx_r;
-}
-
-static PyObject *__pyx_pf_6_hydra_12MMapBitField_6fdatasync(struct __pyx_obj_6_hydra_MMapBitField *__pyx_v_self) {
+static PyObject *__pyx_f_6_hydra_12MMapBitField_fdatasync(struct __pyx_obj_6_hydra_MMapBitField *__pyx_v_self, int __pyx_skip_dispatch) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
-  int __pyx_t_1;
-  int __pyx_t_2;
+  PyObject *__pyx_t_1 = NULL;
+  PyObject *__pyx_t_2 = NULL;
   PyObject *__pyx_t_3 = NULL;
-  int __pyx_t_4;
+  PyObject *__pyx_t_4 = NULL;
+  int __pyx_t_5;
+  int __pyx_t_6;
+  int __pyx_t_7;
   __Pyx_RefNannySetupContext("fdatasync", 0);
+  /* Check if called by wrapper */
+  if (unlikely(__pyx_skip_dispatch)) ;
+  /* Check if overridden in Python */
+  else if (unlikely(Py_TYPE(((PyObject *)__pyx_v_self))->tp_dictoffset != 0)) {
+    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_fdatasync); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 86, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_1);
+    if (!PyCFunction_Check(__pyx_t_1) || (PyCFunction_GET_FUNCTION(__pyx_t_1) != (PyCFunction)__pyx_pw_6_hydra_12MMapBitField_7fdatasync)) {
+      __Pyx_XDECREF(__pyx_r);
+      __Pyx_INCREF(__pyx_t_1);
+      __pyx_t_3 = __pyx_t_1; __pyx_t_4 = NULL;
+      if (CYTHON_COMPILING_IN_CPYTHON && unlikely(PyMethod_Check(__pyx_t_3))) {
+        __pyx_t_4 = PyMethod_GET_SELF(__pyx_t_3);
+        if (likely(__pyx_t_4)) {
+          PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_3);
+          __Pyx_INCREF(__pyx_t_4);
+          __Pyx_INCREF(function);
+          __Pyx_DECREF_SET(__pyx_t_3, function);
+        }
+      }
+      if (__pyx_t_4) {
+        __pyx_t_2 = __Pyx_PyObject_CallOneArg(__pyx_t_3, __pyx_t_4); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 86, __pyx_L1_error)
+        __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+      } else {
+        __pyx_t_2 = __Pyx_PyObject_CallNoArg(__pyx_t_3); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 86, __pyx_L1_error)
+      }
+      __Pyx_GOTREF(__pyx_t_2);
+      __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+      __pyx_r = __pyx_t_2;
+      __pyx_t_2 = 0;
+      __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+      goto __pyx_L0;
+    }
+    __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+  }
 
   /* "_hydra.pyx":88
- *     def fdatasync(self):
+ *     cpdef fdatasync(self):
  *         """ Flush everything to disk """
  *         if self._fd < 0 or not self._buffer:             # <<<<<<<<<<<<<<
  *             raise ValueError('I/O operation on closed file')
  * 
  */
-  __pyx_t_2 = ((__pyx_v_self->_fd < 0) != 0);
-  if (!__pyx_t_2) {
+  __pyx_t_6 = ((__pyx_v_self->_fd < 0) != 0);
+  if (!__pyx_t_6) {
   } else {
-    __pyx_t_1 = __pyx_t_2;
+    __pyx_t_5 = __pyx_t_6;
     goto __pyx_L4_bool_binop_done;
   }
-  __pyx_t_2 = ((!(__pyx_v_self->_buffer != 0)) != 0);
-  __pyx_t_1 = __pyx_t_2;
+  __pyx_t_6 = ((!(__pyx_v_self->_buffer != 0)) != 0);
+  __pyx_t_5 = __pyx_t_6;
   __pyx_L4_bool_binop_done:;
-  if (__pyx_t_1) {
+  if (__pyx_t_5) {
 
     /* "_hydra.pyx":89
  *         """ Flush everything to disk """
@@ -2325,14 +2414,14 @@ static PyObject *__pyx_pf_6_hydra_12MMapBitField_6fdatasync(struct __pyx_obj_6_h
  * 
  *         if self._read_only:
  */
-    __pyx_t_3 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__3, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 89, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_3);
-    __Pyx_Raise(__pyx_t_3, 0, 0, 0);
-    __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+    __pyx_t_1 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__3, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 89, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_1);
+    __Pyx_Raise(__pyx_t_1, 0, 0, 0);
+    __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
     __PYX_ERR(0, 89, __pyx_L1_error)
 
     /* "_hydra.pyx":88
- *     def fdatasync(self):
+ *     cpdef fdatasync(self):
  *         """ Flush everything to disk """
  *         if self._fd < 0 or not self._buffer:             # <<<<<<<<<<<<<<
  *             raise ValueError('I/O operation on closed file')
@@ -2347,8 +2436,8 @@ static PyObject *__pyx_pf_6_hydra_12MMapBitField_6fdatasync(struct __pyx_obj_6_h
  *             raise ValueError('bit field is read only')
  * 
  */
-  __pyx_t_1 = (__pyx_v_self->_read_only != 0);
-  if (__pyx_t_1) {
+  __pyx_t_5 = (__pyx_v_self->_read_only != 0);
+  if (__pyx_t_5) {
 
     /* "_hydra.pyx":92
  * 
@@ -2357,10 +2446,10 @@ static PyObject *__pyx_pf_6_hydra_12MMapBitField_6fdatasync(struct __pyx_obj_6_h
  * 
  *         flush_to_disk(self._fd)
  */
-    __pyx_t_3 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__4, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 92, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_3);
-    __Pyx_Raise(__pyx_t_3, 0, 0, 0);
-    __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+    __pyx_t_1 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__4, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 92, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_1);
+    __Pyx_Raise(__pyx_t_1, 0, 0, 0);
+    __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
     __PYX_ERR(0, 92, __pyx_L1_error)
 
     /* "_hydra.pyx":91
@@ -2379,12 +2468,12 @@ static PyObject *__pyx_pf_6_hydra_12MMapBitField_6fdatasync(struct __pyx_obj_6_h
  * 
  *     def __setitem__(self, size_t key, int value):
  */
-  __pyx_t_4 = flush_to_disk(__pyx_v_self->_fd); if (unlikely(__pyx_t_4 == -1)) __PYX_ERR(0, 94, __pyx_L1_error)
+  __pyx_t_7 = flush_to_disk(__pyx_v_self->_fd); if (unlikely(__pyx_t_7 == -1)) __PYX_ERR(0, 94, __pyx_L1_error)
 
   /* "_hydra.pyx":86
  *             self._buffer = NULL
  * 
- *     def fdatasync(self):             # <<<<<<<<<<<<<<
+ *     cpdef fdatasync(self):             # <<<<<<<<<<<<<<
  *         """ Flush everything to disk """
  *         if self._fd < 0 or not self._buffer:
  */
@@ -2393,7 +2482,47 @@ static PyObject *__pyx_pf_6_hydra_12MMapBitField_6fdatasync(struct __pyx_obj_6_h
   __pyx_r = Py_None; __Pyx_INCREF(Py_None);
   goto __pyx_L0;
   __pyx_L1_error:;
+  __Pyx_XDECREF(__pyx_t_1);
+  __Pyx_XDECREF(__pyx_t_2);
   __Pyx_XDECREF(__pyx_t_3);
+  __Pyx_XDECREF(__pyx_t_4);
+  __Pyx_AddTraceback("_hydra.MMapBitField.fdatasync", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = 0;
+  __pyx_L0:;
+  __Pyx_XGIVEREF(__pyx_r);
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* Python wrapper */
+static PyObject *__pyx_pw_6_hydra_12MMapBitField_7fdatasync(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused); /*proto*/
+static char __pyx_doc_6_hydra_12MMapBitField_6fdatasync[] = " Flush everything to disk ";
+static PyObject *__pyx_pw_6_hydra_12MMapBitField_7fdatasync(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused) {
+  PyObject *__pyx_r = 0;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("fdatasync (wrapper)", 0);
+  __pyx_r = __pyx_pf_6_hydra_12MMapBitField_6fdatasync(((struct __pyx_obj_6_hydra_MMapBitField *)__pyx_v_self));
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+static PyObject *__pyx_pf_6_hydra_12MMapBitField_6fdatasync(struct __pyx_obj_6_hydra_MMapBitField *__pyx_v_self) {
+  PyObject *__pyx_r = NULL;
+  __Pyx_RefNannyDeclarations
+  PyObject *__pyx_t_1 = NULL;
+  __Pyx_RefNannySetupContext("fdatasync", 0);
+  __Pyx_XDECREF(__pyx_r);
+  __pyx_t_1 = __pyx_f_6_hydra_12MMapBitField_fdatasync(__pyx_v_self, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 86, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __pyx_r = __pyx_t_1;
+  __pyx_t_1 = 0;
+  goto __pyx_L0;
+
+  /* function exit code */
+  __pyx_L1_error:;
+  __Pyx_XDECREF(__pyx_t_1);
   __Pyx_AddTraceback("_hydra.MMapBitField.fdatasync", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
@@ -2873,8 +3002,8 @@ static PyObject *__pyx_pf_6_hydra_12MMapBitField_12__iter__(struct __pyx_obj_6_h
  *         return MMapIter(self)
  * 
  *     def __len__(self):             # <<<<<<<<<<<<<<
- *         if self._fd < 0 or not self._buffer:
- *             raise ValueError('I/O operation on closed file')
+ *         return self.size()
+ * 
  */
 
 /* Python wrapper */
@@ -2893,72 +3022,35 @@ static Py_ssize_t __pyx_pw_6_hydra_12MMapBitField_15__len__(PyObject *__pyx_v_se
 static Py_ssize_t __pyx_pf_6_hydra_12MMapBitField_14__len__(struct __pyx_obj_6_hydra_MMapBitField *__pyx_v_self) {
   Py_ssize_t __pyx_r;
   __Pyx_RefNannyDeclarations
-  int __pyx_t_1;
-  int __pyx_t_2;
-  PyObject *__pyx_t_3 = NULL;
+  PyObject *__pyx_t_1 = NULL;
+  Py_ssize_t __pyx_t_2;
   __Pyx_RefNannySetupContext("__len__", 0);
 
   /* "_hydra.pyx":131
  * 
  *     def __len__(self):
- *         if self._fd < 0 or not self._buffer:             # <<<<<<<<<<<<<<
- *             raise ValueError('I/O operation on closed file')
+ *         return self.size()             # <<<<<<<<<<<<<<
  * 
+ *     cpdef size(self):
  */
-  __pyx_t_2 = ((__pyx_v_self->_fd < 0) != 0);
-  if (!__pyx_t_2) {
-  } else {
-    __pyx_t_1 = __pyx_t_2;
-    goto __pyx_L4_bool_binop_done;
-  }
-  __pyx_t_2 = ((!(__pyx_v_self->_buffer != 0)) != 0);
-  __pyx_t_1 = __pyx_t_2;
-  __pyx_L4_bool_binop_done:;
-  if (__pyx_t_1) {
-
-    /* "_hydra.pyx":132
- *     def __len__(self):
- *         if self._fd < 0 or not self._buffer:
- *             raise ValueError('I/O operation on closed file')             # <<<<<<<<<<<<<<
- * 
- *         return self._bitsize
- */
-    __pyx_t_3 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__9, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 132, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_3);
-    __Pyx_Raise(__pyx_t_3, 0, 0, 0);
-    __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-    __PYX_ERR(0, 132, __pyx_L1_error)
-
-    /* "_hydra.pyx":131
- * 
- *     def __len__(self):
- *         if self._fd < 0 or not self._buffer:             # <<<<<<<<<<<<<<
- *             raise ValueError('I/O operation on closed file')
- * 
- */
-  }
-
-  /* "_hydra.pyx":134
- *             raise ValueError('I/O operation on closed file')
- * 
- *         return self._bitsize             # <<<<<<<<<<<<<<
- * 
- * cdef class MMapIter:
- */
-  __pyx_r = __pyx_v_self->_bitsize;
+  __pyx_t_1 = ((struct __pyx_vtabstruct_6_hydra_MMapBitField *)__pyx_v_self->__pyx_vtab)->size(__pyx_v_self, 0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 131, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __pyx_t_2 = __Pyx_PyIndex_AsSsize_t(__pyx_t_1); if (unlikely((__pyx_t_2 == (Py_ssize_t)-1) && PyErr_Occurred())) __PYX_ERR(0, 131, __pyx_L1_error)
+  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+  __pyx_r = __pyx_t_2;
   goto __pyx_L0;
 
   /* "_hydra.pyx":130
  *         return MMapIter(self)
  * 
  *     def __len__(self):             # <<<<<<<<<<<<<<
- *         if self._fd < 0 or not self._buffer:
- *             raise ValueError('I/O operation on closed file')
+ *         return self.size()
+ * 
  */
 
   /* function exit code */
   __pyx_L1_error:;
-  __Pyx_XDECREF(__pyx_t_3);
+  __Pyx_XDECREF(__pyx_t_1);
   __Pyx_AddTraceback("_hydra.MMapBitField.__len__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = -1;
   __pyx_L0:;
@@ -2966,7 +3058,173 @@ static Py_ssize_t __pyx_pf_6_hydra_12MMapBitField_14__len__(struct __pyx_obj_6_h
   return __pyx_r;
 }
 
-/* "_hydra.pyx":139
+/* "_hydra.pyx":133
+ *         return self.size()
+ * 
+ *     cpdef size(self):             # <<<<<<<<<<<<<<
+ *         if self._fd < 0 or not self._buffer:
+ *             raise ValueError('I/O operation on closed file')
+ */
+
+static PyObject *__pyx_pw_6_hydra_12MMapBitField_17size(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused); /*proto*/
+static PyObject *__pyx_f_6_hydra_12MMapBitField_size(struct __pyx_obj_6_hydra_MMapBitField *__pyx_v_self, int __pyx_skip_dispatch) {
+  PyObject *__pyx_r = NULL;
+  __Pyx_RefNannyDeclarations
+  PyObject *__pyx_t_1 = NULL;
+  PyObject *__pyx_t_2 = NULL;
+  PyObject *__pyx_t_3 = NULL;
+  PyObject *__pyx_t_4 = NULL;
+  int __pyx_t_5;
+  int __pyx_t_6;
+  __Pyx_RefNannySetupContext("size", 0);
+  /* Check if called by wrapper */
+  if (unlikely(__pyx_skip_dispatch)) ;
+  /* Check if overridden in Python */
+  else if (unlikely(Py_TYPE(((PyObject *)__pyx_v_self))->tp_dictoffset != 0)) {
+    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_size); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 133, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_1);
+    if (!PyCFunction_Check(__pyx_t_1) || (PyCFunction_GET_FUNCTION(__pyx_t_1) != (PyCFunction)__pyx_pw_6_hydra_12MMapBitField_17size)) {
+      __Pyx_XDECREF(__pyx_r);
+      __Pyx_INCREF(__pyx_t_1);
+      __pyx_t_3 = __pyx_t_1; __pyx_t_4 = NULL;
+      if (CYTHON_COMPILING_IN_CPYTHON && unlikely(PyMethod_Check(__pyx_t_3))) {
+        __pyx_t_4 = PyMethod_GET_SELF(__pyx_t_3);
+        if (likely(__pyx_t_4)) {
+          PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_3);
+          __Pyx_INCREF(__pyx_t_4);
+          __Pyx_INCREF(function);
+          __Pyx_DECREF_SET(__pyx_t_3, function);
+        }
+      }
+      if (__pyx_t_4) {
+        __pyx_t_2 = __Pyx_PyObject_CallOneArg(__pyx_t_3, __pyx_t_4); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 133, __pyx_L1_error)
+        __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+      } else {
+        __pyx_t_2 = __Pyx_PyObject_CallNoArg(__pyx_t_3); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 133, __pyx_L1_error)
+      }
+      __Pyx_GOTREF(__pyx_t_2);
+      __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+      __pyx_r = __pyx_t_2;
+      __pyx_t_2 = 0;
+      __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+      goto __pyx_L0;
+    }
+    __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+  }
+
+  /* "_hydra.pyx":134
+ * 
+ *     cpdef size(self):
+ *         if self._fd < 0 or not self._buffer:             # <<<<<<<<<<<<<<
+ *             raise ValueError('I/O operation on closed file')
+ * 
+ */
+  __pyx_t_6 = ((__pyx_v_self->_fd < 0) != 0);
+  if (!__pyx_t_6) {
+  } else {
+    __pyx_t_5 = __pyx_t_6;
+    goto __pyx_L4_bool_binop_done;
+  }
+  __pyx_t_6 = ((!(__pyx_v_self->_buffer != 0)) != 0);
+  __pyx_t_5 = __pyx_t_6;
+  __pyx_L4_bool_binop_done:;
+  if (__pyx_t_5) {
+
+    /* "_hydra.pyx":135
+ *     cpdef size(self):
+ *         if self._fd < 0 or not self._buffer:
+ *             raise ValueError('I/O operation on closed file')             # <<<<<<<<<<<<<<
+ * 
+ *         return self._bitsize
+ */
+    __pyx_t_1 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__9, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 135, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_1);
+    __Pyx_Raise(__pyx_t_1, 0, 0, 0);
+    __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+    __PYX_ERR(0, 135, __pyx_L1_error)
+
+    /* "_hydra.pyx":134
+ * 
+ *     cpdef size(self):
+ *         if self._fd < 0 or not self._buffer:             # <<<<<<<<<<<<<<
+ *             raise ValueError('I/O operation on closed file')
+ * 
+ */
+  }
+
+  /* "_hydra.pyx":137
+ *             raise ValueError('I/O operation on closed file')
+ * 
+ *         return self._bitsize             # <<<<<<<<<<<<<<
+ * 
+ * 
+ */
+  __Pyx_XDECREF(__pyx_r);
+  __pyx_t_1 = __Pyx_PyInt_From_long(__pyx_v_self->_bitsize); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 137, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __pyx_r = __pyx_t_1;
+  __pyx_t_1 = 0;
+  goto __pyx_L0;
+
+  /* "_hydra.pyx":133
+ *         return self.size()
+ * 
+ *     cpdef size(self):             # <<<<<<<<<<<<<<
+ *         if self._fd < 0 or not self._buffer:
+ *             raise ValueError('I/O operation on closed file')
+ */
+
+  /* function exit code */
+  __pyx_L1_error:;
+  __Pyx_XDECREF(__pyx_t_1);
+  __Pyx_XDECREF(__pyx_t_2);
+  __Pyx_XDECREF(__pyx_t_3);
+  __Pyx_XDECREF(__pyx_t_4);
+  __Pyx_AddTraceback("_hydra.MMapBitField.size", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = 0;
+  __pyx_L0:;
+  __Pyx_XGIVEREF(__pyx_r);
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* Python wrapper */
+static PyObject *__pyx_pw_6_hydra_12MMapBitField_17size(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused); /*proto*/
+static PyObject *__pyx_pw_6_hydra_12MMapBitField_17size(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused) {
+  PyObject *__pyx_r = 0;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("size (wrapper)", 0);
+  __pyx_r = __pyx_pf_6_hydra_12MMapBitField_16size(((struct __pyx_obj_6_hydra_MMapBitField *)__pyx_v_self));
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+static PyObject *__pyx_pf_6_hydra_12MMapBitField_16size(struct __pyx_obj_6_hydra_MMapBitField *__pyx_v_self) {
+  PyObject *__pyx_r = NULL;
+  __Pyx_RefNannyDeclarations
+  PyObject *__pyx_t_1 = NULL;
+  __Pyx_RefNannySetupContext("size", 0);
+  __Pyx_XDECREF(__pyx_r);
+  __pyx_t_1 = __pyx_f_6_hydra_12MMapBitField_size(__pyx_v_self, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 133, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __pyx_r = __pyx_t_1;
+  __pyx_t_1 = 0;
+  goto __pyx_L0;
+
+  /* function exit code */
+  __pyx_L1_error:;
+  __Pyx_XDECREF(__pyx_t_1);
+  __Pyx_AddTraceback("_hydra.MMapBitField.size", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = NULL;
+  __pyx_L0:;
+  __Pyx_XGIVEREF(__pyx_r);
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* "_hydra.pyx":143
  *     cdef size_t _idx
  *     cdef MMapBitField  _bitfield
  *     def __cinit__(self, bitfield):             # <<<<<<<<<<<<<<
@@ -2999,7 +3257,7 @@ static int __pyx_pw_6_hydra_8MMapIter_1__cinit__(PyObject *__pyx_v_self, PyObjec
         else goto __pyx_L5_argtuple_error;
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "__cinit__") < 0)) __PYX_ERR(0, 139, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "__cinit__") < 0)) __PYX_ERR(0, 143, __pyx_L3_error)
       }
     } else if (PyTuple_GET_SIZE(__pyx_args) != 1) {
       goto __pyx_L5_argtuple_error;
@@ -3010,7 +3268,7 @@ static int __pyx_pw_6_hydra_8MMapIter_1__cinit__(PyObject *__pyx_v_self, PyObjec
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("__cinit__", 1, 1, 1, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 139, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("__cinit__", 1, 1, 1, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 143, __pyx_L3_error)
   __pyx_L3_error:;
   __Pyx_AddTraceback("_hydra.MMapIter.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
@@ -3029,14 +3287,14 @@ static int __pyx_pf_6_hydra_8MMapIter___cinit__(struct __pyx_obj_6_hydra_MMapIte
   PyObject *__pyx_t_1 = NULL;
   __Pyx_RefNannySetupContext("__cinit__", 0);
 
-  /* "_hydra.pyx":140
+  /* "_hydra.pyx":144
  *     cdef MMapBitField  _bitfield
  *     def __cinit__(self, bitfield):
  *         self._bitfield = bitfield             # <<<<<<<<<<<<<<
  *         self._idx = 0
  * 
  */
-  if (!(likely(((__pyx_v_bitfield) == Py_None) || likely(__Pyx_TypeTest(__pyx_v_bitfield, __pyx_ptype_6_hydra_MMapBitField))))) __PYX_ERR(0, 140, __pyx_L1_error)
+  if (!(likely(((__pyx_v_bitfield) == Py_None) || likely(__Pyx_TypeTest(__pyx_v_bitfield, __pyx_ptype_6_hydra_MMapBitField))))) __PYX_ERR(0, 144, __pyx_L1_error)
   __pyx_t_1 = __pyx_v_bitfield;
   __Pyx_INCREF(__pyx_t_1);
   __Pyx_GIVEREF(__pyx_t_1);
@@ -3045,7 +3303,7 @@ static int __pyx_pf_6_hydra_8MMapIter___cinit__(struct __pyx_obj_6_hydra_MMapIte
   __pyx_v_self->_bitfield = ((struct __pyx_obj_6_hydra_MMapBitField *)__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "_hydra.pyx":141
+  /* "_hydra.pyx":145
  *     def __cinit__(self, bitfield):
  *         self._bitfield = bitfield
  *         self._idx = 0             # <<<<<<<<<<<<<<
@@ -3054,7 +3312,7 @@ static int __pyx_pf_6_hydra_8MMapIter___cinit__(struct __pyx_obj_6_hydra_MMapIte
  */
   __pyx_v_self->_idx = 0;
 
-  /* "_hydra.pyx":139
+  /* "_hydra.pyx":143
  *     cdef size_t _idx
  *     cdef MMapBitField  _bitfield
  *     def __cinit__(self, bitfield):             # <<<<<<<<<<<<<<
@@ -3074,7 +3332,7 @@ static int __pyx_pf_6_hydra_8MMapIter___cinit__(struct __pyx_obj_6_hydra_MMapIte
   return __pyx_r;
 }
 
-/* "_hydra.pyx":143
+/* "_hydra.pyx":147
  *         self._idx = 0
  * 
  *     def __next__(self):             # <<<<<<<<<<<<<<
@@ -3105,7 +3363,7 @@ static PyObject *__pyx_pf_6_hydra_8MMapIter_2__next__(struct __pyx_obj_6_hydra_M
   int __pyx_t_4;
   __Pyx_RefNannySetupContext("__next__", 0);
 
-  /* "_hydra.pyx":145
+  /* "_hydra.pyx":149
  *     def __next__(self):
  *         cdef int result
  *         if self._idx < len(self._bitfield):             # <<<<<<<<<<<<<<
@@ -3114,25 +3372,25 @@ static PyObject *__pyx_pf_6_hydra_8MMapIter_2__next__(struct __pyx_obj_6_hydra_M
  */
   __pyx_t_1 = ((PyObject *)__pyx_v_self->_bitfield);
   __Pyx_INCREF(__pyx_t_1);
-  __pyx_t_2 = PyObject_Length(__pyx_t_1); if (unlikely(__pyx_t_2 == -1)) __PYX_ERR(0, 145, __pyx_L1_error)
+  __pyx_t_2 = PyObject_Length(__pyx_t_1); if (unlikely(__pyx_t_2 == -1)) __PYX_ERR(0, 149, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __pyx_t_3 = ((__pyx_v_self->_idx < __pyx_t_2) != 0);
   if (__pyx_t_3) {
 
-    /* "_hydra.pyx":146
+    /* "_hydra.pyx":150
  *         cdef int result
  *         if self._idx < len(self._bitfield):
  *             result = self._bitfield[self._idx]             # <<<<<<<<<<<<<<
  *             self._idx +=1
  *             return result
  */
-    __pyx_t_1 = __Pyx_GetItemInt(((PyObject *)__pyx_v_self->_bitfield), __pyx_v_self->_idx, size_t, 0, __Pyx_PyInt_FromSize_t, 0, 0, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 146, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_GetItemInt(((PyObject *)__pyx_v_self->_bitfield), __pyx_v_self->_idx, size_t, 0, __Pyx_PyInt_FromSize_t, 0, 0, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 150, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
-    __pyx_t_4 = __Pyx_PyInt_As_int(__pyx_t_1); if (unlikely((__pyx_t_4 == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 146, __pyx_L1_error)
+    __pyx_t_4 = __Pyx_PyInt_As_int(__pyx_t_1); if (unlikely((__pyx_t_4 == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 150, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
     __pyx_v_result = __pyx_t_4;
 
-    /* "_hydra.pyx":147
+    /* "_hydra.pyx":151
  *         if self._idx < len(self._bitfield):
  *             result = self._bitfield[self._idx]
  *             self._idx +=1             # <<<<<<<<<<<<<<
@@ -3141,7 +3399,7 @@ static PyObject *__pyx_pf_6_hydra_8MMapIter_2__next__(struct __pyx_obj_6_hydra_M
  */
     __pyx_v_self->_idx = (__pyx_v_self->_idx + 1);
 
-    /* "_hydra.pyx":148
+    /* "_hydra.pyx":152
  *             result = self._bitfield[self._idx]
  *             self._idx +=1
  *             return result             # <<<<<<<<<<<<<<
@@ -3149,13 +3407,13 @@ static PyObject *__pyx_pf_6_hydra_8MMapIter_2__next__(struct __pyx_obj_6_hydra_M
  * 
  */
     __Pyx_XDECREF(__pyx_r);
-    __pyx_t_1 = __Pyx_PyInt_From_int(__pyx_v_result); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 148, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyInt_From_int(__pyx_v_result); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 152, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __pyx_r = __pyx_t_1;
     __pyx_t_1 = 0;
     goto __pyx_L0;
 
-    /* "_hydra.pyx":145
+    /* "_hydra.pyx":149
  *     def __next__(self):
  *         cdef int result
  *         if self._idx < len(self._bitfield):             # <<<<<<<<<<<<<<
@@ -3164,7 +3422,7 @@ static PyObject *__pyx_pf_6_hydra_8MMapIter_2__next__(struct __pyx_obj_6_hydra_M
  */
   }
 
-  /* "_hydra.pyx":149
+  /* "_hydra.pyx":153
  *             self._idx +=1
  *             return result
  *         raise StopIteration             # <<<<<<<<<<<<<<
@@ -3172,9 +3430,9 @@ static PyObject *__pyx_pf_6_hydra_8MMapIter_2__next__(struct __pyx_obj_6_hydra_M
  * 
  */
   __Pyx_Raise(__pyx_builtin_StopIteration, 0, 0, 0);
-  __PYX_ERR(0, 149, __pyx_L1_error)
+  __PYX_ERR(0, 153, __pyx_L1_error)
 
-  /* "_hydra.pyx":143
+  /* "_hydra.pyx":147
  *         self._idx = 0
  * 
  *     def __next__(self):             # <<<<<<<<<<<<<<
@@ -3193,7 +3451,7 @@ static PyObject *__pyx_pf_6_hydra_8MMapIter_2__next__(struct __pyx_obj_6_hydra_M
   return __pyx_r;
 }
 
-/* "_hydra.pyx":160
+/* "_hydra.pyx":164
  *     """
  * 
  *     def __init__(self, k, bucketsPerElement):             # <<<<<<<<<<<<<<
@@ -3232,16 +3490,16 @@ static PyObject *__pyx_pw_6_hydra_18BloomSpecification_1__init__(PyObject *__pyx
         case  1:
         if (likely((values[1] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_k)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("__init__", 1, 3, 3, 1); __PYX_ERR(0, 160, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("__init__", 1, 3, 3, 1); __PYX_ERR(0, 164, __pyx_L3_error)
         }
         case  2:
         if (likely((values[2] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_bucketsPerElement)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("__init__", 1, 3, 3, 2); __PYX_ERR(0, 160, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("__init__", 1, 3, 3, 2); __PYX_ERR(0, 164, __pyx_L3_error)
         }
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "__init__") < 0)) __PYX_ERR(0, 160, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "__init__") < 0)) __PYX_ERR(0, 164, __pyx_L3_error)
       }
     } else if (PyTuple_GET_SIZE(__pyx_args) != 3) {
       goto __pyx_L5_argtuple_error;
@@ -3256,7 +3514,7 @@ static PyObject *__pyx_pw_6_hydra_18BloomSpecification_1__init__(PyObject *__pyx
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("__init__", 1, 3, 3, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 160, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("__init__", 1, 3, 3, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 164, __pyx_L3_error)
   __pyx_L3_error:;
   __Pyx_AddTraceback("_hydra.BloomSpecification.__init__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
@@ -3274,25 +3532,25 @@ static PyObject *__pyx_pf_6_hydra_18BloomSpecification___init__(CYTHON_UNUSED Py
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__init__", 0);
 
-  /* "_hydra.pyx":161
+  /* "_hydra.pyx":165
  * 
  *     def __init__(self, k, bucketsPerElement):
  *         self.K = k             # <<<<<<<<<<<<<<
  *         self.bucketsPerElement = bucketsPerElement
  * 
  */
-  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_K, __pyx_v_k) < 0) __PYX_ERR(0, 161, __pyx_L1_error)
+  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_K, __pyx_v_k) < 0) __PYX_ERR(0, 165, __pyx_L1_error)
 
-  /* "_hydra.pyx":162
+  /* "_hydra.pyx":166
  *     def __init__(self, k, bucketsPerElement):
  *         self.K = k
  *         self.bucketsPerElement = bucketsPerElement             # <<<<<<<<<<<<<<
  * 
  *     def __eq__(self, other):
  */
-  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_bucketsPerElement, __pyx_v_bucketsPerElement) < 0) __PYX_ERR(0, 162, __pyx_L1_error)
+  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_bucketsPerElement, __pyx_v_bucketsPerElement) < 0) __PYX_ERR(0, 166, __pyx_L1_error)
 
-  /* "_hydra.pyx":160
+  /* "_hydra.pyx":164
  *     """
  * 
  *     def __init__(self, k, bucketsPerElement):             # <<<<<<<<<<<<<<
@@ -3312,7 +3570,7 @@ static PyObject *__pyx_pf_6_hydra_18BloomSpecification___init__(CYTHON_UNUSED Py
   return __pyx_r;
 }
 
-/* "_hydra.pyx":164
+/* "_hydra.pyx":168
  *         self.bucketsPerElement = bucketsPerElement
  * 
  *     def __eq__(self, other):             # <<<<<<<<<<<<<<
@@ -3349,11 +3607,11 @@ static PyObject *__pyx_pw_6_hydra_18BloomSpecification_3__eq__(PyObject *__pyx_s
         case  1:
         if (likely((values[1] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_other)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("__eq__", 1, 2, 2, 1); __PYX_ERR(0, 164, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("__eq__", 1, 2, 2, 1); __PYX_ERR(0, 168, __pyx_L3_error)
         }
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "__eq__") < 0)) __PYX_ERR(0, 164, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "__eq__") < 0)) __PYX_ERR(0, 168, __pyx_L3_error)
       }
     } else if (PyTuple_GET_SIZE(__pyx_args) != 2) {
       goto __pyx_L5_argtuple_error;
@@ -3366,7 +3624,7 @@ static PyObject *__pyx_pw_6_hydra_18BloomSpecification_3__eq__(PyObject *__pyx_s
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("__eq__", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 164, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("__eq__", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 168, __pyx_L3_error)
   __pyx_L3_error:;
   __Pyx_AddTraceback("_hydra.BloomSpecification.__eq__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
@@ -3390,41 +3648,41 @@ static PyObject *__pyx_pf_6_hydra_18BloomSpecification_2__eq__(CYTHON_UNUSED PyO
   int __pyx_t_4;
   __Pyx_RefNannySetupContext("__eq__", 0);
 
-  /* "_hydra.pyx":165
+  /* "_hydra.pyx":169
  * 
  *     def __eq__(self, other):
  *         c1 = getattr(other, 'K', None) == self.K             # <<<<<<<<<<<<<<
  *         c2 = getattr(other, 'bucketsPerElement', None) == self.bucketsPerElement
  *         return c1 and c2
  */
-  __pyx_t_1 = __Pyx_GetAttr3(__pyx_v_other, __pyx_n_s_K, Py_None); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 165, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_GetAttr3(__pyx_v_other, __pyx_n_s_K, Py_None); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 169, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_K); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 165, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_K); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 169, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_3 = PyObject_RichCompare(__pyx_t_1, __pyx_t_2, Py_EQ); __Pyx_XGOTREF(__pyx_t_3); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 165, __pyx_L1_error)
+  __pyx_t_3 = PyObject_RichCompare(__pyx_t_1, __pyx_t_2, Py_EQ); __Pyx_XGOTREF(__pyx_t_3); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 169, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_v_c1 = __pyx_t_3;
   __pyx_t_3 = 0;
 
-  /* "_hydra.pyx":166
+  /* "_hydra.pyx":170
  *     def __eq__(self, other):
  *         c1 = getattr(other, 'K', None) == self.K
  *         c2 = getattr(other, 'bucketsPerElement', None) == self.bucketsPerElement             # <<<<<<<<<<<<<<
  *         return c1 and c2
  * 
  */
-  __pyx_t_3 = __Pyx_GetAttr3(__pyx_v_other, __pyx_n_s_bucketsPerElement, Py_None); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 166, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_GetAttr3(__pyx_v_other, __pyx_n_s_bucketsPerElement, Py_None); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 170, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_bucketsPerElement); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 166, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_bucketsPerElement); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 170, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_1 = PyObject_RichCompare(__pyx_t_3, __pyx_t_2, Py_EQ); __Pyx_XGOTREF(__pyx_t_1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 166, __pyx_L1_error)
+  __pyx_t_1 = PyObject_RichCompare(__pyx_t_3, __pyx_t_2, Py_EQ); __Pyx_XGOTREF(__pyx_t_1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 170, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_v_c2 = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "_hydra.pyx":167
+  /* "_hydra.pyx":171
  *         c1 = getattr(other, 'K', None) == self.K
  *         c2 = getattr(other, 'bucketsPerElement', None) == self.bucketsPerElement
  *         return c1 and c2             # <<<<<<<<<<<<<<
@@ -3432,7 +3690,7 @@ static PyObject *__pyx_pf_6_hydra_18BloomSpecification_2__eq__(CYTHON_UNUSED PyO
  * cdef class BloomCalculations:
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_4 = __Pyx_PyObject_IsTrue(__pyx_v_c1); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 167, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyObject_IsTrue(__pyx_v_c1); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 171, __pyx_L1_error)
   if (__pyx_t_4) {
   } else {
     __Pyx_INCREF(__pyx_v_c1);
@@ -3446,7 +3704,7 @@ static PyObject *__pyx_pf_6_hydra_18BloomSpecification_2__eq__(CYTHON_UNUSED PyO
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "_hydra.pyx":164
+  /* "_hydra.pyx":168
  *         self.bucketsPerElement = bucketsPerElement
  * 
  *     def __eq__(self, other):             # <<<<<<<<<<<<<<
@@ -3469,7 +3727,7 @@ static PyObject *__pyx_pf_6_hydra_18BloomSpecification_2__eq__(CYTHON_UNUSED PyO
   return __pyx_r;
 }
 
-/* "_hydra.pyx":203
+/* "_hydra.pyx":207
  * 
  *     @classmethod
  *     def computeBloomSpec1(cls, bucketsPerElement):             # <<<<<<<<<<<<<<
@@ -3503,7 +3761,7 @@ static PyObject *__pyx_pf_6_hydra_17BloomCalculations_computeBloomSpec1(PyTypeOb
   PyObject *__pyx_t_7 = NULL;
   __Pyx_RefNannySetupContext("computeBloomSpec1", 0);
 
-  /* "_hydra.pyx":211
+  /* "_hydra.pyx":215
  *         @return A spec that minimizes the false positive rate.
  *         """
  *         assert bucketsPerElement >= 1             # <<<<<<<<<<<<<<
@@ -3512,17 +3770,17 @@ static PyObject *__pyx_pf_6_hydra_17BloomCalculations_computeBloomSpec1(PyTypeOb
  */
   #ifndef CYTHON_WITHOUT_ASSERTIONS
   if (unlikely(!Py_OptimizeFlag)) {
-    __pyx_t_1 = PyObject_RichCompare(__pyx_v_bucketsPerElement, __pyx_int_1, Py_GE); __Pyx_XGOTREF(__pyx_t_1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 211, __pyx_L1_error)
-    __pyx_t_2 = __Pyx_PyObject_IsTrue(__pyx_t_1); if (unlikely(__pyx_t_2 < 0)) __PYX_ERR(0, 211, __pyx_L1_error)
+    __pyx_t_1 = PyObject_RichCompare(__pyx_v_bucketsPerElement, __pyx_int_1, Py_GE); __Pyx_XGOTREF(__pyx_t_1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 215, __pyx_L1_error)
+    __pyx_t_2 = __Pyx_PyObject_IsTrue(__pyx_t_1); if (unlikely(__pyx_t_2 < 0)) __PYX_ERR(0, 215, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
     if (unlikely(!__pyx_t_2)) {
       PyErr_SetNone(PyExc_AssertionError);
-      __PYX_ERR(0, 211, __pyx_L1_error)
+      __PYX_ERR(0, 215, __pyx_L1_error)
     }
   }
   #endif
 
-  /* "_hydra.pyx":212
+  /* "_hydra.pyx":216
  *         """
  *         assert bucketsPerElement >= 1
  *         assert bucketsPerElement <= len(BloomCalculations.PROBS) - 1             # <<<<<<<<<<<<<<
@@ -3531,24 +3789,24 @@ static PyObject *__pyx_pf_6_hydra_17BloomCalculations_computeBloomSpec1(PyTypeOb
  */
   #ifndef CYTHON_WITHOUT_ASSERTIONS
   if (unlikely(!Py_OptimizeFlag)) {
-    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_ptype_6_hydra_BloomCalculations), __pyx_n_s_PROBS); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 212, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_ptype_6_hydra_BloomCalculations), __pyx_n_s_PROBS); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 216, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
-    __pyx_t_3 = PyObject_Length(__pyx_t_1); if (unlikely(__pyx_t_3 == -1)) __PYX_ERR(0, 212, __pyx_L1_error)
+    __pyx_t_3 = PyObject_Length(__pyx_t_1); if (unlikely(__pyx_t_3 == -1)) __PYX_ERR(0, 216, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-    __pyx_t_1 = PyInt_FromSsize_t((__pyx_t_3 - 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 212, __pyx_L1_error)
+    __pyx_t_1 = PyInt_FromSsize_t((__pyx_t_3 - 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 216, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
-    __pyx_t_4 = PyObject_RichCompare(__pyx_v_bucketsPerElement, __pyx_t_1, Py_LE); __Pyx_XGOTREF(__pyx_t_4); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 212, __pyx_L1_error)
+    __pyx_t_4 = PyObject_RichCompare(__pyx_v_bucketsPerElement, __pyx_t_1, Py_LE); __Pyx_XGOTREF(__pyx_t_4); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 216, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-    __pyx_t_2 = __Pyx_PyObject_IsTrue(__pyx_t_4); if (unlikely(__pyx_t_2 < 0)) __PYX_ERR(0, 212, __pyx_L1_error)
+    __pyx_t_2 = __Pyx_PyObject_IsTrue(__pyx_t_4); if (unlikely(__pyx_t_2 < 0)) __PYX_ERR(0, 216, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
     if (unlikely(!__pyx_t_2)) {
       PyErr_SetNone(PyExc_AssertionError);
-      __PYX_ERR(0, 212, __pyx_L1_error)
+      __PYX_ERR(0, 216, __pyx_L1_error)
     }
   }
   #endif
 
-  /* "_hydra.pyx":213
+  /* "_hydra.pyx":217
  *         assert bucketsPerElement >= 1
  *         assert bucketsPerElement <= len(BloomCalculations.PROBS) - 1
  *         return BloomSpecification(cls.optKPerBuckets[bucketsPerElement], bucketsPerElement)             # <<<<<<<<<<<<<<
@@ -3556,11 +3814,11 @@ static PyObject *__pyx_pf_6_hydra_17BloomCalculations_computeBloomSpec1(PyTypeOb
  * 
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __Pyx_GetModuleGlobalName(__pyx_n_s_BloomSpecification); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 213, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_GetModuleGlobalName(__pyx_n_s_BloomSpecification); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 217, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_cls), __pyx_n_s_optKPerBuckets); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 213, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_cls), __pyx_n_s_optKPerBuckets); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 217, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
-  __pyx_t_6 = PyObject_GetItem(__pyx_t_5, __pyx_v_bucketsPerElement); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 213, __pyx_L1_error)
+  __pyx_t_6 = PyObject_GetItem(__pyx_t_5, __pyx_v_bucketsPerElement); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 217, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
   __pyx_t_5 = NULL;
@@ -3575,7 +3833,7 @@ static PyObject *__pyx_pf_6_hydra_17BloomCalculations_computeBloomSpec1(PyTypeOb
       __pyx_t_3 = 1;
     }
   }
-  __pyx_t_7 = PyTuple_New(2+__pyx_t_3); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 213, __pyx_L1_error)
+  __pyx_t_7 = PyTuple_New(2+__pyx_t_3); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 217, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_7);
   if (__pyx_t_5) {
     __Pyx_GIVEREF(__pyx_t_5); PyTuple_SET_ITEM(__pyx_t_7, 0, __pyx_t_5); __pyx_t_5 = NULL;
@@ -3586,7 +3844,7 @@ static PyObject *__pyx_pf_6_hydra_17BloomCalculations_computeBloomSpec1(PyTypeOb
   __Pyx_GIVEREF(__pyx_v_bucketsPerElement);
   PyTuple_SET_ITEM(__pyx_t_7, 1+__pyx_t_3, __pyx_v_bucketsPerElement);
   __pyx_t_6 = 0;
-  __pyx_t_4 = __Pyx_PyObject_Call(__pyx_t_1, __pyx_t_7, NULL); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 213, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyObject_Call(__pyx_t_1, __pyx_t_7, NULL); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 217, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -3594,7 +3852,7 @@ static PyObject *__pyx_pf_6_hydra_17BloomCalculations_computeBloomSpec1(PyTypeOb
   __pyx_t_4 = 0;
   goto __pyx_L0;
 
-  /* "_hydra.pyx":203
+  /* "_hydra.pyx":207
  * 
  *     @classmethod
  *     def computeBloomSpec1(cls, bucketsPerElement):             # <<<<<<<<<<<<<<
@@ -3617,7 +3875,7 @@ static PyObject *__pyx_pf_6_hydra_17BloomCalculations_computeBloomSpec1(PyTypeOb
   return __pyx_r;
 }
 
-/* "_hydra.pyx":217
+/* "_hydra.pyx":221
  * 
  *     @classmethod
  *     def computeBloomSpec2(cls, maxBucketsPerElement, maxFalsePosProb):             # <<<<<<<<<<<<<<
@@ -3654,11 +3912,11 @@ static PyObject *__pyx_pw_6_hydra_17BloomCalculations_3computeBloomSpec2(PyObjec
         case  1:
         if (likely((values[1] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_maxFalsePosProb)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("computeBloomSpec2", 1, 2, 2, 1); __PYX_ERR(0, 217, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("computeBloomSpec2", 1, 2, 2, 1); __PYX_ERR(0, 221, __pyx_L3_error)
         }
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "computeBloomSpec2") < 0)) __PYX_ERR(0, 217, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "computeBloomSpec2") < 0)) __PYX_ERR(0, 221, __pyx_L3_error)
       }
     } else if (PyTuple_GET_SIZE(__pyx_args) != 2) {
       goto __pyx_L5_argtuple_error;
@@ -3671,7 +3929,7 @@ static PyObject *__pyx_pw_6_hydra_17BloomCalculations_3computeBloomSpec2(PyObjec
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("computeBloomSpec2", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 217, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("computeBloomSpec2", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 221, __pyx_L3_error)
   __pyx_L3_error:;
   __Pyx_AddTraceback("_hydra.BloomCalculations.computeBloomSpec2", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
@@ -3700,7 +3958,7 @@ static PyObject *__pyx_pf_6_hydra_17BloomCalculations_2computeBloomSpec2(PyTypeO
   PyObject *__pyx_t_7 = NULL;
   __Pyx_RefNannySetupContext("computeBloomSpec2", 0);
 
-  /* "_hydra.pyx":232
+  /* "_hydra.pyx":236
  *         @throws UnsupportedOperationException if a filter satisfying the parameters cannot be met
  *         """
  *         assert maxBucketsPerElement >= 1             # <<<<<<<<<<<<<<
@@ -3709,17 +3967,17 @@ static PyObject *__pyx_pf_6_hydra_17BloomCalculations_2computeBloomSpec2(PyTypeO
  */
   #ifndef CYTHON_WITHOUT_ASSERTIONS
   if (unlikely(!Py_OptimizeFlag)) {
-    __pyx_t_1 = PyObject_RichCompare(__pyx_v_maxBucketsPerElement, __pyx_int_1, Py_GE); __Pyx_XGOTREF(__pyx_t_1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 232, __pyx_L1_error)
-    __pyx_t_2 = __Pyx_PyObject_IsTrue(__pyx_t_1); if (unlikely(__pyx_t_2 < 0)) __PYX_ERR(0, 232, __pyx_L1_error)
+    __pyx_t_1 = PyObject_RichCompare(__pyx_v_maxBucketsPerElement, __pyx_int_1, Py_GE); __Pyx_XGOTREF(__pyx_t_1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 236, __pyx_L1_error)
+    __pyx_t_2 = __Pyx_PyObject_IsTrue(__pyx_t_1); if (unlikely(__pyx_t_2 < 0)) __PYX_ERR(0, 236, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
     if (unlikely(!__pyx_t_2)) {
       PyErr_SetNone(PyExc_AssertionError);
-      __PYX_ERR(0, 232, __pyx_L1_error)
+      __PYX_ERR(0, 236, __pyx_L1_error)
     }
   }
   #endif
 
-  /* "_hydra.pyx":233
+  /* "_hydra.pyx":237
  *         """
  *         assert maxBucketsPerElement >= 1
  *         assert maxBucketsPerElement <= len(BloomCalculations.PROBS) - 1             # <<<<<<<<<<<<<<
@@ -3728,67 +3986,67 @@ static PyObject *__pyx_pf_6_hydra_17BloomCalculations_2computeBloomSpec2(PyTypeO
  */
   #ifndef CYTHON_WITHOUT_ASSERTIONS
   if (unlikely(!Py_OptimizeFlag)) {
-    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_ptype_6_hydra_BloomCalculations), __pyx_n_s_PROBS); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 233, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_ptype_6_hydra_BloomCalculations), __pyx_n_s_PROBS); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 237, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
-    __pyx_t_3 = PyObject_Length(__pyx_t_1); if (unlikely(__pyx_t_3 == -1)) __PYX_ERR(0, 233, __pyx_L1_error)
+    __pyx_t_3 = PyObject_Length(__pyx_t_1); if (unlikely(__pyx_t_3 == -1)) __PYX_ERR(0, 237, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-    __pyx_t_1 = PyInt_FromSsize_t((__pyx_t_3 - 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 233, __pyx_L1_error)
+    __pyx_t_1 = PyInt_FromSsize_t((__pyx_t_3 - 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 237, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
-    __pyx_t_4 = PyObject_RichCompare(__pyx_v_maxBucketsPerElement, __pyx_t_1, Py_LE); __Pyx_XGOTREF(__pyx_t_4); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 233, __pyx_L1_error)
+    __pyx_t_4 = PyObject_RichCompare(__pyx_v_maxBucketsPerElement, __pyx_t_1, Py_LE); __Pyx_XGOTREF(__pyx_t_4); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 237, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-    __pyx_t_2 = __Pyx_PyObject_IsTrue(__pyx_t_4); if (unlikely(__pyx_t_2 < 0)) __PYX_ERR(0, 233, __pyx_L1_error)
+    __pyx_t_2 = __Pyx_PyObject_IsTrue(__pyx_t_4); if (unlikely(__pyx_t_2 < 0)) __PYX_ERR(0, 237, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
     if (unlikely(!__pyx_t_2)) {
       PyErr_SetNone(PyExc_AssertionError);
-      __PYX_ERR(0, 233, __pyx_L1_error)
+      __PYX_ERR(0, 237, __pyx_L1_error)
     }
   }
   #endif
 
-  /* "_hydra.pyx":234
+  /* "_hydra.pyx":238
  *         assert maxBucketsPerElement >= 1
  *         assert maxBucketsPerElement <= len(BloomCalculations.PROBS) - 1
  *         maxK = len(BloomCalculations.PROBS[maxBucketsPerElement]) - 1             # <<<<<<<<<<<<<<
  * 
  *         # Handle the trivial cases
  */
-  __pyx_t_4 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_ptype_6_hydra_BloomCalculations), __pyx_n_s_PROBS); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 234, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_ptype_6_hydra_BloomCalculations), __pyx_n_s_PROBS); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 238, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
-  __pyx_t_1 = PyObject_GetItem(__pyx_t_4, __pyx_v_maxBucketsPerElement); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 234, __pyx_L1_error)
+  __pyx_t_1 = PyObject_GetItem(__pyx_t_4, __pyx_v_maxBucketsPerElement); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 238, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-  __pyx_t_3 = PyObject_Length(__pyx_t_1); if (unlikely(__pyx_t_3 == -1)) __PYX_ERR(0, 234, __pyx_L1_error)
+  __pyx_t_3 = PyObject_Length(__pyx_t_1); if (unlikely(__pyx_t_3 == -1)) __PYX_ERR(0, 238, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __pyx_v_maxK = (__pyx_t_3 - 1);
 
-  /* "_hydra.pyx":237
+  /* "_hydra.pyx":241
  * 
  *         # Handle the trivial cases
  *         if maxFalsePosProb >= BloomCalculations.PROBS[cls.minBuckets][cls.minK]:             # <<<<<<<<<<<<<<
  *             return BloomSpecification(2, cls.optKPerBuckets[2])
  * 
  */
-  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_ptype_6_hydra_BloomCalculations), __pyx_n_s_PROBS); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 237, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_ptype_6_hydra_BloomCalculations), __pyx_n_s_PROBS); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 241, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_4 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_cls), __pyx_n_s_minBuckets); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 237, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_cls), __pyx_n_s_minBuckets); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 241, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
-  __pyx_t_5 = PyObject_GetItem(__pyx_t_1, __pyx_t_4); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 237, __pyx_L1_error)
+  __pyx_t_5 = PyObject_GetItem(__pyx_t_1, __pyx_t_4); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 241, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-  __pyx_t_4 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_cls), __pyx_n_s_minK); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 237, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_cls), __pyx_n_s_minK); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 241, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
-  __pyx_t_1 = PyObject_GetItem(__pyx_t_5, __pyx_t_4); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 237, __pyx_L1_error)
+  __pyx_t_1 = PyObject_GetItem(__pyx_t_5, __pyx_t_4); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 241, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-  __pyx_t_4 = PyObject_RichCompare(__pyx_v_maxFalsePosProb, __pyx_t_1, Py_GE); __Pyx_XGOTREF(__pyx_t_4); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 237, __pyx_L1_error)
+  __pyx_t_4 = PyObject_RichCompare(__pyx_v_maxFalsePosProb, __pyx_t_1, Py_GE); __Pyx_XGOTREF(__pyx_t_4); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 241, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __pyx_t_2 = __Pyx_PyObject_IsTrue(__pyx_t_4); if (unlikely(__pyx_t_2 < 0)) __PYX_ERR(0, 237, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_IsTrue(__pyx_t_4); if (unlikely(__pyx_t_2 < 0)) __PYX_ERR(0, 241, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
   if (__pyx_t_2) {
 
-    /* "_hydra.pyx":238
+    /* "_hydra.pyx":242
  *         # Handle the trivial cases
  *         if maxFalsePosProb >= BloomCalculations.PROBS[cls.minBuckets][cls.minK]:
  *             return BloomSpecification(2, cls.optKPerBuckets[2])             # <<<<<<<<<<<<<<
@@ -3796,11 +4054,11 @@ static PyObject *__pyx_pf_6_hydra_17BloomCalculations_2computeBloomSpec2(PyTypeO
  *         if maxFalsePosProb < BloomCalculations.PROBS[maxBucketsPerElement][maxK]:
  */
     __Pyx_XDECREF(__pyx_r);
-    __pyx_t_1 = __Pyx_GetModuleGlobalName(__pyx_n_s_BloomSpecification); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 238, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_GetModuleGlobalName(__pyx_n_s_BloomSpecification); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 242, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
-    __pyx_t_5 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_cls), __pyx_n_s_optKPerBuckets); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 238, __pyx_L1_error)
+    __pyx_t_5 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_cls), __pyx_n_s_optKPerBuckets); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 242, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_5);
-    __pyx_t_6 = __Pyx_GetItemInt(__pyx_t_5, 2, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 238, __pyx_L1_error)
+    __pyx_t_6 = __Pyx_GetItemInt(__pyx_t_5, 2, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 242, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_6);
     __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
     __pyx_t_5 = NULL;
@@ -3815,7 +4073,7 @@ static PyObject *__pyx_pf_6_hydra_17BloomCalculations_2computeBloomSpec2(PyTypeO
         __pyx_t_3 = 1;
       }
     }
-    __pyx_t_7 = PyTuple_New(2+__pyx_t_3); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 238, __pyx_L1_error)
+    __pyx_t_7 = PyTuple_New(2+__pyx_t_3); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 242, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_7);
     if (__pyx_t_5) {
       __Pyx_GIVEREF(__pyx_t_5); PyTuple_SET_ITEM(__pyx_t_7, 0, __pyx_t_5); __pyx_t_5 = NULL;
@@ -3826,7 +4084,7 @@ static PyObject *__pyx_pf_6_hydra_17BloomCalculations_2computeBloomSpec2(PyTypeO
     __Pyx_GIVEREF(__pyx_t_6);
     PyTuple_SET_ITEM(__pyx_t_7, 1+__pyx_t_3, __pyx_t_6);
     __pyx_t_6 = 0;
-    __pyx_t_4 = __Pyx_PyObject_Call(__pyx_t_1, __pyx_t_7, NULL); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 238, __pyx_L1_error)
+    __pyx_t_4 = __Pyx_PyObject_Call(__pyx_t_1, __pyx_t_7, NULL); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 242, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_4);
     __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -3834,7 +4092,7 @@ static PyObject *__pyx_pf_6_hydra_17BloomCalculations_2computeBloomSpec2(PyTypeO
     __pyx_t_4 = 0;
     goto __pyx_L0;
 
-    /* "_hydra.pyx":237
+    /* "_hydra.pyx":241
  * 
  *         # Handle the trivial cases
  *         if maxFalsePosProb >= BloomCalculations.PROBS[cls.minBuckets][cls.minK]:             # <<<<<<<<<<<<<<
@@ -3843,28 +4101,28 @@ static PyObject *__pyx_pf_6_hydra_17BloomCalculations_2computeBloomSpec2(PyTypeO
  */
   }
 
-  /* "_hydra.pyx":240
+  /* "_hydra.pyx":244
  *             return BloomSpecification(2, cls.optKPerBuckets[2])
  * 
  *         if maxFalsePosProb < BloomCalculations.PROBS[maxBucketsPerElement][maxK]:             # <<<<<<<<<<<<<<
  *             msg = "Unable to satisfy %s with %s buckets per element"
  *             raise  UnsupportedOperationException(msg % (maxFalsePosProb, maxBucketsPerElement))
  */
-  __pyx_t_4 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_ptype_6_hydra_BloomCalculations), __pyx_n_s_PROBS); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 240, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_ptype_6_hydra_BloomCalculations), __pyx_n_s_PROBS); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 244, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
-  __pyx_t_1 = PyObject_GetItem(__pyx_t_4, __pyx_v_maxBucketsPerElement); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 240, __pyx_L1_error)
+  __pyx_t_1 = PyObject_GetItem(__pyx_t_4, __pyx_v_maxBucketsPerElement); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 244, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-  __pyx_t_4 = __Pyx_GetItemInt(__pyx_t_1, __pyx_v_maxK, Py_ssize_t, 1, PyInt_FromSsize_t, 0, 1, 1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 240, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_GetItemInt(__pyx_t_1, __pyx_v_maxK, Py_ssize_t, 1, PyInt_FromSsize_t, 0, 1, 1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 244, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __pyx_t_1 = PyObject_RichCompare(__pyx_v_maxFalsePosProb, __pyx_t_4, Py_LT); __Pyx_XGOTREF(__pyx_t_1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 240, __pyx_L1_error)
+  __pyx_t_1 = PyObject_RichCompare(__pyx_v_maxFalsePosProb, __pyx_t_4, Py_LT); __Pyx_XGOTREF(__pyx_t_1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 244, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-  __pyx_t_2 = __Pyx_PyObject_IsTrue(__pyx_t_1); if (unlikely(__pyx_t_2 < 0)) __PYX_ERR(0, 240, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_IsTrue(__pyx_t_1); if (unlikely(__pyx_t_2 < 0)) __PYX_ERR(0, 244, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   if (__pyx_t_2) {
 
-    /* "_hydra.pyx":241
+    /* "_hydra.pyx":245
  * 
  *         if maxFalsePosProb < BloomCalculations.PROBS[maxBucketsPerElement][maxK]:
  *             msg = "Unable to satisfy %s with %s buckets per element"             # <<<<<<<<<<<<<<
@@ -3874,16 +4132,16 @@ static PyObject *__pyx_pf_6_hydra_17BloomCalculations_2computeBloomSpec2(PyTypeO
     __Pyx_INCREF(__pyx_kp_s_Unable_to_satisfy_s_with_s_bucke);
     __pyx_v_msg = __pyx_kp_s_Unable_to_satisfy_s_with_s_bucke;
 
-    /* "_hydra.pyx":242
+    /* "_hydra.pyx":246
  *         if maxFalsePosProb < BloomCalculations.PROBS[maxBucketsPerElement][maxK]:
  *             msg = "Unable to satisfy %s with %s buckets per element"
  *             raise  UnsupportedOperationException(msg % (maxFalsePosProb, maxBucketsPerElement))             # <<<<<<<<<<<<<<
  * 
  *         # First find the minimal required number of buckets:
  */
-    __pyx_t_4 = __Pyx_GetModuleGlobalName(__pyx_n_s_UnsupportedOperationException); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 242, __pyx_L1_error)
+    __pyx_t_4 = __Pyx_GetModuleGlobalName(__pyx_n_s_UnsupportedOperationException); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 246, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_4);
-    __pyx_t_7 = PyTuple_New(2); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 242, __pyx_L1_error)
+    __pyx_t_7 = PyTuple_New(2); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 246, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_7);
     __Pyx_INCREF(__pyx_v_maxFalsePosProb);
     __Pyx_GIVEREF(__pyx_v_maxFalsePosProb);
@@ -3891,7 +4149,7 @@ static PyObject *__pyx_pf_6_hydra_17BloomCalculations_2computeBloomSpec2(PyTypeO
     __Pyx_INCREF(__pyx_v_maxBucketsPerElement);
     __Pyx_GIVEREF(__pyx_v_maxBucketsPerElement);
     PyTuple_SET_ITEM(__pyx_t_7, 1, __pyx_v_maxBucketsPerElement);
-    __pyx_t_6 = PyNumber_Remainder(__pyx_v_msg, __pyx_t_7); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 242, __pyx_L1_error)
+    __pyx_t_6 = PyNumber_Remainder(__pyx_v_msg, __pyx_t_7); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 246, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_6);
     __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
     __pyx_t_7 = NULL;
@@ -3905,26 +4163,26 @@ static PyObject *__pyx_pf_6_hydra_17BloomCalculations_2computeBloomSpec2(PyTypeO
       }
     }
     if (!__pyx_t_7) {
-      __pyx_t_1 = __Pyx_PyObject_CallOneArg(__pyx_t_4, __pyx_t_6); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 242, __pyx_L1_error)
+      __pyx_t_1 = __Pyx_PyObject_CallOneArg(__pyx_t_4, __pyx_t_6); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 246, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
       __Pyx_GOTREF(__pyx_t_1);
     } else {
-      __pyx_t_5 = PyTuple_New(1+1); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 242, __pyx_L1_error)
+      __pyx_t_5 = PyTuple_New(1+1); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 246, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_5);
       __Pyx_GIVEREF(__pyx_t_7); PyTuple_SET_ITEM(__pyx_t_5, 0, __pyx_t_7); __pyx_t_7 = NULL;
       __Pyx_GIVEREF(__pyx_t_6);
       PyTuple_SET_ITEM(__pyx_t_5, 0+1, __pyx_t_6);
       __pyx_t_6 = 0;
-      __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_4, __pyx_t_5, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 242, __pyx_L1_error)
+      __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_4, __pyx_t_5, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 246, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
       __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
     }
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
     __Pyx_Raise(__pyx_t_1, 0, 0, 0);
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-    __PYX_ERR(0, 242, __pyx_L1_error)
+    __PYX_ERR(0, 246, __pyx_L1_error)
 
-    /* "_hydra.pyx":240
+    /* "_hydra.pyx":244
  *             return BloomSpecification(2, cls.optKPerBuckets[2])
  * 
  *         if maxFalsePosProb < BloomCalculations.PROBS[maxBucketsPerElement][maxK]:             # <<<<<<<<<<<<<<
@@ -3933,7 +4191,7 @@ static PyObject *__pyx_pf_6_hydra_17BloomCalculations_2computeBloomSpec2(PyTypeO
  */
   }
 
-  /* "_hydra.pyx":245
+  /* "_hydra.pyx":249
  * 
  *         # First find the minimal required number of buckets:
  *         bucketsPerElement = 2             # <<<<<<<<<<<<<<
@@ -3943,22 +4201,22 @@ static PyObject *__pyx_pf_6_hydra_17BloomCalculations_2computeBloomSpec2(PyTypeO
   __Pyx_INCREF(__pyx_int_2);
   __pyx_v_bucketsPerElement = __pyx_int_2;
 
-  /* "_hydra.pyx":246
+  /* "_hydra.pyx":250
  *         # First find the minimal required number of buckets:
  *         bucketsPerElement = 2
  *         K = cls.optKPerBuckets[2]             # <<<<<<<<<<<<<<
  *         while(BloomCalculations.PROBS[bucketsPerElement][K] > maxFalsePosProb):
  *             bucketsPerElement += 1
  */
-  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_cls), __pyx_n_s_optKPerBuckets); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 246, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_cls), __pyx_n_s_optKPerBuckets); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 250, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_4 = __Pyx_GetItemInt(__pyx_t_1, 2, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 246, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_GetItemInt(__pyx_t_1, 2, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 250, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __pyx_v_K = __pyx_t_4;
   __pyx_t_4 = 0;
 
-  /* "_hydra.pyx":247
+  /* "_hydra.pyx":251
  *         bucketsPerElement = 2
  *         K = cls.optKPerBuckets[2]
  *         while(BloomCalculations.PROBS[bucketsPerElement][K] > maxFalsePosProb):             # <<<<<<<<<<<<<<
@@ -3966,49 +4224,49 @@ static PyObject *__pyx_pf_6_hydra_17BloomCalculations_2computeBloomSpec2(PyTypeO
  *             K = cls.optKPerBuckets[bucketsPerElement]
  */
   while (1) {
-    __pyx_t_4 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_ptype_6_hydra_BloomCalculations), __pyx_n_s_PROBS); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 247, __pyx_L1_error)
+    __pyx_t_4 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_ptype_6_hydra_BloomCalculations), __pyx_n_s_PROBS); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 251, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_4);
-    __pyx_t_1 = PyObject_GetItem(__pyx_t_4, __pyx_v_bucketsPerElement); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 247, __pyx_L1_error)
+    __pyx_t_1 = PyObject_GetItem(__pyx_t_4, __pyx_v_bucketsPerElement); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 251, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-    __pyx_t_4 = PyObject_GetItem(__pyx_t_1, __pyx_v_K); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 247, __pyx_L1_error)
+    __pyx_t_4 = PyObject_GetItem(__pyx_t_1, __pyx_v_K); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 251, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_4);
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-    __pyx_t_1 = PyObject_RichCompare(__pyx_t_4, __pyx_v_maxFalsePosProb, Py_GT); __Pyx_XGOTREF(__pyx_t_1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 247, __pyx_L1_error)
+    __pyx_t_1 = PyObject_RichCompare(__pyx_t_4, __pyx_v_maxFalsePosProb, Py_GT); __Pyx_XGOTREF(__pyx_t_1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 251, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-    __pyx_t_2 = __Pyx_PyObject_IsTrue(__pyx_t_1); if (unlikely(__pyx_t_2 < 0)) __PYX_ERR(0, 247, __pyx_L1_error)
+    __pyx_t_2 = __Pyx_PyObject_IsTrue(__pyx_t_1); if (unlikely(__pyx_t_2 < 0)) __PYX_ERR(0, 251, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
     if (!__pyx_t_2) break;
 
-    /* "_hydra.pyx":248
+    /* "_hydra.pyx":252
  *         K = cls.optKPerBuckets[2]
  *         while(BloomCalculations.PROBS[bucketsPerElement][K] > maxFalsePosProb):
  *             bucketsPerElement += 1             # <<<<<<<<<<<<<<
  *             K = cls.optKPerBuckets[bucketsPerElement]
  *         # Now that the number of buckets is sufficient, see if we can relax K
  */
-    __pyx_t_1 = __Pyx_PyInt_AddObjC(__pyx_v_bucketsPerElement, __pyx_int_1, 1, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 248, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyInt_AddObjC(__pyx_v_bucketsPerElement, __pyx_int_1, 1, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 252, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF_SET(__pyx_v_bucketsPerElement, __pyx_t_1);
     __pyx_t_1 = 0;
 
-    /* "_hydra.pyx":249
+    /* "_hydra.pyx":253
  *         while(BloomCalculations.PROBS[bucketsPerElement][K] > maxFalsePosProb):
  *             bucketsPerElement += 1
  *             K = cls.optKPerBuckets[bucketsPerElement]             # <<<<<<<<<<<<<<
  *         # Now that the number of buckets is sufficient, see if we can relax K
  *         # without losing too much precision.
  */
-    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_cls), __pyx_n_s_optKPerBuckets); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 249, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_cls), __pyx_n_s_optKPerBuckets); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 253, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
-    __pyx_t_4 = PyObject_GetItem(__pyx_t_1, __pyx_v_bucketsPerElement); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 249, __pyx_L1_error)
+    __pyx_t_4 = PyObject_GetItem(__pyx_t_1, __pyx_v_bucketsPerElement); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 253, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_4);
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
     __Pyx_DECREF_SET(__pyx_v_K, __pyx_t_4);
     __pyx_t_4 = 0;
   }
 
-  /* "_hydra.pyx":252
+  /* "_hydra.pyx":256
  *         # Now that the number of buckets is sufficient, see if we can relax K
  *         # without losing too much precision.
  *         while BloomCalculations.PROBS[bucketsPerElement][K - 1] <= maxFalsePosProb:             # <<<<<<<<<<<<<<
@@ -4016,37 +4274,37 @@ static PyObject *__pyx_pf_6_hydra_17BloomCalculations_2computeBloomSpec2(PyTypeO
  * 
  */
   while (1) {
-    __pyx_t_4 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_ptype_6_hydra_BloomCalculations), __pyx_n_s_PROBS); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 252, __pyx_L1_error)
+    __pyx_t_4 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_ptype_6_hydra_BloomCalculations), __pyx_n_s_PROBS); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 256, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_4);
-    __pyx_t_1 = PyObject_GetItem(__pyx_t_4, __pyx_v_bucketsPerElement); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 252, __pyx_L1_error)
+    __pyx_t_1 = PyObject_GetItem(__pyx_t_4, __pyx_v_bucketsPerElement); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 256, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-    __pyx_t_4 = __Pyx_PyInt_SubtractObjC(__pyx_v_K, __pyx_int_1, 1, 0); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 252, __pyx_L1_error)
+    __pyx_t_4 = __Pyx_PyInt_SubtractObjC(__pyx_v_K, __pyx_int_1, 1, 0); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 256, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_4);
-    __pyx_t_5 = PyObject_GetItem(__pyx_t_1, __pyx_t_4); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 252, __pyx_L1_error)
+    __pyx_t_5 = PyObject_GetItem(__pyx_t_1, __pyx_t_4); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 256, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_5);
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-    __pyx_t_4 = PyObject_RichCompare(__pyx_t_5, __pyx_v_maxFalsePosProb, Py_LE); __Pyx_XGOTREF(__pyx_t_4); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 252, __pyx_L1_error)
+    __pyx_t_4 = PyObject_RichCompare(__pyx_t_5, __pyx_v_maxFalsePosProb, Py_LE); __Pyx_XGOTREF(__pyx_t_4); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 256, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-    __pyx_t_2 = __Pyx_PyObject_IsTrue(__pyx_t_4); if (unlikely(__pyx_t_2 < 0)) __PYX_ERR(0, 252, __pyx_L1_error)
+    __pyx_t_2 = __Pyx_PyObject_IsTrue(__pyx_t_4); if (unlikely(__pyx_t_2 < 0)) __PYX_ERR(0, 256, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
     if (!__pyx_t_2) break;
 
-    /* "_hydra.pyx":253
+    /* "_hydra.pyx":257
  *         # without losing too much precision.
  *         while BloomCalculations.PROBS[bucketsPerElement][K - 1] <= maxFalsePosProb:
  *             K -= 1             # <<<<<<<<<<<<<<
  * 
  *         return BloomSpecification(K, bucketsPerElement)
  */
-    __pyx_t_4 = __Pyx_PyInt_SubtractObjC(__pyx_v_K, __pyx_int_1, 1, 1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 253, __pyx_L1_error)
+    __pyx_t_4 = __Pyx_PyInt_SubtractObjC(__pyx_v_K, __pyx_int_1, 1, 1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 257, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_4);
     __Pyx_DECREF_SET(__pyx_v_K, __pyx_t_4);
     __pyx_t_4 = 0;
   }
 
-  /* "_hydra.pyx":255
+  /* "_hydra.pyx":259
  *             K -= 1
  * 
  *         return BloomSpecification(K, bucketsPerElement)             # <<<<<<<<<<<<<<
@@ -4054,7 +4312,7 @@ static PyObject *__pyx_pf_6_hydra_17BloomCalculations_2computeBloomSpec2(PyTypeO
  * cdef class BloomFilter:
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_5 = __Pyx_GetModuleGlobalName(__pyx_n_s_BloomSpecification); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 255, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_GetModuleGlobalName(__pyx_n_s_BloomSpecification); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 259, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __pyx_t_1 = NULL;
   __pyx_t_3 = 0;
@@ -4068,7 +4326,7 @@ static PyObject *__pyx_pf_6_hydra_17BloomCalculations_2computeBloomSpec2(PyTypeO
       __pyx_t_3 = 1;
     }
   }
-  __pyx_t_6 = PyTuple_New(2+__pyx_t_3); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 255, __pyx_L1_error)
+  __pyx_t_6 = PyTuple_New(2+__pyx_t_3); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 259, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
   if (__pyx_t_1) {
     __Pyx_GIVEREF(__pyx_t_1); PyTuple_SET_ITEM(__pyx_t_6, 0, __pyx_t_1); __pyx_t_1 = NULL;
@@ -4079,7 +4337,7 @@ static PyObject *__pyx_pf_6_hydra_17BloomCalculations_2computeBloomSpec2(PyTypeO
   __Pyx_INCREF(__pyx_v_bucketsPerElement);
   __Pyx_GIVEREF(__pyx_v_bucketsPerElement);
   PyTuple_SET_ITEM(__pyx_t_6, 1+__pyx_t_3, __pyx_v_bucketsPerElement);
-  __pyx_t_4 = __Pyx_PyObject_Call(__pyx_t_5, __pyx_t_6, NULL); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 255, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyObject_Call(__pyx_t_5, __pyx_t_6, NULL); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 259, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
@@ -4087,7 +4345,7 @@ static PyObject *__pyx_pf_6_hydra_17BloomCalculations_2computeBloomSpec2(PyTypeO
   __pyx_t_4 = 0;
   goto __pyx_L0;
 
-  /* "_hydra.pyx":217
+  /* "_hydra.pyx":221
  * 
  *     @classmethod
  *     def computeBloomSpec2(cls, maxBucketsPerElement, maxFalsePosProb):             # <<<<<<<<<<<<<<
@@ -4113,7 +4371,7 @@ static PyObject *__pyx_pf_6_hydra_17BloomCalculations_2computeBloomSpec2(PyTypeO
   return __pyx_r;
 }
 
-/* "_hydra.pyx":264
+/* "_hydra.pyx":268
  *     cdef object _tempfile
  * 
  *     def __cinit__(self, unsigned int hashes, MMapBitField bitmap, int ignore_case):             # <<<<<<<<<<<<<<
@@ -4151,16 +4409,16 @@ static int __pyx_pw_6_hydra_11BloomFilter_1__cinit__(PyObject *__pyx_v_self, PyO
         case  1:
         if (likely((values[1] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_bitmap)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("__cinit__", 1, 3, 3, 1); __PYX_ERR(0, 264, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("__cinit__", 1, 3, 3, 1); __PYX_ERR(0, 268, __pyx_L3_error)
         }
         case  2:
         if (likely((values[2] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_ignore_case)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("__cinit__", 1, 3, 3, 2); __PYX_ERR(0, 264, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("__cinit__", 1, 3, 3, 2); __PYX_ERR(0, 268, __pyx_L3_error)
         }
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "__cinit__") < 0)) __PYX_ERR(0, 264, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "__cinit__") < 0)) __PYX_ERR(0, 268, __pyx_L3_error)
       }
     } else if (PyTuple_GET_SIZE(__pyx_args) != 3) {
       goto __pyx_L5_argtuple_error;
@@ -4169,19 +4427,19 @@ static int __pyx_pw_6_hydra_11BloomFilter_1__cinit__(PyObject *__pyx_v_self, PyO
       values[1] = PyTuple_GET_ITEM(__pyx_args, 1);
       values[2] = PyTuple_GET_ITEM(__pyx_args, 2);
     }
-    __pyx_v_hashes = __Pyx_PyInt_As_unsigned_int(values[0]); if (unlikely((__pyx_v_hashes == (unsigned int)-1) && PyErr_Occurred())) __PYX_ERR(0, 264, __pyx_L3_error)
+    __pyx_v_hashes = __Pyx_PyInt_As_unsigned_int(values[0]); if (unlikely((__pyx_v_hashes == (unsigned int)-1) && PyErr_Occurred())) __PYX_ERR(0, 268, __pyx_L3_error)
     __pyx_v_bitmap = ((struct __pyx_obj_6_hydra_MMapBitField *)values[1]);
-    __pyx_v_ignore_case = __Pyx_PyInt_As_int(values[2]); if (unlikely((__pyx_v_ignore_case == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 264, __pyx_L3_error)
+    __pyx_v_ignore_case = __Pyx_PyInt_As_int(values[2]); if (unlikely((__pyx_v_ignore_case == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 268, __pyx_L3_error)
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("__cinit__", 1, 3, 3, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 264, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("__cinit__", 1, 3, 3, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 268, __pyx_L3_error)
   __pyx_L3_error:;
   __Pyx_AddTraceback("_hydra.BloomFilter.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return -1;
   __pyx_L4_argument_unpacking_done:;
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_bitmap), __pyx_ptype_6_hydra_MMapBitField, 1, "bitmap", 0))) __PYX_ERR(0, 264, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_bitmap), __pyx_ptype_6_hydra_MMapBitField, 1, "bitmap", 0))) __PYX_ERR(0, 268, __pyx_L1_error)
   __pyx_r = __pyx_pf_6_hydra_11BloomFilter___cinit__(((struct __pyx_obj_6_hydra_BloomFilter *)__pyx_v_self), __pyx_v_hashes, __pyx_v_bitmap, __pyx_v_ignore_case);
 
   /* function exit code */
@@ -4198,7 +4456,7 @@ static int __pyx_pf_6_hydra_11BloomFilter___cinit__(struct __pyx_obj_6_hydra_Blo
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__cinit__", 0);
 
-  /* "_hydra.pyx":267
+  /* "_hydra.pyx":271
  *         cdef int i
  * 
  *         self._hashCount = hashes             # <<<<<<<<<<<<<<
@@ -4207,7 +4465,7 @@ static int __pyx_pf_6_hydra_11BloomFilter___cinit__(struct __pyx_obj_6_hydra_Blo
  */
   __pyx_v_self->_hashCount = __pyx_v_hashes;
 
-  /* "_hydra.pyx":268
+  /* "_hydra.pyx":272
  * 
  *         self._hashCount = hashes
  *         self._bitmap = bitmap             # <<<<<<<<<<<<<<
@@ -4220,7 +4478,7 @@ static int __pyx_pf_6_hydra_11BloomFilter___cinit__(struct __pyx_obj_6_hydra_Blo
   __Pyx_DECREF(((PyObject *)__pyx_v_self->_bitmap));
   __pyx_v_self->_bitmap = __pyx_v_bitmap;
 
-  /* "_hydra.pyx":269
+  /* "_hydra.pyx":273
  *         self._hashCount = hashes
  *         self._bitmap = bitmap
  *         self._ignore_case = ignore_case             # <<<<<<<<<<<<<<
@@ -4229,7 +4487,7 @@ static int __pyx_pf_6_hydra_11BloomFilter___cinit__(struct __pyx_obj_6_hydra_Blo
  */
   __pyx_v_self->_ignore_case = __pyx_v_ignore_case;
 
-  /* "_hydra.pyx":264
+  /* "_hydra.pyx":268
  *     cdef object _tempfile
  * 
  *     def __cinit__(self, unsigned int hashes, MMapBitField bitmap, int ignore_case):             # <<<<<<<<<<<<<<
@@ -4243,7 +4501,7 @@ static int __pyx_pf_6_hydra_11BloomFilter___cinit__(struct __pyx_obj_6_hydra_Blo
   return __pyx_r;
 }
 
-/* "_hydra.pyx":271
+/* "_hydra.pyx":275
  *         self._ignore_case = ignore_case
  * 
  *     def __enter__(self):             # <<<<<<<<<<<<<<
@@ -4269,7 +4527,7 @@ static PyObject *__pyx_pf_6_hydra_11BloomFilter_2__enter__(struct __pyx_obj_6_hy
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__enter__", 0);
 
-  /* "_hydra.pyx":272
+  /* "_hydra.pyx":276
  * 
  *     def __enter__(self):
  *         return self             # <<<<<<<<<<<<<<
@@ -4281,7 +4539,7 @@ static PyObject *__pyx_pf_6_hydra_11BloomFilter_2__enter__(struct __pyx_obj_6_hy
   __pyx_r = ((PyObject *)__pyx_v_self);
   goto __pyx_L0;
 
-  /* "_hydra.pyx":271
+  /* "_hydra.pyx":275
  *         self._ignore_case = ignore_case
  * 
  *     def __enter__(self):             # <<<<<<<<<<<<<<
@@ -4296,7 +4554,7 @@ static PyObject *__pyx_pf_6_hydra_11BloomFilter_2__enter__(struct __pyx_obj_6_hy
   return __pyx_r;
 }
 
-/* "_hydra.pyx":274
+/* "_hydra.pyx":278
  *         return self
  * 
  *     def __exit__(self, *excinfo):             # <<<<<<<<<<<<<<
@@ -4326,52 +4584,32 @@ static PyObject *__pyx_pf_6_hydra_11BloomFilter_4__exit__(struct __pyx_obj_6_hyd
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
-  PyObject *__pyx_t_2 = NULL;
-  PyObject *__pyx_t_3 = NULL;
   __Pyx_RefNannySetupContext("__exit__", 0);
 
-  /* "_hydra.pyx":275
+  /* "_hydra.pyx":279
  * 
  *     def __exit__(self, *excinfo):
  *         self.close()             # <<<<<<<<<<<<<<
  *         return None
  * 
  */
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_close); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 275, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_3 = NULL;
-  if (CYTHON_COMPILING_IN_CPYTHON && likely(PyMethod_Check(__pyx_t_2))) {
-    __pyx_t_3 = PyMethod_GET_SELF(__pyx_t_2);
-    if (likely(__pyx_t_3)) {
-      PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_2);
-      __Pyx_INCREF(__pyx_t_3);
-      __Pyx_INCREF(function);
-      __Pyx_DECREF_SET(__pyx_t_2, function);
-    }
-  }
-  if (__pyx_t_3) {
-    __pyx_t_1 = __Pyx_PyObject_CallOneArg(__pyx_t_2, __pyx_t_3); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 275, __pyx_L1_error)
-    __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  } else {
-    __pyx_t_1 = __Pyx_PyObject_CallNoArg(__pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 275, __pyx_L1_error)
-  }
+  __pyx_t_1 = ((struct __pyx_vtabstruct_6_hydra_BloomFilter *)__pyx_v_self->__pyx_vtab)->close(__pyx_v_self, 0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 279, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "_hydra.pyx":276
+  /* "_hydra.pyx":280
  *     def __exit__(self, *excinfo):
  *         self.close()
  *         return None             # <<<<<<<<<<<<<<
  * 
- *     def close(self):
+ *     cpdef close(self):
  */
   __Pyx_XDECREF(__pyx_r);
   __Pyx_INCREF(Py_None);
   __pyx_r = Py_None;
   goto __pyx_L0;
 
-  /* "_hydra.pyx":274
+  /* "_hydra.pyx":278
  *         return self
  * 
  *     def __exit__(self, *excinfo):             # <<<<<<<<<<<<<<
@@ -4382,8 +4620,6 @@ static PyObject *__pyx_pf_6_hydra_11BloomFilter_4__exit__(struct __pyx_obj_6_hyd
   /* function exit code */
   __pyx_L1_error:;
   __Pyx_XDECREF(__pyx_t_1);
-  __Pyx_XDECREF(__pyx_t_2);
-  __Pyx_XDECREF(__pyx_t_3);
   __Pyx_AddTraceback("_hydra.BloomFilter.__exit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
@@ -4392,13 +4628,92 @@ static PyObject *__pyx_pf_6_hydra_11BloomFilter_4__exit__(struct __pyx_obj_6_hyd
   return __pyx_r;
 }
 
-/* "_hydra.pyx":278
+/* "_hydra.pyx":282
  *         return None
  * 
- *     def close(self):             # <<<<<<<<<<<<<<
+ *     cpdef close(self):             # <<<<<<<<<<<<<<
  *         self._bitmap.close()
  * 
  */
+
+static PyObject *__pyx_pw_6_hydra_11BloomFilter_7close(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused); /*proto*/
+static PyObject *__pyx_f_6_hydra_11BloomFilter_close(struct __pyx_obj_6_hydra_BloomFilter *__pyx_v_self, int __pyx_skip_dispatch) {
+  PyObject *__pyx_r = NULL;
+  __Pyx_RefNannyDeclarations
+  PyObject *__pyx_t_1 = NULL;
+  PyObject *__pyx_t_2 = NULL;
+  PyObject *__pyx_t_3 = NULL;
+  PyObject *__pyx_t_4 = NULL;
+  __Pyx_RefNannySetupContext("close", 0);
+  /* Check if called by wrapper */
+  if (unlikely(__pyx_skip_dispatch)) ;
+  /* Check if overridden in Python */
+  else if (unlikely(Py_TYPE(((PyObject *)__pyx_v_self))->tp_dictoffset != 0)) {
+    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_close); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 282, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_1);
+    if (!PyCFunction_Check(__pyx_t_1) || (PyCFunction_GET_FUNCTION(__pyx_t_1) != (PyCFunction)__pyx_pw_6_hydra_11BloomFilter_7close)) {
+      __Pyx_XDECREF(__pyx_r);
+      __Pyx_INCREF(__pyx_t_1);
+      __pyx_t_3 = __pyx_t_1; __pyx_t_4 = NULL;
+      if (CYTHON_COMPILING_IN_CPYTHON && unlikely(PyMethod_Check(__pyx_t_3))) {
+        __pyx_t_4 = PyMethod_GET_SELF(__pyx_t_3);
+        if (likely(__pyx_t_4)) {
+          PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_3);
+          __Pyx_INCREF(__pyx_t_4);
+          __Pyx_INCREF(function);
+          __Pyx_DECREF_SET(__pyx_t_3, function);
+        }
+      }
+      if (__pyx_t_4) {
+        __pyx_t_2 = __Pyx_PyObject_CallOneArg(__pyx_t_3, __pyx_t_4); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 282, __pyx_L1_error)
+        __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+      } else {
+        __pyx_t_2 = __Pyx_PyObject_CallNoArg(__pyx_t_3); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 282, __pyx_L1_error)
+      }
+      __Pyx_GOTREF(__pyx_t_2);
+      __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+      __pyx_r = __pyx_t_2;
+      __pyx_t_2 = 0;
+      __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+      goto __pyx_L0;
+    }
+    __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+  }
+
+  /* "_hydra.pyx":283
+ * 
+ *     cpdef close(self):
+ *         self._bitmap.close()             # <<<<<<<<<<<<<<
+ * 
+ *     cpdef fdatasync(self):
+ */
+  __pyx_t_1 = ((struct __pyx_vtabstruct_6_hydra_MMapBitField *)__pyx_v_self->_bitmap->__pyx_vtab)->close(__pyx_v_self->_bitmap, 0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 283, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+
+  /* "_hydra.pyx":282
+ *         return None
+ * 
+ *     cpdef close(self):             # <<<<<<<<<<<<<<
+ *         self._bitmap.close()
+ * 
+ */
+
+  /* function exit code */
+  __pyx_r = Py_None; __Pyx_INCREF(Py_None);
+  goto __pyx_L0;
+  __pyx_L1_error:;
+  __Pyx_XDECREF(__pyx_t_1);
+  __Pyx_XDECREF(__pyx_t_2);
+  __Pyx_XDECREF(__pyx_t_3);
+  __Pyx_XDECREF(__pyx_t_4);
+  __Pyx_AddTraceback("_hydra.BloomFilter.close", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = 0;
+  __pyx_L0:;
+  __Pyx_XGIVEREF(__pyx_r);
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
 
 /* Python wrapper */
 static PyObject *__pyx_pw_6_hydra_11BloomFilter_7close(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused); /*proto*/
@@ -4417,45 +4732,94 @@ static PyObject *__pyx_pf_6_hydra_11BloomFilter_6close(struct __pyx_obj_6_hydra_
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
-  PyObject *__pyx_t_2 = NULL;
-  PyObject *__pyx_t_3 = NULL;
   __Pyx_RefNannySetupContext("close", 0);
-
-  /* "_hydra.pyx":279
- * 
- *     def close(self):
- *         self._bitmap.close()             # <<<<<<<<<<<<<<
- * 
- *     def fdatasync(self):
- */
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self->_bitmap), __pyx_n_s_close); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 279, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_3 = NULL;
-  if (CYTHON_COMPILING_IN_CPYTHON && likely(PyMethod_Check(__pyx_t_2))) {
-    __pyx_t_3 = PyMethod_GET_SELF(__pyx_t_2);
-    if (likely(__pyx_t_3)) {
-      PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_2);
-      __Pyx_INCREF(__pyx_t_3);
-      __Pyx_INCREF(function);
-      __Pyx_DECREF_SET(__pyx_t_2, function);
-    }
-  }
-  if (__pyx_t_3) {
-    __pyx_t_1 = __Pyx_PyObject_CallOneArg(__pyx_t_2, __pyx_t_3); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 279, __pyx_L1_error)
-    __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  } else {
-    __pyx_t_1 = __Pyx_PyObject_CallNoArg(__pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 279, __pyx_L1_error)
-  }
+  __Pyx_XDECREF(__pyx_r);
+  __pyx_t_1 = __pyx_f_6_hydra_11BloomFilter_close(__pyx_v_self, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 282, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+  __pyx_r = __pyx_t_1;
+  __pyx_t_1 = 0;
+  goto __pyx_L0;
 
-  /* "_hydra.pyx":278
- *         return None
- * 
- *     def close(self):             # <<<<<<<<<<<<<<
+  /* function exit code */
+  __pyx_L1_error:;
+  __Pyx_XDECREF(__pyx_t_1);
+  __Pyx_AddTraceback("_hydra.BloomFilter.close", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = NULL;
+  __pyx_L0:;
+  __Pyx_XGIVEREF(__pyx_r);
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* "_hydra.pyx":285
  *         self._bitmap.close()
  * 
+ *     cpdef fdatasync(self):             # <<<<<<<<<<<<<<
+ *         """ Flush everything to disk """
+ *         self._bitmap.fdatasync()
+ */
+
+static PyObject *__pyx_pw_6_hydra_11BloomFilter_9fdatasync(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused); /*proto*/
+static PyObject *__pyx_f_6_hydra_11BloomFilter_fdatasync(struct __pyx_obj_6_hydra_BloomFilter *__pyx_v_self, int __pyx_skip_dispatch) {
+  PyObject *__pyx_r = NULL;
+  __Pyx_RefNannyDeclarations
+  PyObject *__pyx_t_1 = NULL;
+  PyObject *__pyx_t_2 = NULL;
+  PyObject *__pyx_t_3 = NULL;
+  PyObject *__pyx_t_4 = NULL;
+  __Pyx_RefNannySetupContext("fdatasync", 0);
+  /* Check if called by wrapper */
+  if (unlikely(__pyx_skip_dispatch)) ;
+  /* Check if overridden in Python */
+  else if (unlikely(Py_TYPE(((PyObject *)__pyx_v_self))->tp_dictoffset != 0)) {
+    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_fdatasync); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 285, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_1);
+    if (!PyCFunction_Check(__pyx_t_1) || (PyCFunction_GET_FUNCTION(__pyx_t_1) != (PyCFunction)__pyx_pw_6_hydra_11BloomFilter_9fdatasync)) {
+      __Pyx_XDECREF(__pyx_r);
+      __Pyx_INCREF(__pyx_t_1);
+      __pyx_t_3 = __pyx_t_1; __pyx_t_4 = NULL;
+      if (CYTHON_COMPILING_IN_CPYTHON && unlikely(PyMethod_Check(__pyx_t_3))) {
+        __pyx_t_4 = PyMethod_GET_SELF(__pyx_t_3);
+        if (likely(__pyx_t_4)) {
+          PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_3);
+          __Pyx_INCREF(__pyx_t_4);
+          __Pyx_INCREF(function);
+          __Pyx_DECREF_SET(__pyx_t_3, function);
+        }
+      }
+      if (__pyx_t_4) {
+        __pyx_t_2 = __Pyx_PyObject_CallOneArg(__pyx_t_3, __pyx_t_4); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 285, __pyx_L1_error)
+        __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+      } else {
+        __pyx_t_2 = __Pyx_PyObject_CallNoArg(__pyx_t_3); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 285, __pyx_L1_error)
+      }
+      __Pyx_GOTREF(__pyx_t_2);
+      __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+      __pyx_r = __pyx_t_2;
+      __pyx_t_2 = 0;
+      __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+      goto __pyx_L0;
+    }
+    __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+  }
+
+  /* "_hydra.pyx":287
+ *     cpdef fdatasync(self):
+ *         """ Flush everything to disk """
+ *         self._bitmap.fdatasync()             # <<<<<<<<<<<<<<
+ * 
+ *     def filename(self):
+ */
+  __pyx_t_1 = ((struct __pyx_vtabstruct_6_hydra_MMapBitField *)__pyx_v_self->_bitmap->__pyx_vtab)->fdatasync(__pyx_v_self->_bitmap, 0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 287, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+
+  /* "_hydra.pyx":285
+ *         self._bitmap.close()
+ * 
+ *     cpdef fdatasync(self):             # <<<<<<<<<<<<<<
+ *         """ Flush everything to disk """
+ *         self._bitmap.fdatasync()
  */
 
   /* function exit code */
@@ -4465,21 +4829,14 @@ static PyObject *__pyx_pf_6_hydra_11BloomFilter_6close(struct __pyx_obj_6_hydra_
   __Pyx_XDECREF(__pyx_t_1);
   __Pyx_XDECREF(__pyx_t_2);
   __Pyx_XDECREF(__pyx_t_3);
-  __Pyx_AddTraceback("_hydra.BloomFilter.close", __pyx_clineno, __pyx_lineno, __pyx_filename);
-  __pyx_r = NULL;
+  __Pyx_XDECREF(__pyx_t_4);
+  __Pyx_AddTraceback("_hydra.BloomFilter.fdatasync", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = 0;
   __pyx_L0:;
   __Pyx_XGIVEREF(__pyx_r);
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
-
-/* "_hydra.pyx":281
- *         self._bitmap.close()
- * 
- *     def fdatasync(self):             # <<<<<<<<<<<<<<
- *         """ Flush everything to disk """
- *         self._bitmap.fdatasync()
- */
 
 /* Python wrapper */
 static PyObject *__pyx_pw_6_hydra_11BloomFilter_9fdatasync(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused); /*proto*/
@@ -4499,54 +4856,17 @@ static PyObject *__pyx_pf_6_hydra_11BloomFilter_8fdatasync(struct __pyx_obj_6_hy
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
-  PyObject *__pyx_t_2 = NULL;
-  PyObject *__pyx_t_3 = NULL;
   __Pyx_RefNannySetupContext("fdatasync", 0);
-
-  /* "_hydra.pyx":283
- *     def fdatasync(self):
- *         """ Flush everything to disk """
- *         self._bitmap.fdatasync()             # <<<<<<<<<<<<<<
- * 
- *     def filename(self):
- */
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self->_bitmap), __pyx_n_s_fdatasync); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 283, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_3 = NULL;
-  if (CYTHON_COMPILING_IN_CPYTHON && likely(PyMethod_Check(__pyx_t_2))) {
-    __pyx_t_3 = PyMethod_GET_SELF(__pyx_t_2);
-    if (likely(__pyx_t_3)) {
-      PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_2);
-      __Pyx_INCREF(__pyx_t_3);
-      __Pyx_INCREF(function);
-      __Pyx_DECREF_SET(__pyx_t_2, function);
-    }
-  }
-  if (__pyx_t_3) {
-    __pyx_t_1 = __Pyx_PyObject_CallOneArg(__pyx_t_2, __pyx_t_3); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 283, __pyx_L1_error)
-    __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  } else {
-    __pyx_t_1 = __Pyx_PyObject_CallNoArg(__pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 283, __pyx_L1_error)
-  }
+  __Pyx_XDECREF(__pyx_r);
+  __pyx_t_1 = __pyx_f_6_hydra_11BloomFilter_fdatasync(__pyx_v_self, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 285, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-
-  /* "_hydra.pyx":281
- *         self._bitmap.close()
- * 
- *     def fdatasync(self):             # <<<<<<<<<<<<<<
- *         """ Flush everything to disk """
- *         self._bitmap.fdatasync()
- */
+  __pyx_r = __pyx_t_1;
+  __pyx_t_1 = 0;
+  goto __pyx_L0;
 
   /* function exit code */
-  __pyx_r = Py_None; __Pyx_INCREF(Py_None);
-  goto __pyx_L0;
   __pyx_L1_error:;
   __Pyx_XDECREF(__pyx_t_1);
-  __Pyx_XDECREF(__pyx_t_2);
-  __Pyx_XDECREF(__pyx_t_3);
   __Pyx_AddTraceback("_hydra.BloomFilter.fdatasync", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
@@ -4555,7 +4875,7 @@ static PyObject *__pyx_pf_6_hydra_11BloomFilter_8fdatasync(struct __pyx_obj_6_hy
   return __pyx_r;
 }
 
-/* "_hydra.pyx":285
+/* "_hydra.pyx":289
  *         self._bitmap.fdatasync()
  * 
  *     def filename(self):             # <<<<<<<<<<<<<<
@@ -4583,7 +4903,7 @@ static PyObject *__pyx_pf_6_hydra_11BloomFilter_10filename(struct __pyx_obj_6_hy
   PyObject *__pyx_t_1 = NULL;
   __Pyx_RefNannySetupContext("filename", 0);
 
-  /* "_hydra.pyx":289
+  /* "_hydra.pyx":293
  *         Filename of the MMAP file
  *         """
  *         return self._bitmap._filename             # <<<<<<<<<<<<<<
@@ -4591,13 +4911,13 @@ static PyObject *__pyx_pf_6_hydra_11BloomFilter_10filename(struct __pyx_obj_6_hy
  *     @classmethod
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __Pyx_PyBytes_FromString(__pyx_v_self->_bitmap->_filename); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 289, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyBytes_FromString(__pyx_v_self->_bitmap->_filename); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 293, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "_hydra.pyx":285
+  /* "_hydra.pyx":289
  *         self._bitmap.fdatasync()
  * 
  *     def filename(self):             # <<<<<<<<<<<<<<
@@ -4616,7 +4936,7 @@ static PyObject *__pyx_pf_6_hydra_11BloomFilter_10filename(struct __pyx_obj_6_hy
   return __pyx_r;
 }
 
-/* "_hydra.pyx":292
+/* "_hydra.pyx":296
  * 
  *     @classmethod
  *     def _maxBucketsPerElement(cls, numElements):             # <<<<<<<<<<<<<<
@@ -4653,7 +4973,7 @@ static PyObject *__pyx_pf_6_hydra_11BloomFilter_12_maxBucketsPerElement(PyTypeOb
   __Pyx_RefNannySetupContext("_maxBucketsPerElement", 0);
   __Pyx_INCREF(__pyx_v_numElements);
 
-  /* "_hydra.pyx":293
+  /* "_hydra.pyx":297
  *     @classmethod
  *     def _maxBucketsPerElement(cls, numElements):
  *         numElements = max(1, numElements)             # <<<<<<<<<<<<<<
@@ -4663,17 +4983,17 @@ static PyObject *__pyx_pf_6_hydra_11BloomFilter_12_maxBucketsPerElement(PyTypeOb
   __Pyx_INCREF(__pyx_v_numElements);
   __pyx_t_1 = __pyx_v_numElements;
   __pyx_t_2 = 1;
-  __pyx_t_4 = __Pyx_PyInt_From_long(__pyx_t_2); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 293, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyInt_From_long(__pyx_t_2); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 297, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
-  __pyx_t_5 = PyObject_RichCompare(__pyx_t_1, __pyx_t_4, Py_GT); __Pyx_XGOTREF(__pyx_t_5); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 293, __pyx_L1_error)
+  __pyx_t_5 = PyObject_RichCompare(__pyx_t_1, __pyx_t_4, Py_GT); __Pyx_XGOTREF(__pyx_t_5); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 297, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-  __pyx_t_6 = __Pyx_PyObject_IsTrue(__pyx_t_5); if (unlikely(__pyx_t_6 < 0)) __PYX_ERR(0, 293, __pyx_L1_error)
+  __pyx_t_6 = __Pyx_PyObject_IsTrue(__pyx_t_5); if (unlikely(__pyx_t_6 < 0)) __PYX_ERR(0, 297, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
   if (__pyx_t_6) {
     __Pyx_INCREF(__pyx_t_1);
     __pyx_t_3 = __pyx_t_1;
   } else {
-    __pyx_t_5 = __Pyx_PyInt_From_long(__pyx_t_2); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 293, __pyx_L1_error)
+    __pyx_t_5 = __Pyx_PyInt_From_long(__pyx_t_2); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 297, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_5);
     __pyx_t_3 = __pyx_t_5;
     __pyx_t_5 = 0;
@@ -4685,46 +5005,46 @@ static PyObject *__pyx_pf_6_hydra_11BloomFilter_12_maxBucketsPerElement(PyTypeOb
   __Pyx_DECREF_SET(__pyx_v_numElements, __pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "_hydra.pyx":294
+  /* "_hydra.pyx":298
  *     def _maxBucketsPerElement(cls, numElements):
  *         numElements = max(1, numElements)
  *         v = (sys.maxsize - cls.EXCESS) / float(numElements)             # <<<<<<<<<<<<<<
  *         if v < 1.0:
  *             msg = "Cannot compute probabilities for %s elements."
  */
-  __pyx_t_1 = __Pyx_GetModuleGlobalName(__pyx_n_s_sys); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 294, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_GetModuleGlobalName(__pyx_n_s_sys); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 298, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_maxsize); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 294, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_maxsize); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 298, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_cls), __pyx_n_s_EXCESS); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 294, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_cls), __pyx_n_s_EXCESS); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 298, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_5 = PyNumber_Subtract(__pyx_t_3, __pyx_t_1); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 294, __pyx_L1_error)
+  __pyx_t_5 = PyNumber_Subtract(__pyx_t_3, __pyx_t_1); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 298, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __pyx_t_1 = __Pyx_PyNumber_Float(__pyx_v_numElements); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 294, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyNumber_Float(__pyx_v_numElements); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 298, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_3 = __Pyx_PyNumber_Divide(__pyx_t_5, __pyx_t_1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 294, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyNumber_Divide(__pyx_t_5, __pyx_t_1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 298, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __pyx_v_v = __pyx_t_3;
   __pyx_t_3 = 0;
 
-  /* "_hydra.pyx":295
+  /* "_hydra.pyx":299
  *         numElements = max(1, numElements)
  *         v = (sys.maxsize - cls.EXCESS) / float(numElements)
  *         if v < 1.0:             # <<<<<<<<<<<<<<
  *             msg = "Cannot compute probabilities for %s elements."
  *             raise UnsupportedOperationException, msg % numElements
  */
-  __pyx_t_3 = PyObject_RichCompare(__pyx_v_v, __pyx_float_1_0, Py_LT); __Pyx_XGOTREF(__pyx_t_3); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 295, __pyx_L1_error)
-  __pyx_t_6 = __Pyx_PyObject_IsTrue(__pyx_t_3); if (unlikely(__pyx_t_6 < 0)) __PYX_ERR(0, 295, __pyx_L1_error)
+  __pyx_t_3 = PyObject_RichCompare(__pyx_v_v, __pyx_float_1_0, Py_LT); __Pyx_XGOTREF(__pyx_t_3); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 299, __pyx_L1_error)
+  __pyx_t_6 = __Pyx_PyObject_IsTrue(__pyx_t_3); if (unlikely(__pyx_t_6 < 0)) __PYX_ERR(0, 299, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   if (__pyx_t_6) {
 
-    /* "_hydra.pyx":296
+    /* "_hydra.pyx":300
  *         v = (sys.maxsize - cls.EXCESS) / float(numElements)
  *         if v < 1.0:
  *             msg = "Cannot compute probabilities for %s elements."             # <<<<<<<<<<<<<<
@@ -4734,23 +5054,23 @@ static PyObject *__pyx_pf_6_hydra_11BloomFilter_12_maxBucketsPerElement(PyTypeOb
     __Pyx_INCREF(__pyx_kp_s_Cannot_compute_probabilities_for);
     __pyx_v_msg = __pyx_kp_s_Cannot_compute_probabilities_for;
 
-    /* "_hydra.pyx":297
+    /* "_hydra.pyx":301
  *         if v < 1.0:
  *             msg = "Cannot compute probabilities for %s elements."
  *             raise UnsupportedOperationException, msg % numElements             # <<<<<<<<<<<<<<
  *         return min(len(BloomCalculations.PROBS) - 1, int(v))
  * 
  */
-    __pyx_t_3 = __Pyx_GetModuleGlobalName(__pyx_n_s_UnsupportedOperationException); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 297, __pyx_L1_error)
+    __pyx_t_3 = __Pyx_GetModuleGlobalName(__pyx_n_s_UnsupportedOperationException); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 301, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
-    __pyx_t_1 = PyNumber_Remainder(__pyx_v_msg, __pyx_v_numElements); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 297, __pyx_L1_error)
+    __pyx_t_1 = PyNumber_Remainder(__pyx_v_msg, __pyx_v_numElements); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 301, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_Raise(__pyx_t_3, __pyx_t_1, 0, 0);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-    __PYX_ERR(0, 297, __pyx_L1_error)
+    __PYX_ERR(0, 301, __pyx_L1_error)
 
-    /* "_hydra.pyx":295
+    /* "_hydra.pyx":299
  *         numElements = max(1, numElements)
  *         v = (sys.maxsize - cls.EXCESS) / float(numElements)
  *         if v < 1.0:             # <<<<<<<<<<<<<<
@@ -4759,7 +5079,7 @@ static PyObject *__pyx_pf_6_hydra_11BloomFilter_12_maxBucketsPerElement(PyTypeOb
  */
   }
 
-  /* "_hydra.pyx":298
+  /* "_hydra.pyx":302
  *             msg = "Cannot compute probabilities for %s elements."
  *             raise UnsupportedOperationException, msg % numElements
  *         return min(len(BloomCalculations.PROBS) - 1, int(v))             # <<<<<<<<<<<<<<
@@ -4767,24 +5087,24 @@ static PyObject *__pyx_pf_6_hydra_11BloomFilter_12_maxBucketsPerElement(PyTypeOb
  *     @classmethod
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __Pyx_PyNumber_Int(__pyx_v_v); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 298, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyNumber_Int(__pyx_v_v); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 302, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_ptype_6_hydra_BloomCalculations), __pyx_n_s_PROBS); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 298, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_ptype_6_hydra_BloomCalculations), __pyx_n_s_PROBS); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 302, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  __pyx_t_7 = PyObject_Length(__pyx_t_3); if (unlikely(__pyx_t_7 == -1)) __PYX_ERR(0, 298, __pyx_L1_error)
+  __pyx_t_7 = PyObject_Length(__pyx_t_3); if (unlikely(__pyx_t_7 == -1)) __PYX_ERR(0, 302, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __pyx_t_8 = (__pyx_t_7 - 1);
-  __pyx_t_5 = PyInt_FromSsize_t(__pyx_t_8); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 298, __pyx_L1_error)
+  __pyx_t_5 = PyInt_FromSsize_t(__pyx_t_8); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 302, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
-  __pyx_t_4 = PyObject_RichCompare(__pyx_t_1, __pyx_t_5, Py_LT); __Pyx_XGOTREF(__pyx_t_4); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 298, __pyx_L1_error)
+  __pyx_t_4 = PyObject_RichCompare(__pyx_t_1, __pyx_t_5, Py_LT); __Pyx_XGOTREF(__pyx_t_4); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 302, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-  __pyx_t_6 = __Pyx_PyObject_IsTrue(__pyx_t_4); if (unlikely(__pyx_t_6 < 0)) __PYX_ERR(0, 298, __pyx_L1_error)
+  __pyx_t_6 = __Pyx_PyObject_IsTrue(__pyx_t_4); if (unlikely(__pyx_t_6 < 0)) __PYX_ERR(0, 302, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
   if (__pyx_t_6) {
     __Pyx_INCREF(__pyx_t_1);
     __pyx_t_3 = __pyx_t_1;
   } else {
-    __pyx_t_4 = PyInt_FromSsize_t(__pyx_t_8); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 298, __pyx_L1_error)
+    __pyx_t_4 = PyInt_FromSsize_t(__pyx_t_8); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 302, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_4);
     __pyx_t_3 = __pyx_t_4;
     __pyx_t_4 = 0;
@@ -4795,7 +5115,7 @@ static PyObject *__pyx_pf_6_hydra_11BloomFilter_12_maxBucketsPerElement(PyTypeOb
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   goto __pyx_L0;
 
-  /* "_hydra.pyx":292
+  /* "_hydra.pyx":296
  * 
  *     @classmethod
  *     def _maxBucketsPerElement(cls, numElements):             # <<<<<<<<<<<<<<
@@ -4820,7 +5140,7 @@ static PyObject *__pyx_pf_6_hydra_11BloomFilter_12_maxBucketsPerElement(PyTypeOb
   return __pyx_r;
 }
 
-/* "_hydra.pyx":301
+/* "_hydra.pyx":305
  * 
  *     @classmethod
  *     def _bucketsFor(cls, numElements, bucketsPer, filename, read_only, want_lock=False, fdatasync_on_close=True):             # <<<<<<<<<<<<<<
@@ -4866,17 +5186,17 @@ static PyObject *__pyx_pw_6_hydra_11BloomFilter_15_bucketsFor(PyObject *__pyx_v_
         case  1:
         if (likely((values[1] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_bucketsPer)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("_bucketsFor", 0, 4, 6, 1); __PYX_ERR(0, 301, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("_bucketsFor", 0, 4, 6, 1); __PYX_ERR(0, 305, __pyx_L3_error)
         }
         case  2:
         if (likely((values[2] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_filename)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("_bucketsFor", 0, 4, 6, 2); __PYX_ERR(0, 301, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("_bucketsFor", 0, 4, 6, 2); __PYX_ERR(0, 305, __pyx_L3_error)
         }
         case  3:
         if (likely((values[3] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_read_only)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("_bucketsFor", 0, 4, 6, 3); __PYX_ERR(0, 301, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("_bucketsFor", 0, 4, 6, 3); __PYX_ERR(0, 305, __pyx_L3_error)
         }
         case  4:
         if (kw_args > 0) {
@@ -4890,7 +5210,7 @@ static PyObject *__pyx_pw_6_hydra_11BloomFilter_15_bucketsFor(PyObject *__pyx_v_
         }
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "_bucketsFor") < 0)) __PYX_ERR(0, 301, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "_bucketsFor") < 0)) __PYX_ERR(0, 305, __pyx_L3_error)
       }
     } else {
       switch (PyTuple_GET_SIZE(__pyx_args)) {
@@ -4913,7 +5233,7 @@ static PyObject *__pyx_pw_6_hydra_11BloomFilter_15_bucketsFor(PyObject *__pyx_v_
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("_bucketsFor", 0, 4, 6, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 301, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("_bucketsFor", 0, 4, 6, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 305, __pyx_L3_error)
   __pyx_L3_error:;
   __Pyx_AddTraceback("_hydra.BloomFilter._bucketsFor", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
@@ -4938,25 +5258,25 @@ static PyObject *__pyx_pf_6_hydra_11BloomFilter_14_bucketsFor(PyTypeObject *__py
   int __pyx_t_5;
   __Pyx_RefNannySetupContext("_bucketsFor", 0);
 
-  /* "_hydra.pyx":302
+  /* "_hydra.pyx":306
  *     @classmethod
  *     def _bucketsFor(cls, numElements, bucketsPer, filename, read_only, want_lock=False, fdatasync_on_close=True):
  *         numBits = numElements * bucketsPer + cls.EXCESS             # <<<<<<<<<<<<<<
  *         bf_size = min(sys.maxsize, numBits)
  *         return MMapBitField(filename, bf_size, read_only,
  */
-  __pyx_t_1 = PyNumber_Multiply(__pyx_v_numElements, __pyx_v_bucketsPer); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 302, __pyx_L1_error)
+  __pyx_t_1 = PyNumber_Multiply(__pyx_v_numElements, __pyx_v_bucketsPer); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 306, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_cls), __pyx_n_s_EXCESS); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 302, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_cls), __pyx_n_s_EXCESS); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 306, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_3 = PyNumber_Add(__pyx_t_1, __pyx_t_2); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 302, __pyx_L1_error)
+  __pyx_t_3 = PyNumber_Add(__pyx_t_1, __pyx_t_2); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 306, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_v_numBits = __pyx_t_3;
   __pyx_t_3 = 0;
 
-  /* "_hydra.pyx":303
+  /* "_hydra.pyx":307
  *     def _bucketsFor(cls, numElements, bucketsPer, filename, read_only, want_lock=False, fdatasync_on_close=True):
  *         numBits = numElements * bucketsPer + cls.EXCESS
  *         bf_size = min(sys.maxsize, numBits)             # <<<<<<<<<<<<<<
@@ -4965,13 +5285,13 @@ static PyObject *__pyx_pf_6_hydra_11BloomFilter_14_bucketsFor(PyTypeObject *__py
  */
   __Pyx_INCREF(__pyx_v_numBits);
   __pyx_t_3 = __pyx_v_numBits;
-  __pyx_t_2 = __Pyx_GetModuleGlobalName(__pyx_n_s_sys); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 303, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_GetModuleGlobalName(__pyx_n_s_sys); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 307, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_maxsize); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 303, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_maxsize); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 307, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __pyx_t_4 = PyObject_RichCompare(__pyx_t_3, __pyx_t_1, Py_LT); __Pyx_XGOTREF(__pyx_t_4); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 303, __pyx_L1_error)
-  __pyx_t_5 = __Pyx_PyObject_IsTrue(__pyx_t_4); if (unlikely(__pyx_t_5 < 0)) __PYX_ERR(0, 303, __pyx_L1_error)
+  __pyx_t_4 = PyObject_RichCompare(__pyx_t_3, __pyx_t_1, Py_LT); __Pyx_XGOTREF(__pyx_t_4); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 307, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyObject_IsTrue(__pyx_t_4); if (unlikely(__pyx_t_5 < 0)) __PYX_ERR(0, 307, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
   if (__pyx_t_5) {
     __Pyx_INCREF(__pyx_t_3);
@@ -4988,7 +5308,7 @@ static PyObject *__pyx_pf_6_hydra_11BloomFilter_14_bucketsFor(PyTypeObject *__py
   __pyx_v_bf_size = __pyx_t_3;
   __pyx_t_3 = 0;
 
-  /* "_hydra.pyx":304
+  /* "_hydra.pyx":308
  *         numBits = numElements * bucketsPer + cls.EXCESS
  *         bf_size = min(sys.maxsize, numBits)
  *         return MMapBitField(filename, bf_size, read_only,             # <<<<<<<<<<<<<<
@@ -4996,7 +5316,7 @@ static PyObject *__pyx_pf_6_hydra_11BloomFilter_14_bucketsFor(PyTypeObject *__py
  *                             fdatasync_on_close=fdatasync_on_close)
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_3 = PyTuple_New(3); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 304, __pyx_L1_error)
+  __pyx_t_3 = PyTuple_New(3); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 308, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_INCREF(__pyx_v_filename);
   __Pyx_GIVEREF(__pyx_v_filename);
@@ -5008,34 +5328,34 @@ static PyObject *__pyx_pf_6_hydra_11BloomFilter_14_bucketsFor(PyTypeObject *__py
   __Pyx_GIVEREF(__pyx_v_read_only);
   PyTuple_SET_ITEM(__pyx_t_3, 2, __pyx_v_read_only);
 
-  /* "_hydra.pyx":305
+  /* "_hydra.pyx":309
  *         bf_size = min(sys.maxsize, numBits)
  *         return MMapBitField(filename, bf_size, read_only,
  *                             want_lock=want_lock,             # <<<<<<<<<<<<<<
  *                             fdatasync_on_close=fdatasync_on_close)
  * 
  */
-  __pyx_t_2 = PyDict_New(); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 305, __pyx_L1_error)
+  __pyx_t_2 = PyDict_New(); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 309, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  if (PyDict_SetItem(__pyx_t_2, __pyx_n_s_want_lock, __pyx_v_want_lock) < 0) __PYX_ERR(0, 305, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_2, __pyx_n_s_want_lock, __pyx_v_want_lock) < 0) __PYX_ERR(0, 309, __pyx_L1_error)
 
-  /* "_hydra.pyx":306
+  /* "_hydra.pyx":310
  *         return MMapBitField(filename, bf_size, read_only,
  *                             want_lock=want_lock,
  *                             fdatasync_on_close=fdatasync_on_close)             # <<<<<<<<<<<<<<
  * 
  *     @classmethod
  */
-  if (PyDict_SetItem(__pyx_t_2, __pyx_n_s_fdatasync_on_close, __pyx_v_fdatasync_on_close) < 0) __PYX_ERR(0, 305, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_2, __pyx_n_s_fdatasync_on_close, __pyx_v_fdatasync_on_close) < 0) __PYX_ERR(0, 309, __pyx_L1_error)
 
-  /* "_hydra.pyx":304
+  /* "_hydra.pyx":308
  *         numBits = numElements * bucketsPer + cls.EXCESS
  *         bf_size = min(sys.maxsize, numBits)
  *         return MMapBitField(filename, bf_size, read_only,             # <<<<<<<<<<<<<<
  *                             want_lock=want_lock,
  *                             fdatasync_on_close=fdatasync_on_close)
  */
-  __pyx_t_1 = __Pyx_PyObject_Call(((PyObject *)__pyx_ptype_6_hydra_MMapBitField), __pyx_t_3, __pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 304, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_Call(((PyObject *)__pyx_ptype_6_hydra_MMapBitField), __pyx_t_3, __pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 308, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
@@ -5043,7 +5363,7 @@ static PyObject *__pyx_pf_6_hydra_11BloomFilter_14_bucketsFor(PyTypeObject *__py
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "_hydra.pyx":301
+  /* "_hydra.pyx":305
  * 
  *     @classmethod
  *     def _bucketsFor(cls, numElements, bucketsPer, filename, read_only, want_lock=False, fdatasync_on_close=True):             # <<<<<<<<<<<<<<
@@ -5067,7 +5387,7 @@ static PyObject *__pyx_pf_6_hydra_11BloomFilter_14_bucketsFor(PyTypeObject *__py
   return __pyx_r;
 }
 
-/* "_hydra.pyx":309
+/* "_hydra.pyx":313
  * 
  *     @classmethod
  *     def getFilter(cls, numElements, maxFalsePosProbability, **kwargs):             # <<<<<<<<<<<<<<
@@ -5107,11 +5427,11 @@ static PyObject *__pyx_pw_6_hydra_11BloomFilter_17getFilter(PyObject *__pyx_v_cl
         case  1:
         if (likely((values[1] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_maxFalsePosProbability)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("getFilter", 1, 2, 2, 1); __PYX_ERR(0, 309, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("getFilter", 1, 2, 2, 1); __PYX_ERR(0, 313, __pyx_L3_error)
         }
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, __pyx_v_kwargs, values, pos_args, "getFilter") < 0)) __PYX_ERR(0, 309, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, __pyx_v_kwargs, values, pos_args, "getFilter") < 0)) __PYX_ERR(0, 313, __pyx_L3_error)
       }
     } else if (PyTuple_GET_SIZE(__pyx_args) != 2) {
       goto __pyx_L5_argtuple_error;
@@ -5124,7 +5444,7 @@ static PyObject *__pyx_pw_6_hydra_11BloomFilter_17getFilter(PyObject *__pyx_v_cl
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("getFilter", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 309, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("getFilter", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 313, __pyx_L3_error)
   __pyx_L3_error:;
   __Pyx_DECREF(__pyx_v_kwargs); __pyx_v_kwargs = 0;
   __Pyx_AddTraceback("_hydra.BloomFilter.getFilter", __pyx_clineno, __pyx_lineno, __pyx_filename);
@@ -5162,67 +5482,67 @@ static PyObject *__pyx_pf_6_hydra_11BloomFilter_16getFilter(PyTypeObject *__pyx_
   PyObject *__pyx_t_7 = NULL;
   __Pyx_RefNannySetupContext("getFilter", 0);
 
-  /* "_hydra.pyx":331
+  /* "_hydra.pyx":335
  * 
  *         """
  *         filename = kwargs.get('filename', None)             # <<<<<<<<<<<<<<
  *         ignore_case = kwargs.get('ignore_case', 0)
  *         read_only = kwargs.get('read_only', 0)
  */
-  __pyx_t_1 = __Pyx_PyDict_GetItemDefault(__pyx_v_kwargs, __pyx_n_s_filename, Py_None); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 331, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyDict_GetItemDefault(__pyx_v_kwargs, __pyx_n_s_filename, Py_None); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 335, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_v_filename = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "_hydra.pyx":332
+  /* "_hydra.pyx":336
  *         """
  *         filename = kwargs.get('filename', None)
  *         ignore_case = kwargs.get('ignore_case', 0)             # <<<<<<<<<<<<<<
  *         read_only = kwargs.get('read_only', 0)
  *         want_lock = kwargs.get('want_lock', False)
  */
-  __pyx_t_1 = __Pyx_PyDict_GetItemDefault(__pyx_v_kwargs, __pyx_n_s_ignore_case, __pyx_int_0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 332, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyDict_GetItemDefault(__pyx_v_kwargs, __pyx_n_s_ignore_case, __pyx_int_0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 336, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_v_ignore_case = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "_hydra.pyx":333
+  /* "_hydra.pyx":337
  *         filename = kwargs.get('filename', None)
  *         ignore_case = kwargs.get('ignore_case', 0)
  *         read_only = kwargs.get('read_only', 0)             # <<<<<<<<<<<<<<
  *         want_lock = kwargs.get('want_lock', False)
  *         fdatasync_on_close = kwargs.get('fdatasync_on_close', True)
  */
-  __pyx_t_1 = __Pyx_PyDict_GetItemDefault(__pyx_v_kwargs, __pyx_n_s_read_only, __pyx_int_0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 333, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyDict_GetItemDefault(__pyx_v_kwargs, __pyx_n_s_read_only, __pyx_int_0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 337, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_v_read_only = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "_hydra.pyx":334
+  /* "_hydra.pyx":338
  *         ignore_case = kwargs.get('ignore_case', 0)
  *         read_only = kwargs.get('read_only', 0)
  *         want_lock = kwargs.get('want_lock', False)             # <<<<<<<<<<<<<<
  *         fdatasync_on_close = kwargs.get('fdatasync_on_close', True)
  * 
  */
-  __pyx_t_1 = __Pyx_PyDict_GetItemDefault(__pyx_v_kwargs, __pyx_n_s_want_lock, Py_False); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 334, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyDict_GetItemDefault(__pyx_v_kwargs, __pyx_n_s_want_lock, Py_False); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 338, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_v_want_lock = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "_hydra.pyx":335
+  /* "_hydra.pyx":339
  *         read_only = kwargs.get('read_only', 0)
  *         want_lock = kwargs.get('want_lock', False)
  *         fdatasync_on_close = kwargs.get('fdatasync_on_close', True)             # <<<<<<<<<<<<<<
  * 
  *         for k in ['filename', 'ignore_case', 'read_only', 'want_lock', 'fdatasync_on_close']:
  */
-  __pyx_t_1 = __Pyx_PyDict_GetItemDefault(__pyx_v_kwargs, __pyx_n_s_fdatasync_on_close, Py_True); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 335, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyDict_GetItemDefault(__pyx_v_kwargs, __pyx_n_s_fdatasync_on_close, Py_True); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 339, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_v_fdatasync_on_close = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "_hydra.pyx":337
+  /* "_hydra.pyx":341
  *         fdatasync_on_close = kwargs.get('fdatasync_on_close', True)
  * 
  *         for k in ['filename', 'ignore_case', 'read_only', 'want_lock', 'fdatasync_on_close']:             # <<<<<<<<<<<<<<
@@ -5233,35 +5553,35 @@ static PyObject *__pyx_pf_6_hydra_11BloomFilter_16getFilter(PyTypeObject *__pyx_
   for (;;) {
     if (__pyx_t_2 >= 5) break;
     #if CYTHON_COMPILING_IN_CPYTHON
-    __pyx_t_3 = PyTuple_GET_ITEM(__pyx_t_1, __pyx_t_2); __Pyx_INCREF(__pyx_t_3); __pyx_t_2++; if (unlikely(0 < 0)) __PYX_ERR(0, 337, __pyx_L1_error)
+    __pyx_t_3 = PyTuple_GET_ITEM(__pyx_t_1, __pyx_t_2); __Pyx_INCREF(__pyx_t_3); __pyx_t_2++; if (unlikely(0 < 0)) __PYX_ERR(0, 341, __pyx_L1_error)
     #else
-    __pyx_t_3 = PySequence_ITEM(__pyx_t_1, __pyx_t_2); __pyx_t_2++; if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 337, __pyx_L1_error)
+    __pyx_t_3 = PySequence_ITEM(__pyx_t_1, __pyx_t_2); __pyx_t_2++; if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 341, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     #endif
     __Pyx_XDECREF_SET(__pyx_v_k, __pyx_t_3);
     __pyx_t_3 = 0;
 
-    /* "_hydra.pyx":338
+    /* "_hydra.pyx":342
  * 
  *         for k in ['filename', 'ignore_case', 'read_only', 'want_lock', 'fdatasync_on_close']:
  *             if kwargs.has_key(k):             # <<<<<<<<<<<<<<
  *                 del kwargs[k]
  *         if kwargs:
  */
-    __pyx_t_4 = PyDict_Contains(__pyx_v_kwargs, __pyx_v_k); if (unlikely(__pyx_t_4 == -1)) __PYX_ERR(0, 338, __pyx_L1_error)
+    __pyx_t_4 = PyDict_Contains(__pyx_v_kwargs, __pyx_v_k); if (unlikely(__pyx_t_4 == -1)) __PYX_ERR(0, 342, __pyx_L1_error)
     __pyx_t_5 = (__pyx_t_4 != 0);
     if (__pyx_t_5) {
 
-      /* "_hydra.pyx":339
+      /* "_hydra.pyx":343
  *         for k in ['filename', 'ignore_case', 'read_only', 'want_lock', 'fdatasync_on_close']:
  *             if kwargs.has_key(k):
  *                 del kwargs[k]             # <<<<<<<<<<<<<<
  *         if kwargs:
  *             raise RuntimeError, "Unexpected kwargs: %s" % str(kwargs)
  */
-      if (unlikely(PyDict_DelItem(__pyx_v_kwargs, __pyx_v_k) < 0)) __PYX_ERR(0, 339, __pyx_L1_error)
+      if (unlikely(PyDict_DelItem(__pyx_v_kwargs, __pyx_v_k) < 0)) __PYX_ERR(0, 343, __pyx_L1_error)
 
-      /* "_hydra.pyx":338
+      /* "_hydra.pyx":342
  * 
  *         for k in ['filename', 'ignore_case', 'read_only', 'want_lock', 'fdatasync_on_close']:
  *             if kwargs.has_key(k):             # <<<<<<<<<<<<<<
@@ -5270,7 +5590,7 @@ static PyObject *__pyx_pf_6_hydra_11BloomFilter_16getFilter(PyTypeObject *__pyx_
  */
     }
 
-    /* "_hydra.pyx":337
+    /* "_hydra.pyx":341
  *         fdatasync_on_close = kwargs.get('fdatasync_on_close', True)
  * 
  *         for k in ['filename', 'ignore_case', 'read_only', 'want_lock', 'fdatasync_on_close']:             # <<<<<<<<<<<<<<
@@ -5280,39 +5600,39 @@ static PyObject *__pyx_pf_6_hydra_11BloomFilter_16getFilter(PyTypeObject *__pyx_
   }
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "_hydra.pyx":340
+  /* "_hydra.pyx":344
  *             if kwargs.has_key(k):
  *                 del kwargs[k]
  *         if kwargs:             # <<<<<<<<<<<<<<
  *             raise RuntimeError, "Unexpected kwargs: %s" % str(kwargs)
  * 
  */
-  __pyx_t_5 = __Pyx_PyObject_IsTrue(__pyx_v_kwargs); if (unlikely(__pyx_t_5 < 0)) __PYX_ERR(0, 340, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyObject_IsTrue(__pyx_v_kwargs); if (unlikely(__pyx_t_5 < 0)) __PYX_ERR(0, 344, __pyx_L1_error)
   if (__pyx_t_5) {
 
-    /* "_hydra.pyx":341
+    /* "_hydra.pyx":345
  *                 del kwargs[k]
  *         if kwargs:
  *             raise RuntimeError, "Unexpected kwargs: %s" % str(kwargs)             # <<<<<<<<<<<<<<
  * 
  *         if not filename:
  */
-    __pyx_t_1 = PyTuple_New(1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 341, __pyx_L1_error)
+    __pyx_t_1 = PyTuple_New(1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 345, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_INCREF(__pyx_v_kwargs);
     __Pyx_GIVEREF(__pyx_v_kwargs);
     PyTuple_SET_ITEM(__pyx_t_1, 0, __pyx_v_kwargs);
-    __pyx_t_3 = __Pyx_PyObject_Call(((PyObject *)(&PyString_Type)), __pyx_t_1, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 341, __pyx_L1_error)
+    __pyx_t_3 = __Pyx_PyObject_Call(((PyObject *)(&PyString_Type)), __pyx_t_1, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 345, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-    __pyx_t_1 = __Pyx_PyString_Format(__pyx_kp_s_Unexpected_kwargs_s, __pyx_t_3); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 341, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyString_Format(__pyx_kp_s_Unexpected_kwargs_s, __pyx_t_3); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 345, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
     __Pyx_Raise(__pyx_builtin_RuntimeError, __pyx_t_1, 0, 0);
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-    __PYX_ERR(0, 341, __pyx_L1_error)
+    __PYX_ERR(0, 345, __pyx_L1_error)
 
-    /* "_hydra.pyx":340
+    /* "_hydra.pyx":344
  *             if kwargs.has_key(k):
  *                 del kwargs[k]
  *         if kwargs:             # <<<<<<<<<<<<<<
@@ -5321,49 +5641,49 @@ static PyObject *__pyx_pf_6_hydra_11BloomFilter_16getFilter(PyTypeObject *__pyx_
  */
   }
 
-  /* "_hydra.pyx":343
+  /* "_hydra.pyx":347
  *             raise RuntimeError, "Unexpected kwargs: %s" % str(kwargs)
  * 
  *         if not filename:             # <<<<<<<<<<<<<<
  *             fileobj = tempfile.NamedTemporaryFile(delete=True)
  *             fileobj.file.close()
  */
-  __pyx_t_5 = __Pyx_PyObject_IsTrue(__pyx_v_filename); if (unlikely(__pyx_t_5 < 0)) __PYX_ERR(0, 343, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyObject_IsTrue(__pyx_v_filename); if (unlikely(__pyx_t_5 < 0)) __PYX_ERR(0, 347, __pyx_L1_error)
   __pyx_t_4 = ((!__pyx_t_5) != 0);
   if (__pyx_t_4) {
 
-    /* "_hydra.pyx":344
+    /* "_hydra.pyx":348
  * 
  *         if not filename:
  *             fileobj = tempfile.NamedTemporaryFile(delete=True)             # <<<<<<<<<<<<<<
  *             fileobj.file.close()
  *             filename = fileobj.name
  */
-    __pyx_t_1 = __Pyx_GetModuleGlobalName(__pyx_n_s_tempfile); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 344, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_GetModuleGlobalName(__pyx_n_s_tempfile); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 348, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
-    __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_NamedTemporaryFile); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 344, __pyx_L1_error)
+    __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_NamedTemporaryFile); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 348, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-    __pyx_t_1 = PyDict_New(); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 344, __pyx_L1_error)
+    __pyx_t_1 = PyDict_New(); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 348, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
-    if (PyDict_SetItem(__pyx_t_1, __pyx_n_s_delete, Py_True) < 0) __PYX_ERR(0, 344, __pyx_L1_error)
-    __pyx_t_6 = __Pyx_PyObject_Call(__pyx_t_3, __pyx_empty_tuple, __pyx_t_1); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 344, __pyx_L1_error)
+    if (PyDict_SetItem(__pyx_t_1, __pyx_n_s_delete, Py_True) < 0) __PYX_ERR(0, 348, __pyx_L1_error)
+    __pyx_t_6 = __Pyx_PyObject_Call(__pyx_t_3, __pyx_empty_tuple, __pyx_t_1); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 348, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_6);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
     __pyx_v_fileobj = __pyx_t_6;
     __pyx_t_6 = 0;
 
-    /* "_hydra.pyx":345
+    /* "_hydra.pyx":349
  *         if not filename:
  *             fileobj = tempfile.NamedTemporaryFile(delete=True)
  *             fileobj.file.close()             # <<<<<<<<<<<<<<
  *             filename = fileobj.name
  * 
  */
-    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_fileobj, __pyx_n_s_file); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 345, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_fileobj, __pyx_n_s_file); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 349, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
-    __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_close); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 345, __pyx_L1_error)
+    __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_close); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 349, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
     __pyx_t_1 = NULL;
@@ -5377,28 +5697,28 @@ static PyObject *__pyx_pf_6_hydra_11BloomFilter_16getFilter(PyTypeObject *__pyx_
       }
     }
     if (__pyx_t_1) {
-      __pyx_t_6 = __Pyx_PyObject_CallOneArg(__pyx_t_3, __pyx_t_1); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 345, __pyx_L1_error)
+      __pyx_t_6 = __Pyx_PyObject_CallOneArg(__pyx_t_3, __pyx_t_1); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 349, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
     } else {
-      __pyx_t_6 = __Pyx_PyObject_CallNoArg(__pyx_t_3); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 345, __pyx_L1_error)
+      __pyx_t_6 = __Pyx_PyObject_CallNoArg(__pyx_t_3); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 349, __pyx_L1_error)
     }
     __Pyx_GOTREF(__pyx_t_6);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
     __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
 
-    /* "_hydra.pyx":346
+    /* "_hydra.pyx":350
  *             fileobj = tempfile.NamedTemporaryFile(delete=True)
  *             fileobj.file.close()
  *             filename = fileobj.name             # <<<<<<<<<<<<<<
  * 
  *         assert 0 < maxFalsePosProbability <= 1.0, "Invalid probability"
  */
-    __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_v_fileobj, __pyx_n_s_name); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 346, __pyx_L1_error)
+    __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_v_fileobj, __pyx_n_s_name); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 350, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_6);
     __Pyx_DECREF_SET(__pyx_v_filename, __pyx_t_6);
     __pyx_t_6 = 0;
 
-    /* "_hydra.pyx":343
+    /* "_hydra.pyx":347
  *             raise RuntimeError, "Unexpected kwargs: %s" % str(kwargs)
  * 
  *         if not filename:             # <<<<<<<<<<<<<<
@@ -5407,7 +5727,7 @@ static PyObject *__pyx_pf_6_hydra_11BloomFilter_16getFilter(PyTypeObject *__pyx_
  */
   }
 
-  /* "_hydra.pyx":348
+  /* "_hydra.pyx":352
  *             filename = fileobj.name
  * 
  *         assert 0 < maxFalsePosProbability <= 1.0, "Invalid probability"             # <<<<<<<<<<<<<<
@@ -5416,28 +5736,28 @@ static PyObject *__pyx_pf_6_hydra_11BloomFilter_16getFilter(PyTypeObject *__pyx_
  */
   #ifndef CYTHON_WITHOUT_ASSERTIONS
   if (unlikely(!Py_OptimizeFlag)) {
-    __pyx_t_6 = PyObject_RichCompare(__pyx_int_0, __pyx_v_maxFalsePosProbability, Py_LT); __Pyx_XGOTREF(__pyx_t_6); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 348, __pyx_L1_error)
+    __pyx_t_6 = PyObject_RichCompare(__pyx_int_0, __pyx_v_maxFalsePosProbability, Py_LT); __Pyx_XGOTREF(__pyx_t_6); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 352, __pyx_L1_error)
     if (__Pyx_PyObject_IsTrue(__pyx_t_6)) {
       __Pyx_DECREF(__pyx_t_6);
-      __pyx_t_6 = PyObject_RichCompare(__pyx_v_maxFalsePosProbability, __pyx_float_1_0, Py_LE); __Pyx_XGOTREF(__pyx_t_6); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 348, __pyx_L1_error)
+      __pyx_t_6 = PyObject_RichCompare(__pyx_v_maxFalsePosProbability, __pyx_float_1_0, Py_LE); __Pyx_XGOTREF(__pyx_t_6); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 352, __pyx_L1_error)
     }
-    __pyx_t_4 = __Pyx_PyObject_IsTrue(__pyx_t_6); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 348, __pyx_L1_error)
+    __pyx_t_4 = __Pyx_PyObject_IsTrue(__pyx_t_6); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 352, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
     if (unlikely(!__pyx_t_4)) {
       PyErr_SetObject(PyExc_AssertionError, __pyx_kp_s_Invalid_probability);
-      __PYX_ERR(0, 348, __pyx_L1_error)
+      __PYX_ERR(0, 352, __pyx_L1_error)
     }
   }
   #endif
 
-  /* "_hydra.pyx":349
+  /* "_hydra.pyx":353
  * 
  *         assert 0 < maxFalsePosProbability <= 1.0, "Invalid probability"
  *         bucketsPerElement = cls._maxBucketsPerElement(numElements)             # <<<<<<<<<<<<<<
  *         spec = BloomCalculations.computeBloomSpec2(bucketsPerElement, maxFalsePosProbability)
  *         bitmap = cls._bucketsFor(numElements, spec.bucketsPerElement, filename, read_only, want_lock=want_lock, fdatasync_on_close=fdatasync_on_close)
  */
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_cls), __pyx_n_s_maxBucketsPerElement_2); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 349, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_cls), __pyx_n_s_maxBucketsPerElement_2); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 353, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __pyx_t_1 = NULL;
   if (CYTHON_COMPILING_IN_CPYTHON && likely(PyMethod_Check(__pyx_t_3))) {
@@ -5450,16 +5770,16 @@ static PyObject *__pyx_pf_6_hydra_11BloomFilter_16getFilter(PyTypeObject *__pyx_
     }
   }
   if (!__pyx_t_1) {
-    __pyx_t_6 = __Pyx_PyObject_CallOneArg(__pyx_t_3, __pyx_v_numElements); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 349, __pyx_L1_error)
+    __pyx_t_6 = __Pyx_PyObject_CallOneArg(__pyx_t_3, __pyx_v_numElements); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 353, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_6);
   } else {
-    __pyx_t_7 = PyTuple_New(1+1); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 349, __pyx_L1_error)
+    __pyx_t_7 = PyTuple_New(1+1); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 353, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_7);
     __Pyx_GIVEREF(__pyx_t_1); PyTuple_SET_ITEM(__pyx_t_7, 0, __pyx_t_1); __pyx_t_1 = NULL;
     __Pyx_INCREF(__pyx_v_numElements);
     __Pyx_GIVEREF(__pyx_v_numElements);
     PyTuple_SET_ITEM(__pyx_t_7, 0+1, __pyx_v_numElements);
-    __pyx_t_6 = __Pyx_PyObject_Call(__pyx_t_3, __pyx_t_7, NULL); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 349, __pyx_L1_error)
+    __pyx_t_6 = __Pyx_PyObject_Call(__pyx_t_3, __pyx_t_7, NULL); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 353, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_6);
     __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
   }
@@ -5467,14 +5787,14 @@ static PyObject *__pyx_pf_6_hydra_11BloomFilter_16getFilter(PyTypeObject *__pyx_
   __pyx_v_bucketsPerElement = __pyx_t_6;
   __pyx_t_6 = 0;
 
-  /* "_hydra.pyx":350
+  /* "_hydra.pyx":354
  *         assert 0 < maxFalsePosProbability <= 1.0, "Invalid probability"
  *         bucketsPerElement = cls._maxBucketsPerElement(numElements)
  *         spec = BloomCalculations.computeBloomSpec2(bucketsPerElement, maxFalsePosProbability)             # <<<<<<<<<<<<<<
  *         bitmap = cls._bucketsFor(numElements, spec.bucketsPerElement, filename, read_only, want_lock=want_lock, fdatasync_on_close=fdatasync_on_close)
  *         bf = BloomFilter(spec.K, bitmap, ignore_case)
  */
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_ptype_6_hydra_BloomCalculations), __pyx_n_s_computeBloomSpec2); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 350, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_ptype_6_hydra_BloomCalculations), __pyx_n_s_computeBloomSpec2); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 354, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __pyx_t_7 = NULL;
   __pyx_t_2 = 0;
@@ -5488,7 +5808,7 @@ static PyObject *__pyx_pf_6_hydra_11BloomFilter_16getFilter(PyTypeObject *__pyx_
       __pyx_t_2 = 1;
     }
   }
-  __pyx_t_1 = PyTuple_New(2+__pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 350, __pyx_L1_error)
+  __pyx_t_1 = PyTuple_New(2+__pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 354, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   if (__pyx_t_7) {
     __Pyx_GIVEREF(__pyx_t_7); PyTuple_SET_ITEM(__pyx_t_1, 0, __pyx_t_7); __pyx_t_7 = NULL;
@@ -5499,25 +5819,25 @@ static PyObject *__pyx_pf_6_hydra_11BloomFilter_16getFilter(PyTypeObject *__pyx_
   __Pyx_INCREF(__pyx_v_maxFalsePosProbability);
   __Pyx_GIVEREF(__pyx_v_maxFalsePosProbability);
   PyTuple_SET_ITEM(__pyx_t_1, 1+__pyx_t_2, __pyx_v_maxFalsePosProbability);
-  __pyx_t_6 = __Pyx_PyObject_Call(__pyx_t_3, __pyx_t_1, NULL); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 350, __pyx_L1_error)
+  __pyx_t_6 = __Pyx_PyObject_Call(__pyx_t_3, __pyx_t_1, NULL); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 354, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __pyx_v_spec = __pyx_t_6;
   __pyx_t_6 = 0;
 
-  /* "_hydra.pyx":351
+  /* "_hydra.pyx":355
  *         bucketsPerElement = cls._maxBucketsPerElement(numElements)
  *         spec = BloomCalculations.computeBloomSpec2(bucketsPerElement, maxFalsePosProbability)
  *         bitmap = cls._bucketsFor(numElements, spec.bucketsPerElement, filename, read_only, want_lock=want_lock, fdatasync_on_close=fdatasync_on_close)             # <<<<<<<<<<<<<<
  *         bf = BloomFilter(spec.K, bitmap, ignore_case)
  *         if not filename:
  */
-  __pyx_t_6 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_cls), __pyx_n_s_bucketsFor); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 351, __pyx_L1_error)
+  __pyx_t_6 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_cls), __pyx_n_s_bucketsFor); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 355, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_spec, __pyx_n_s_bucketsPerElement); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 351, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_spec, __pyx_n_s_bucketsPerElement); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 355, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  __pyx_t_1 = PyTuple_New(4); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 351, __pyx_L1_error)
+  __pyx_t_1 = PyTuple_New(4); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 355, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_INCREF(__pyx_v_numElements);
   __Pyx_GIVEREF(__pyx_v_numElements);
@@ -5531,11 +5851,11 @@ static PyObject *__pyx_pf_6_hydra_11BloomFilter_16getFilter(PyTypeObject *__pyx_
   __Pyx_GIVEREF(__pyx_v_read_only);
   PyTuple_SET_ITEM(__pyx_t_1, 3, __pyx_v_read_only);
   __pyx_t_3 = 0;
-  __pyx_t_3 = PyDict_New(); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 351, __pyx_L1_error)
+  __pyx_t_3 = PyDict_New(); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 355, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  if (PyDict_SetItem(__pyx_t_3, __pyx_n_s_want_lock, __pyx_v_want_lock) < 0) __PYX_ERR(0, 351, __pyx_L1_error)
-  if (PyDict_SetItem(__pyx_t_3, __pyx_n_s_fdatasync_on_close, __pyx_v_fdatasync_on_close) < 0) __PYX_ERR(0, 351, __pyx_L1_error)
-  __pyx_t_7 = __Pyx_PyObject_Call(__pyx_t_6, __pyx_t_1, __pyx_t_3); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 351, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_3, __pyx_n_s_want_lock, __pyx_v_want_lock) < 0) __PYX_ERR(0, 355, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_3, __pyx_n_s_fdatasync_on_close, __pyx_v_fdatasync_on_close) < 0) __PYX_ERR(0, 355, __pyx_L1_error)
+  __pyx_t_7 = __Pyx_PyObject_Call(__pyx_t_6, __pyx_t_1, __pyx_t_3); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 355, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_7);
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -5543,16 +5863,16 @@ static PyObject *__pyx_pf_6_hydra_11BloomFilter_16getFilter(PyTypeObject *__pyx_
   __pyx_v_bitmap = __pyx_t_7;
   __pyx_t_7 = 0;
 
-  /* "_hydra.pyx":352
+  /* "_hydra.pyx":356
  *         spec = BloomCalculations.computeBloomSpec2(bucketsPerElement, maxFalsePosProbability)
  *         bitmap = cls._bucketsFor(numElements, spec.bucketsPerElement, filename, read_only, want_lock=want_lock, fdatasync_on_close=fdatasync_on_close)
  *         bf = BloomFilter(spec.K, bitmap, ignore_case)             # <<<<<<<<<<<<<<
  *         if not filename:
  *             bf._tempfile = fileobj
  */
-  __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_v_spec, __pyx_n_s_K); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 352, __pyx_L1_error)
+  __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_v_spec, __pyx_n_s_K); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 356, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_7);
-  __pyx_t_3 = PyTuple_New(3); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 352, __pyx_L1_error)
+  __pyx_t_3 = PyTuple_New(3); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 356, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_GIVEREF(__pyx_t_7);
   PyTuple_SET_ITEM(__pyx_t_3, 0, __pyx_t_7);
@@ -5563,38 +5883,38 @@ static PyObject *__pyx_pf_6_hydra_11BloomFilter_16getFilter(PyTypeObject *__pyx_
   __Pyx_GIVEREF(__pyx_v_ignore_case);
   PyTuple_SET_ITEM(__pyx_t_3, 2, __pyx_v_ignore_case);
   __pyx_t_7 = 0;
-  __pyx_t_7 = __Pyx_PyObject_Call(((PyObject *)__pyx_ptype_6_hydra_BloomFilter), __pyx_t_3, NULL); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 352, __pyx_L1_error)
+  __pyx_t_7 = __Pyx_PyObject_Call(((PyObject *)__pyx_ptype_6_hydra_BloomFilter), __pyx_t_3, NULL); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 356, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_7);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __pyx_v_bf = ((struct __pyx_obj_6_hydra_BloomFilter *)__pyx_t_7);
   __pyx_t_7 = 0;
 
-  /* "_hydra.pyx":353
+  /* "_hydra.pyx":357
  *         bitmap = cls._bucketsFor(numElements, spec.bucketsPerElement, filename, read_only, want_lock=want_lock, fdatasync_on_close=fdatasync_on_close)
  *         bf = BloomFilter(spec.K, bitmap, ignore_case)
  *         if not filename:             # <<<<<<<<<<<<<<
  *             bf._tempfile = fileobj
  *         return bf
  */
-  __pyx_t_4 = __Pyx_PyObject_IsTrue(__pyx_v_filename); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 353, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyObject_IsTrue(__pyx_v_filename); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 357, __pyx_L1_error)
   __pyx_t_5 = ((!__pyx_t_4) != 0);
   if (__pyx_t_5) {
 
-    /* "_hydra.pyx":354
+    /* "_hydra.pyx":358
  *         bf = BloomFilter(spec.K, bitmap, ignore_case)
  *         if not filename:
  *             bf._tempfile = fileobj             # <<<<<<<<<<<<<<
  *         return bf
  * 
  */
-    if (unlikely(!__pyx_v_fileobj)) { __Pyx_RaiseUnboundLocalError("fileobj"); __PYX_ERR(0, 354, __pyx_L1_error) }
+    if (unlikely(!__pyx_v_fileobj)) { __Pyx_RaiseUnboundLocalError("fileobj"); __PYX_ERR(0, 358, __pyx_L1_error) }
     __Pyx_INCREF(__pyx_v_fileobj);
     __Pyx_GIVEREF(__pyx_v_fileobj);
     __Pyx_GOTREF(__pyx_v_bf->_tempfile);
     __Pyx_DECREF(__pyx_v_bf->_tempfile);
     __pyx_v_bf->_tempfile = __pyx_v_fileobj;
 
-    /* "_hydra.pyx":353
+    /* "_hydra.pyx":357
  *         bitmap = cls._bucketsFor(numElements, spec.bucketsPerElement, filename, read_only, want_lock=want_lock, fdatasync_on_close=fdatasync_on_close)
  *         bf = BloomFilter(spec.K, bitmap, ignore_case)
  *         if not filename:             # <<<<<<<<<<<<<<
@@ -5603,7 +5923,7 @@ static PyObject *__pyx_pf_6_hydra_11BloomFilter_16getFilter(PyTypeObject *__pyx_
  */
   }
 
-  /* "_hydra.pyx":355
+  /* "_hydra.pyx":359
  *         if not filename:
  *             bf._tempfile = fileobj
  *         return bf             # <<<<<<<<<<<<<<
@@ -5615,7 +5935,7 @@ static PyObject *__pyx_pf_6_hydra_11BloomFilter_16getFilter(PyTypeObject *__pyx_
   __pyx_r = ((PyObject *)__pyx_v_bf);
   goto __pyx_L0;
 
-  /* "_hydra.pyx":309
+  /* "_hydra.pyx":313
  * 
  *     @classmethod
  *     def getFilter(cls, numElements, maxFalsePosProbability, **kwargs):             # <<<<<<<<<<<<<<
@@ -5648,7 +5968,7 @@ static PyObject *__pyx_pf_6_hydra_11BloomFilter_16getFilter(PyTypeObject *__pyx_
   return __pyx_r;
 }
 
-/* "_hydra.pyx":357
+/* "_hydra.pyx":361
  *         return bf
  * 
  *     def __setitem__(self, key, int ignored):             # <<<<<<<<<<<<<<
@@ -5664,7 +5984,7 @@ static int __pyx_pw_6_hydra_11BloomFilter_19__setitem__(PyObject *__pyx_v_self, 
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__setitem__ (wrapper)", 0);
   assert(__pyx_arg_ignored); {
-    __pyx_v_ignored = __Pyx_PyInt_As_int(__pyx_arg_ignored); if (unlikely((__pyx_v_ignored == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 357, __pyx_L3_error)
+    __pyx_v_ignored = __Pyx_PyInt_As_int(__pyx_arg_ignored); if (unlikely((__pyx_v_ignored == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 361, __pyx_L3_error)
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -5683,48 +6003,20 @@ static int __pyx_pf_6_hydra_11BloomFilter_18__setitem__(struct __pyx_obj_6_hydra
   int __pyx_r;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
-  PyObject *__pyx_t_2 = NULL;
-  PyObject *__pyx_t_3 = NULL;
-  PyObject *__pyx_t_4 = NULL;
   __Pyx_RefNannySetupContext("__setitem__", 0);
 
-  /* "_hydra.pyx":358
+  /* "_hydra.pyx":362
  * 
  *     def __setitem__(self, key, int ignored):
  *         self.add(key)             # <<<<<<<<<<<<<<
  * 
  *     def __getitem__(self, key):
  */
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_add); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 358, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_3 = NULL;
-  if (CYTHON_COMPILING_IN_CPYTHON && likely(PyMethod_Check(__pyx_t_2))) {
-    __pyx_t_3 = PyMethod_GET_SELF(__pyx_t_2);
-    if (likely(__pyx_t_3)) {
-      PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_2);
-      __Pyx_INCREF(__pyx_t_3);
-      __Pyx_INCREF(function);
-      __Pyx_DECREF_SET(__pyx_t_2, function);
-    }
-  }
-  if (!__pyx_t_3) {
-    __pyx_t_1 = __Pyx_PyObject_CallOneArg(__pyx_t_2, __pyx_v_key); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 358, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_1);
-  } else {
-    __pyx_t_4 = PyTuple_New(1+1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 358, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_4);
-    __Pyx_GIVEREF(__pyx_t_3); PyTuple_SET_ITEM(__pyx_t_4, 0, __pyx_t_3); __pyx_t_3 = NULL;
-    __Pyx_INCREF(__pyx_v_key);
-    __Pyx_GIVEREF(__pyx_v_key);
-    PyTuple_SET_ITEM(__pyx_t_4, 0+1, __pyx_v_key);
-    __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_2, __pyx_t_4, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 358, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_1);
-    __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-  }
-  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+  __pyx_t_1 = ((struct __pyx_vtabstruct_6_hydra_BloomFilter *)__pyx_v_self->__pyx_vtab)->add(__pyx_v_self, __pyx_v_key, 0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 362, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "_hydra.pyx":357
+  /* "_hydra.pyx":361
  *         return bf
  * 
  *     def __setitem__(self, key, int ignored):             # <<<<<<<<<<<<<<
@@ -5737,9 +6029,6 @@ static int __pyx_pf_6_hydra_11BloomFilter_18__setitem__(struct __pyx_obj_6_hydra
   goto __pyx_L0;
   __pyx_L1_error:;
   __Pyx_XDECREF(__pyx_t_1);
-  __Pyx_XDECREF(__pyx_t_2);
-  __Pyx_XDECREF(__pyx_t_3);
-  __Pyx_XDECREF(__pyx_t_4);
   __Pyx_AddTraceback("_hydra.BloomFilter.__setitem__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = -1;
   __pyx_L0:;
@@ -5747,7 +6036,7 @@ static int __pyx_pf_6_hydra_11BloomFilter_18__setitem__(struct __pyx_obj_6_hydra
   return __pyx_r;
 }
 
-/* "_hydra.pyx":360
+/* "_hydra.pyx":364
  *         self.add(key)
  * 
  *     def __getitem__(self, key):             # <<<<<<<<<<<<<<
@@ -5773,11 +6062,9 @@ static PyObject *__pyx_pf_6_hydra_11BloomFilter_20__getitem__(struct __pyx_obj_6
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
   PyObject *__pyx_t_2 = NULL;
-  PyObject *__pyx_t_3 = NULL;
-  PyObject *__pyx_t_4 = NULL;
   __Pyx_RefNannySetupContext("__getitem__", 0);
 
-  /* "_hydra.pyx":361
+  /* "_hydra.pyx":365
  * 
  *     def __getitem__(self, key):
  *         return int(self.contains(key))             # <<<<<<<<<<<<<<
@@ -5785,41 +6072,16 @@ static PyObject *__pyx_pf_6_hydra_11BloomFilter_20__getitem__(struct __pyx_obj_6
  *     def __contains__(self, ustring):
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_contains); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 361, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_3 = NULL;
-  if (CYTHON_COMPILING_IN_CPYTHON && likely(PyMethod_Check(__pyx_t_2))) {
-    __pyx_t_3 = PyMethod_GET_SELF(__pyx_t_2);
-    if (likely(__pyx_t_3)) {
-      PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_2);
-      __Pyx_INCREF(__pyx_t_3);
-      __Pyx_INCREF(function);
-      __Pyx_DECREF_SET(__pyx_t_2, function);
-    }
-  }
-  if (!__pyx_t_3) {
-    __pyx_t_1 = __Pyx_PyObject_CallOneArg(__pyx_t_2, __pyx_v_key); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 361, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_1);
-  } else {
-    __pyx_t_4 = PyTuple_New(1+1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 361, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_4);
-    __Pyx_GIVEREF(__pyx_t_3); PyTuple_SET_ITEM(__pyx_t_4, 0, __pyx_t_3); __pyx_t_3 = NULL;
-    __Pyx_INCREF(__pyx_v_key);
-    __Pyx_GIVEREF(__pyx_v_key);
-    PyTuple_SET_ITEM(__pyx_t_4, 0+1, __pyx_v_key);
-    __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_2, __pyx_t_4, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 361, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_1);
-    __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-  }
-  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __pyx_t_2 = __Pyx_PyNumber_Int(__pyx_t_1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 361, __pyx_L1_error)
+  __pyx_t_1 = ((struct __pyx_vtabstruct_6_hydra_BloomFilter *)__pyx_v_self->__pyx_vtab)->contains(__pyx_v_self, __pyx_v_key, 0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 365, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __pyx_t_2 = __Pyx_PyNumber_Int(__pyx_t_1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 365, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __pyx_r = __pyx_t_2;
   __pyx_t_2 = 0;
   goto __pyx_L0;
 
-  /* "_hydra.pyx":360
+  /* "_hydra.pyx":364
  *         self.add(key)
  * 
  *     def __getitem__(self, key):             # <<<<<<<<<<<<<<
@@ -5831,8 +6093,6 @@ static PyObject *__pyx_pf_6_hydra_11BloomFilter_20__getitem__(struct __pyx_obj_6
   __pyx_L1_error:;
   __Pyx_XDECREF(__pyx_t_1);
   __Pyx_XDECREF(__pyx_t_2);
-  __Pyx_XDECREF(__pyx_t_3);
-  __Pyx_XDECREF(__pyx_t_4);
   __Pyx_AddTraceback("_hydra.BloomFilter.__getitem__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
@@ -5841,7 +6101,7 @@ static PyObject *__pyx_pf_6_hydra_11BloomFilter_20__getitem__(struct __pyx_obj_6
   return __pyx_r;
 }
 
-/* "_hydra.pyx":363
+/* "_hydra.pyx":367
  *         return int(self.contains(key))
  * 
  *     def __contains__(self, ustring):             # <<<<<<<<<<<<<<
@@ -5866,52 +6126,24 @@ static int __pyx_pf_6_hydra_11BloomFilter_22__contains__(struct __pyx_obj_6_hydr
   int __pyx_r;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
-  PyObject *__pyx_t_2 = NULL;
-  PyObject *__pyx_t_3 = NULL;
-  PyObject *__pyx_t_4 = NULL;
-  int __pyx_t_5;
+  int __pyx_t_2;
   __Pyx_RefNannySetupContext("__contains__", 0);
 
-  /* "_hydra.pyx":364
+  /* "_hydra.pyx":368
  * 
  *     def __contains__(self, ustring):
  *         return self.contains(ustring)             # <<<<<<<<<<<<<<
  * 
  *     @cython.boundscheck(False)
  */
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_contains); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 364, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_3 = NULL;
-  if (CYTHON_COMPILING_IN_CPYTHON && likely(PyMethod_Check(__pyx_t_2))) {
-    __pyx_t_3 = PyMethod_GET_SELF(__pyx_t_2);
-    if (likely(__pyx_t_3)) {
-      PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_2);
-      __Pyx_INCREF(__pyx_t_3);
-      __Pyx_INCREF(function);
-      __Pyx_DECREF_SET(__pyx_t_2, function);
-    }
-  }
-  if (!__pyx_t_3) {
-    __pyx_t_1 = __Pyx_PyObject_CallOneArg(__pyx_t_2, __pyx_v_ustring); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 364, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_1);
-  } else {
-    __pyx_t_4 = PyTuple_New(1+1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 364, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_4);
-    __Pyx_GIVEREF(__pyx_t_3); PyTuple_SET_ITEM(__pyx_t_4, 0, __pyx_t_3); __pyx_t_3 = NULL;
-    __Pyx_INCREF(__pyx_v_ustring);
-    __Pyx_GIVEREF(__pyx_v_ustring);
-    PyTuple_SET_ITEM(__pyx_t_4, 0+1, __pyx_v_ustring);
-    __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_2, __pyx_t_4, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 364, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_1);
-    __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-  }
-  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __pyx_t_5 = __Pyx_PyInt_As_int(__pyx_t_1); if (unlikely((__pyx_t_5 == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 364, __pyx_L1_error)
+  __pyx_t_1 = ((struct __pyx_vtabstruct_6_hydra_BloomFilter *)__pyx_v_self->__pyx_vtab)->contains(__pyx_v_self, __pyx_v_ustring, 0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 368, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __pyx_t_2 = __Pyx_PyInt_As_int(__pyx_t_1); if (unlikely((__pyx_t_2 == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 368, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __pyx_r = __pyx_t_5;
+  __pyx_r = __pyx_t_2;
   goto __pyx_L0;
 
-  /* "_hydra.pyx":363
+  /* "_hydra.pyx":367
  *         return int(self.contains(key))
  * 
  *     def __contains__(self, ustring):             # <<<<<<<<<<<<<<
@@ -5922,9 +6154,6 @@ static int __pyx_pf_6_hydra_11BloomFilter_22__contains__(struct __pyx_obj_6_hydr
   /* function exit code */
   __pyx_L1_error:;
   __Pyx_XDECREF(__pyx_t_1);
-  __Pyx_XDECREF(__pyx_t_2);
-  __Pyx_XDECREF(__pyx_t_3);
-  __Pyx_XDECREF(__pyx_t_4);
   __Pyx_AddTraceback("_hydra.BloomFilter.__contains__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = -1;
   __pyx_L0:;
@@ -5932,13 +6161,213 @@ static int __pyx_pf_6_hydra_11BloomFilter_22__contains__(struct __pyx_obj_6_hydr
   return __pyx_r;
 }
 
-/* "_hydra.pyx":367
+/* "_hydra.pyx":371
  * 
  *     @cython.boundscheck(False)
- *     def add(self, ustring):             # <<<<<<<<<<<<<<
+ *     cpdef add(self, ustring):             # <<<<<<<<<<<<<<
  *         """ Add a key into the filter.  Just like a set.  """
  *         cdef unsigned long long i
  */
+
+static PyObject *__pyx_pw_6_hydra_11BloomFilter_25add(PyObject *__pyx_v_self, PyObject *__pyx_v_ustring); /*proto*/
+static PyObject *__pyx_f_6_hydra_11BloomFilter_add(struct __pyx_obj_6_hydra_BloomFilter *__pyx_v_self, PyObject *__pyx_v_ustring, int __pyx_skip_dispatch) {
+  unsigned PY_LONG_LONG __pyx_v_i;
+  unsigned PY_LONG_LONG __pyx_v__bucket_indexes[0x3E8];
+  PyObject *__pyx_v_key = NULL;
+  PyObject *__pyx_r = NULL;
+  __Pyx_RefNannyDeclarations
+  PyObject *__pyx_t_1 = NULL;
+  PyObject *__pyx_t_2 = NULL;
+  PyObject *__pyx_t_3 = NULL;
+  PyObject *__pyx_t_4 = NULL;
+  PyObject *__pyx_t_5 = NULL;
+  int __pyx_t_6;
+  int __pyx_t_7;
+  char *__pyx_t_8;
+  unsigned long __pyx_t_9;
+  unsigned int __pyx_t_10;
+  unsigned PY_LONG_LONG __pyx_t_11;
+  __Pyx_RefNannySetupContext("add", 0);
+  /* Check if called by wrapper */
+  if (unlikely(__pyx_skip_dispatch)) ;
+  /* Check if overridden in Python */
+  else if (unlikely(Py_TYPE(((PyObject *)__pyx_v_self))->tp_dictoffset != 0)) {
+    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_add); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 371, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_1);
+    if (!PyCFunction_Check(__pyx_t_1) || (PyCFunction_GET_FUNCTION(__pyx_t_1) != (PyCFunction)__pyx_pw_6_hydra_11BloomFilter_25add)) {
+      __Pyx_XDECREF(__pyx_r);
+      __Pyx_INCREF(__pyx_t_1);
+      __pyx_t_3 = __pyx_t_1; __pyx_t_4 = NULL;
+      if (CYTHON_COMPILING_IN_CPYTHON && unlikely(PyMethod_Check(__pyx_t_3))) {
+        __pyx_t_4 = PyMethod_GET_SELF(__pyx_t_3);
+        if (likely(__pyx_t_4)) {
+          PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_3);
+          __Pyx_INCREF(__pyx_t_4);
+          __Pyx_INCREF(function);
+          __Pyx_DECREF_SET(__pyx_t_3, function);
+        }
+      }
+      if (!__pyx_t_4) {
+        __pyx_t_2 = __Pyx_PyObject_CallOneArg(__pyx_t_3, __pyx_v_ustring); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 371, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_2);
+      } else {
+        __pyx_t_5 = PyTuple_New(1+1); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 371, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_5);
+        __Pyx_GIVEREF(__pyx_t_4); PyTuple_SET_ITEM(__pyx_t_5, 0, __pyx_t_4); __pyx_t_4 = NULL;
+        __Pyx_INCREF(__pyx_v_ustring);
+        __Pyx_GIVEREF(__pyx_v_ustring);
+        PyTuple_SET_ITEM(__pyx_t_5, 0+1, __pyx_v_ustring);
+        __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_3, __pyx_t_5, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 371, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_2);
+        __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
+      }
+      __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+      __pyx_r = __pyx_t_2;
+      __pyx_t_2 = 0;
+      __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+      goto __pyx_L0;
+    }
+    __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+  }
+
+  /* "_hydra.pyx":376
+ *         cdef unsigned long long _bucket_indexes[1000]
+ * 
+ *         if isinstance(ustring, unicode):             # <<<<<<<<<<<<<<
+ *             key = ustring.encode('utf8')
+ *         else:
+ */
+  __pyx_t_6 = PyUnicode_Check(__pyx_v_ustring); 
+  __pyx_t_7 = (__pyx_t_6 != 0);
+  if (__pyx_t_7) {
+
+    /* "_hydra.pyx":377
+ * 
+ *         if isinstance(ustring, unicode):
+ *             key = ustring.encode('utf8')             # <<<<<<<<<<<<<<
+ *         else:
+ *             key = ustring
+ */
+    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_ustring, __pyx_n_s_encode); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 377, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_1);
+    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_1, __pyx_tuple__11, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 377, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_2);
+    __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+    __pyx_v_key = __pyx_t_2;
+    __pyx_t_2 = 0;
+
+    /* "_hydra.pyx":376
+ *         cdef unsigned long long _bucket_indexes[1000]
+ * 
+ *         if isinstance(ustring, unicode):             # <<<<<<<<<<<<<<
+ *             key = ustring.encode('utf8')
+ *         else:
+ */
+    goto __pyx_L3;
+  }
+
+  /* "_hydra.pyx":379
+ *             key = ustring.encode('utf8')
+ *         else:
+ *             key = ustring             # <<<<<<<<<<<<<<
+ * 
+ *         if self._ignore_case:
+ */
+  /*else*/ {
+    __Pyx_INCREF(__pyx_v_ustring);
+    __pyx_v_key = __pyx_v_ustring;
+  }
+  __pyx_L3:;
+
+  /* "_hydra.pyx":381
+ *             key = ustring
+ * 
+ *         if self._ignore_case:             # <<<<<<<<<<<<<<
+ *             c_lcase(key);
+ * 
+ */
+  __pyx_t_7 = (__pyx_v_self->_ignore_case != 0);
+  if (__pyx_t_7) {
+
+    /* "_hydra.pyx":382
+ * 
+ *         if self._ignore_case:
+ *             c_lcase(key);             # <<<<<<<<<<<<<<
+ * 
+ *         self._get_hash_buckets(key, _bucket_indexes, self._hashCount, self.buckets())
+ */
+    __pyx_t_8 = __Pyx_PyObject_AsString(__pyx_v_key); if (unlikely((!__pyx_t_8) && PyErr_Occurred())) __PYX_ERR(0, 382, __pyx_L1_error)
+    __pyx_f_6_hydra_c_lcase(__pyx_t_8);
+
+    /* "_hydra.pyx":381
+ *             key = ustring
+ * 
+ *         if self._ignore_case:             # <<<<<<<<<<<<<<
+ *             c_lcase(key);
+ * 
+ */
+  }
+
+  /* "_hydra.pyx":384
+ *             c_lcase(key);
+ * 
+ *         self._get_hash_buckets(key, _bucket_indexes, self._hashCount, self.buckets())             # <<<<<<<<<<<<<<
+ *         for i in range(self._hashCount):
+ *             self._bitmap[_bucket_indexes[i]] = 1
+ */
+  if (!(likely(PyBytes_CheckExact(__pyx_v_key))||((__pyx_v_key) == Py_None)||(PyErr_Format(PyExc_TypeError, "Expected %.16s, got %.200s", "bytes", Py_TYPE(__pyx_v_key)->tp_name), 0))) __PYX_ERR(0, 384, __pyx_L1_error)
+  __pyx_t_2 = ((struct __pyx_vtabstruct_6_hydra_BloomFilter *)__pyx_v_self->__pyx_vtab)->buckets(__pyx_v_self, 0); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 384, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_2);
+  __pyx_t_9 = __Pyx_PyInt_As_unsigned_long(__pyx_t_2); if (unlikely((__pyx_t_9 == (unsigned long)-1) && PyErr_Occurred())) __PYX_ERR(0, 384, __pyx_L1_error)
+  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+  ((struct __pyx_vtabstruct_6_hydra_BloomFilter *)__pyx_v_self->__pyx_vtab)->_get_hash_buckets(__pyx_v_self, ((PyObject*)__pyx_v_key), __pyx_v__bucket_indexes, __pyx_v_self->_hashCount, __pyx_t_9);
+
+  /* "_hydra.pyx":385
+ * 
+ *         self._get_hash_buckets(key, _bucket_indexes, self._hashCount, self.buckets())
+ *         for i in range(self._hashCount):             # <<<<<<<<<<<<<<
+ *             self._bitmap[_bucket_indexes[i]] = 1
+ * 
+ */
+  __pyx_t_10 = __pyx_v_self->_hashCount;
+  for (__pyx_t_11 = 0; __pyx_t_11 < __pyx_t_10; __pyx_t_11+=1) {
+    __pyx_v_i = __pyx_t_11;
+
+    /* "_hydra.pyx":386
+ *         self._get_hash_buckets(key, _bucket_indexes, self._hashCount, self.buckets())
+ *         for i in range(self._hashCount):
+ *             self._bitmap[_bucket_indexes[i]] = 1             # <<<<<<<<<<<<<<
+ * 
+ *     @cython.boundscheck(False)
+ */
+    if (unlikely(__Pyx_SetItemInt(((PyObject *)__pyx_v_self->_bitmap), (__pyx_v__bucket_indexes[__pyx_v_i]), __pyx_int_1, unsigned PY_LONG_LONG, 0, __Pyx_PyInt_From_unsigned_PY_LONG_LONG, 0, 0, 0) < 0)) __PYX_ERR(0, 386, __pyx_L1_error)
+  }
+
+  /* "_hydra.pyx":371
+ * 
+ *     @cython.boundscheck(False)
+ *     cpdef add(self, ustring):             # <<<<<<<<<<<<<<
+ *         """ Add a key into the filter.  Just like a set.  """
+ *         cdef unsigned long long i
+ */
+
+  /* function exit code */
+  __pyx_r = Py_None; __Pyx_INCREF(Py_None);
+  goto __pyx_L0;
+  __pyx_L1_error:;
+  __Pyx_XDECREF(__pyx_t_1);
+  __Pyx_XDECREF(__pyx_t_2);
+  __Pyx_XDECREF(__pyx_t_3);
+  __Pyx_XDECREF(__pyx_t_4);
+  __Pyx_XDECREF(__pyx_t_5);
+  __Pyx_AddTraceback("_hydra.BloomFilter.add", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = 0;
+  __pyx_L0:;
+  __Pyx_XDECREF(__pyx_v_key);
+  __Pyx_XGIVEREF(__pyx_r);
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
 
 /* Python wrapper */
 static PyObject *__pyx_pw_6_hydra_11BloomFilter_25add(PyObject *__pyx_v_self, PyObject *__pyx_v_ustring); /*proto*/
@@ -5955,50 +6384,125 @@ static PyObject *__pyx_pw_6_hydra_11BloomFilter_25add(PyObject *__pyx_v_self, Py
 }
 
 static PyObject *__pyx_pf_6_hydra_11BloomFilter_24add(struct __pyx_obj_6_hydra_BloomFilter *__pyx_v_self, PyObject *__pyx_v_ustring) {
-  unsigned PY_LONG_LONG __pyx_v_i;
+  PyObject *__pyx_r = NULL;
+  __Pyx_RefNannyDeclarations
+  PyObject *__pyx_t_1 = NULL;
+  __Pyx_RefNannySetupContext("add", 0);
+  __Pyx_XDECREF(__pyx_r);
+  __pyx_t_1 = __pyx_f_6_hydra_11BloomFilter_add(__pyx_v_self, __pyx_v_ustring, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 371, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __pyx_r = __pyx_t_1;
+  __pyx_t_1 = 0;
+  goto __pyx_L0;
+
+  /* function exit code */
+  __pyx_L1_error:;
+  __Pyx_XDECREF(__pyx_t_1);
+  __Pyx_AddTraceback("_hydra.BloomFilter.add", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = NULL;
+  __pyx_L0:;
+  __Pyx_XGIVEREF(__pyx_r);
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* "_hydra.pyx":389
+ * 
+ *     @cython.boundscheck(False)
+ *     cpdef contains(self, ustring):             # <<<<<<<<<<<<<<
+ *         """ Check if a key is in the bloom filter.  May return a false positive. """
+ *         cdef unsigned long long _bucket_indexes[1000]
+ */
+
+static PyObject *__pyx_pw_6_hydra_11BloomFilter_27contains(PyObject *__pyx_v_self, PyObject *__pyx_v_ustring); /*proto*/
+static PyObject *__pyx_f_6_hydra_11BloomFilter_contains(struct __pyx_obj_6_hydra_BloomFilter *__pyx_v_self, PyObject *__pyx_v_ustring, int __pyx_skip_dispatch) {
   unsigned PY_LONG_LONG __pyx_v__bucket_indexes[0x3E8];
+  unsigned PY_LONG_LONG __pyx_v_i;
   PyObject *__pyx_v_key = NULL;
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
-  int __pyx_t_1;
-  int __pyx_t_2;
+  PyObject *__pyx_t_1 = NULL;
+  PyObject *__pyx_t_2 = NULL;
   PyObject *__pyx_t_3 = NULL;
   PyObject *__pyx_t_4 = NULL;
-  char *__pyx_t_5;
-  PyObject *__pyx_t_6 = NULL;
-  unsigned long __pyx_t_7;
-  unsigned int __pyx_t_8;
-  unsigned PY_LONG_LONG __pyx_t_9;
-  __Pyx_RefNannySetupContext("add", 0);
+  PyObject *__pyx_t_5 = NULL;
+  int __pyx_t_6;
+  int __pyx_t_7;
+  char *__pyx_t_8;
+  unsigned long __pyx_t_9;
+  unsigned int __pyx_t_10;
+  unsigned PY_LONG_LONG __pyx_t_11;
+  __Pyx_RefNannySetupContext("contains", 0);
+  /* Check if called by wrapper */
+  if (unlikely(__pyx_skip_dispatch)) ;
+  /* Check if overridden in Python */
+  else if (unlikely(Py_TYPE(((PyObject *)__pyx_v_self))->tp_dictoffset != 0)) {
+    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_contains); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 389, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_1);
+    if (!PyCFunction_Check(__pyx_t_1) || (PyCFunction_GET_FUNCTION(__pyx_t_1) != (PyCFunction)__pyx_pw_6_hydra_11BloomFilter_27contains)) {
+      __Pyx_XDECREF(__pyx_r);
+      __Pyx_INCREF(__pyx_t_1);
+      __pyx_t_3 = __pyx_t_1; __pyx_t_4 = NULL;
+      if (CYTHON_COMPILING_IN_CPYTHON && unlikely(PyMethod_Check(__pyx_t_3))) {
+        __pyx_t_4 = PyMethod_GET_SELF(__pyx_t_3);
+        if (likely(__pyx_t_4)) {
+          PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_3);
+          __Pyx_INCREF(__pyx_t_4);
+          __Pyx_INCREF(function);
+          __Pyx_DECREF_SET(__pyx_t_3, function);
+        }
+      }
+      if (!__pyx_t_4) {
+        __pyx_t_2 = __Pyx_PyObject_CallOneArg(__pyx_t_3, __pyx_v_ustring); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 389, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_2);
+      } else {
+        __pyx_t_5 = PyTuple_New(1+1); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 389, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_5);
+        __Pyx_GIVEREF(__pyx_t_4); PyTuple_SET_ITEM(__pyx_t_5, 0, __pyx_t_4); __pyx_t_4 = NULL;
+        __Pyx_INCREF(__pyx_v_ustring);
+        __Pyx_GIVEREF(__pyx_v_ustring);
+        PyTuple_SET_ITEM(__pyx_t_5, 0+1, __pyx_v_ustring);
+        __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_3, __pyx_t_5, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 389, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_2);
+        __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
+      }
+      __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+      __pyx_r = __pyx_t_2;
+      __pyx_t_2 = 0;
+      __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+      goto __pyx_L0;
+    }
+    __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+  }
 
-  /* "_hydra.pyx":372
- *         cdef unsigned long long _bucket_indexes[1000]
+  /* "_hydra.pyx":394
+ *         cdef unsigned long long i
  * 
  *         if isinstance(ustring, unicode):             # <<<<<<<<<<<<<<
  *             key = ustring.encode('utf8')
  *         else:
  */
-  __pyx_t_1 = PyUnicode_Check(__pyx_v_ustring); 
-  __pyx_t_2 = (__pyx_t_1 != 0);
-  if (__pyx_t_2) {
+  __pyx_t_6 = PyUnicode_Check(__pyx_v_ustring); 
+  __pyx_t_7 = (__pyx_t_6 != 0);
+  if (__pyx_t_7) {
 
-    /* "_hydra.pyx":373
+    /* "_hydra.pyx":395
  * 
  *         if isinstance(ustring, unicode):
  *             key = ustring.encode('utf8')             # <<<<<<<<<<<<<<
  *         else:
  *             key = ustring
  */
-    __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_ustring, __pyx_n_s_encode); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 373, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_3);
-    __pyx_t_4 = __Pyx_PyObject_Call(__pyx_t_3, __pyx_tuple__11, NULL); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 373, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_4);
-    __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-    __pyx_v_key = __pyx_t_4;
-    __pyx_t_4 = 0;
+    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_ustring, __pyx_n_s_encode); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 395, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_1);
+    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_1, __pyx_tuple__12, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 395, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_2);
+    __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+    __pyx_v_key = __pyx_t_2;
+    __pyx_t_2 = 0;
 
-    /* "_hydra.pyx":372
- *         cdef unsigned long long _bucket_indexes[1000]
+    /* "_hydra.pyx":394
+ *         cdef unsigned long long i
  * 
  *         if isinstance(ustring, unicode):             # <<<<<<<<<<<<<<
  *             key = ustring.encode('utf8')
@@ -6007,7 +6511,7 @@ static PyObject *__pyx_pf_6_hydra_11BloomFilter_24add(struct __pyx_obj_6_hydra_B
     goto __pyx_L3;
   }
 
-  /* "_hydra.pyx":375
+  /* "_hydra.pyx":397
  *             key = ustring.encode('utf8')
  *         else:
  *             key = ustring             # <<<<<<<<<<<<<<
@@ -6020,118 +6524,131 @@ static PyObject *__pyx_pf_6_hydra_11BloomFilter_24add(struct __pyx_obj_6_hydra_B
   }
   __pyx_L3:;
 
-  /* "_hydra.pyx":377
+  /* "_hydra.pyx":399
  *             key = ustring
  * 
  *         if self._ignore_case:             # <<<<<<<<<<<<<<
  *             c_lcase(key);
- * 
+ *         self._get_hash_buckets(key, _bucket_indexes, self._hashCount, self.buckets())
  */
-  __pyx_t_2 = (__pyx_v_self->_ignore_case != 0);
-  if (__pyx_t_2) {
+  __pyx_t_7 = (__pyx_v_self->_ignore_case != 0);
+  if (__pyx_t_7) {
 
-    /* "_hydra.pyx":378
+    /* "_hydra.pyx":400
  * 
  *         if self._ignore_case:
  *             c_lcase(key);             # <<<<<<<<<<<<<<
- * 
  *         self._get_hash_buckets(key, _bucket_indexes, self._hashCount, self.buckets())
+ *         for i in range(self._hashCount):
  */
-    __pyx_t_5 = __Pyx_PyObject_AsString(__pyx_v_key); if (unlikely((!__pyx_t_5) && PyErr_Occurred())) __PYX_ERR(0, 378, __pyx_L1_error)
-    __pyx_f_6_hydra_c_lcase(__pyx_t_5);
+    __pyx_t_8 = __Pyx_PyObject_AsString(__pyx_v_key); if (unlikely((!__pyx_t_8) && PyErr_Occurred())) __PYX_ERR(0, 400, __pyx_L1_error)
+    __pyx_f_6_hydra_c_lcase(__pyx_t_8);
 
-    /* "_hydra.pyx":377
+    /* "_hydra.pyx":399
  *             key = ustring
  * 
  *         if self._ignore_case:             # <<<<<<<<<<<<<<
  *             c_lcase(key);
- * 
+ *         self._get_hash_buckets(key, _bucket_indexes, self._hashCount, self.buckets())
  */
   }
 
-  /* "_hydra.pyx":380
+  /* "_hydra.pyx":401
+ *         if self._ignore_case:
  *             c_lcase(key);
- * 
  *         self._get_hash_buckets(key, _bucket_indexes, self._hashCount, self.buckets())             # <<<<<<<<<<<<<<
  *         for i in range(self._hashCount):
- *             self._bitmap[_bucket_indexes[i]] = 1
+ *             if not self._bitmap[_bucket_indexes[i]]:
  */
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_buckets); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 380, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_3);
-  __pyx_t_6 = NULL;
-  if (CYTHON_COMPILING_IN_CPYTHON && likely(PyMethod_Check(__pyx_t_3))) {
-    __pyx_t_6 = PyMethod_GET_SELF(__pyx_t_3);
-    if (likely(__pyx_t_6)) {
-      PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_3);
-      __Pyx_INCREF(__pyx_t_6);
-      __Pyx_INCREF(function);
-      __Pyx_DECREF_SET(__pyx_t_3, function);
-    }
-  }
-  if (__pyx_t_6) {
-    __pyx_t_4 = __Pyx_PyObject_CallOneArg(__pyx_t_3, __pyx_t_6); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 380, __pyx_L1_error)
-    __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-  } else {
-    __pyx_t_4 = __Pyx_PyObject_CallNoArg(__pyx_t_3); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 380, __pyx_L1_error)
-  }
-  __Pyx_GOTREF(__pyx_t_4);
-  __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  __pyx_t_7 = __Pyx_PyInt_As_unsigned_long(__pyx_t_4); if (unlikely((__pyx_t_7 == (unsigned long)-1) && PyErr_Occurred())) __PYX_ERR(0, 380, __pyx_L1_error)
-  __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-  ((struct __pyx_vtabstruct_6_hydra_BloomFilter *)__pyx_v_self->__pyx_vtab)->_get_hash_buckets(__pyx_v_self, __pyx_v_key, __pyx_v__bucket_indexes, __pyx_v_self->_hashCount, __pyx_t_7);
+  if (!(likely(PyBytes_CheckExact(__pyx_v_key))||((__pyx_v_key) == Py_None)||(PyErr_Format(PyExc_TypeError, "Expected %.16s, got %.200s", "bytes", Py_TYPE(__pyx_v_key)->tp_name), 0))) __PYX_ERR(0, 401, __pyx_L1_error)
+  __pyx_t_2 = ((struct __pyx_vtabstruct_6_hydra_BloomFilter *)__pyx_v_self->__pyx_vtab)->buckets(__pyx_v_self, 0); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 401, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_2);
+  __pyx_t_9 = __Pyx_PyInt_As_unsigned_long(__pyx_t_2); if (unlikely((__pyx_t_9 == (unsigned long)-1) && PyErr_Occurred())) __PYX_ERR(0, 401, __pyx_L1_error)
+  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+  ((struct __pyx_vtabstruct_6_hydra_BloomFilter *)__pyx_v_self->__pyx_vtab)->_get_hash_buckets(__pyx_v_self, ((PyObject*)__pyx_v_key), __pyx_v__bucket_indexes, __pyx_v_self->_hashCount, __pyx_t_9);
 
-  /* "_hydra.pyx":381
- * 
+  /* "_hydra.pyx":402
+ *             c_lcase(key);
  *         self._get_hash_buckets(key, _bucket_indexes, self._hashCount, self.buckets())
  *         for i in range(self._hashCount):             # <<<<<<<<<<<<<<
- *             self._bitmap[_bucket_indexes[i]] = 1
- * 
+ *             if not self._bitmap[_bucket_indexes[i]]:
+ *                 return False
  */
-  __pyx_t_8 = __pyx_v_self->_hashCount;
-  for (__pyx_t_9 = 0; __pyx_t_9 < __pyx_t_8; __pyx_t_9+=1) {
-    __pyx_v_i = __pyx_t_9;
+  __pyx_t_10 = __pyx_v_self->_hashCount;
+  for (__pyx_t_11 = 0; __pyx_t_11 < __pyx_t_10; __pyx_t_11+=1) {
+    __pyx_v_i = __pyx_t_11;
 
-    /* "_hydra.pyx":382
+    /* "_hydra.pyx":403
  *         self._get_hash_buckets(key, _bucket_indexes, self._hashCount, self.buckets())
  *         for i in range(self._hashCount):
- *             self._bitmap[_bucket_indexes[i]] = 1             # <<<<<<<<<<<<<<
- * 
- *     @cython.boundscheck(False)
+ *             if not self._bitmap[_bucket_indexes[i]]:             # <<<<<<<<<<<<<<
+ *                 return False
+ *         return True
  */
-    if (unlikely(__Pyx_SetItemInt(((PyObject *)__pyx_v_self->_bitmap), (__pyx_v__bucket_indexes[__pyx_v_i]), __pyx_int_1, unsigned PY_LONG_LONG, 0, __Pyx_PyInt_From_unsigned_PY_LONG_LONG, 0, 0, 0) < 0)) __PYX_ERR(0, 382, __pyx_L1_error)
+    __pyx_t_2 = __Pyx_GetItemInt(((PyObject *)__pyx_v_self->_bitmap), (__pyx_v__bucket_indexes[__pyx_v_i]), unsigned PY_LONG_LONG, 0, __Pyx_PyInt_From_unsigned_PY_LONG_LONG, 0, 0, 0); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 403, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_2);
+    __pyx_t_7 = __Pyx_PyObject_IsTrue(__pyx_t_2); if (unlikely(__pyx_t_7 < 0)) __PYX_ERR(0, 403, __pyx_L1_error)
+    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+    __pyx_t_6 = ((!__pyx_t_7) != 0);
+    if (__pyx_t_6) {
+
+      /* "_hydra.pyx":404
+ *         for i in range(self._hashCount):
+ *             if not self._bitmap[_bucket_indexes[i]]:
+ *                 return False             # <<<<<<<<<<<<<<
+ *         return True
+ * 
+ */
+      __Pyx_XDECREF(__pyx_r);
+      __Pyx_INCREF(Py_False);
+      __pyx_r = Py_False;
+      goto __pyx_L0;
+
+      /* "_hydra.pyx":403
+ *         self._get_hash_buckets(key, _bucket_indexes, self._hashCount, self.buckets())
+ *         for i in range(self._hashCount):
+ *             if not self._bitmap[_bucket_indexes[i]]:             # <<<<<<<<<<<<<<
+ *                 return False
+ *         return True
+ */
+    }
   }
 
-  /* "_hydra.pyx":367
+  /* "_hydra.pyx":405
+ *             if not self._bitmap[_bucket_indexes[i]]:
+ *                 return False
+ *         return True             # <<<<<<<<<<<<<<
+ * 
+ *     cpdef buckets(self):
+ */
+  __Pyx_XDECREF(__pyx_r);
+  __Pyx_INCREF(Py_True);
+  __pyx_r = Py_True;
+  goto __pyx_L0;
+
+  /* "_hydra.pyx":389
  * 
  *     @cython.boundscheck(False)
- *     def add(self, ustring):             # <<<<<<<<<<<<<<
- *         """ Add a key into the filter.  Just like a set.  """
- *         cdef unsigned long long i
+ *     cpdef contains(self, ustring):             # <<<<<<<<<<<<<<
+ *         """ Check if a key is in the bloom filter.  May return a false positive. """
+ *         cdef unsigned long long _bucket_indexes[1000]
  */
 
   /* function exit code */
-  __pyx_r = Py_None; __Pyx_INCREF(Py_None);
-  goto __pyx_L0;
   __pyx_L1_error:;
+  __Pyx_XDECREF(__pyx_t_1);
+  __Pyx_XDECREF(__pyx_t_2);
   __Pyx_XDECREF(__pyx_t_3);
   __Pyx_XDECREF(__pyx_t_4);
-  __Pyx_XDECREF(__pyx_t_6);
-  __Pyx_AddTraceback("_hydra.BloomFilter.add", __pyx_clineno, __pyx_lineno, __pyx_filename);
-  __pyx_r = NULL;
+  __Pyx_XDECREF(__pyx_t_5);
+  __Pyx_AddTraceback("_hydra.BloomFilter.contains", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = 0;
   __pyx_L0:;
   __Pyx_XDECREF(__pyx_v_key);
   __Pyx_XGIVEREF(__pyx_r);
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
-
-/* "_hydra.pyx":385
- * 
- *     @cython.boundscheck(False)
- *     def contains(self, ustring):             # <<<<<<<<<<<<<<
- *         """ Check if a key is in the bloom filter.  May return a false positive. """
- *         cdef unsigned long long _bucket_indexes[1000]
- */
 
 /* Python wrapper */
 static PyObject *__pyx_pw_6_hydra_11BloomFilter_27contains(PyObject *__pyx_v_self, PyObject *__pyx_v_ustring); /*proto*/
@@ -6148,219 +6665,115 @@ static PyObject *__pyx_pw_6_hydra_11BloomFilter_27contains(PyObject *__pyx_v_sel
 }
 
 static PyObject *__pyx_pf_6_hydra_11BloomFilter_26contains(struct __pyx_obj_6_hydra_BloomFilter *__pyx_v_self, PyObject *__pyx_v_ustring) {
-  unsigned PY_LONG_LONG __pyx_v__bucket_indexes[0x3E8];
-  unsigned PY_LONG_LONG __pyx_v_i;
-  PyObject *__pyx_v_key = NULL;
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
-  int __pyx_t_1;
-  int __pyx_t_2;
-  PyObject *__pyx_t_3 = NULL;
-  PyObject *__pyx_t_4 = NULL;
-  char *__pyx_t_5;
-  PyObject *__pyx_t_6 = NULL;
-  unsigned long __pyx_t_7;
-  unsigned int __pyx_t_8;
-  unsigned PY_LONG_LONG __pyx_t_9;
+  PyObject *__pyx_t_1 = NULL;
   __Pyx_RefNannySetupContext("contains", 0);
-
-  /* "_hydra.pyx":390
- *         cdef unsigned long long i
- * 
- *         if isinstance(ustring, unicode):             # <<<<<<<<<<<<<<
- *             key = ustring.encode('utf8')
- *         else:
- */
-  __pyx_t_1 = PyUnicode_Check(__pyx_v_ustring); 
-  __pyx_t_2 = (__pyx_t_1 != 0);
-  if (__pyx_t_2) {
-
-    /* "_hydra.pyx":391
- * 
- *         if isinstance(ustring, unicode):
- *             key = ustring.encode('utf8')             # <<<<<<<<<<<<<<
- *         else:
- *             key = ustring
- */
-    __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_ustring, __pyx_n_s_encode); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 391, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_3);
-    __pyx_t_4 = __Pyx_PyObject_Call(__pyx_t_3, __pyx_tuple__12, NULL); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 391, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_4);
-    __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-    __pyx_v_key = __pyx_t_4;
-    __pyx_t_4 = 0;
-
-    /* "_hydra.pyx":390
- *         cdef unsigned long long i
- * 
- *         if isinstance(ustring, unicode):             # <<<<<<<<<<<<<<
- *             key = ustring.encode('utf8')
- *         else:
- */
-    goto __pyx_L3;
-  }
-
-  /* "_hydra.pyx":393
- *             key = ustring.encode('utf8')
- *         else:
- *             key = ustring             # <<<<<<<<<<<<<<
- * 
- *         if self._ignore_case:
- */
-  /*else*/ {
-    __Pyx_INCREF(__pyx_v_ustring);
-    __pyx_v_key = __pyx_v_ustring;
-  }
-  __pyx_L3:;
-
-  /* "_hydra.pyx":395
- *             key = ustring
- * 
- *         if self._ignore_case:             # <<<<<<<<<<<<<<
- *             c_lcase(key);
- *         self._get_hash_buckets(key, _bucket_indexes, self._hashCount, self.buckets())
- */
-  __pyx_t_2 = (__pyx_v_self->_ignore_case != 0);
-  if (__pyx_t_2) {
-
-    /* "_hydra.pyx":396
- * 
- *         if self._ignore_case:
- *             c_lcase(key);             # <<<<<<<<<<<<<<
- *         self._get_hash_buckets(key, _bucket_indexes, self._hashCount, self.buckets())
- *         for i in range(self._hashCount):
- */
-    __pyx_t_5 = __Pyx_PyObject_AsString(__pyx_v_key); if (unlikely((!__pyx_t_5) && PyErr_Occurred())) __PYX_ERR(0, 396, __pyx_L1_error)
-    __pyx_f_6_hydra_c_lcase(__pyx_t_5);
-
-    /* "_hydra.pyx":395
- *             key = ustring
- * 
- *         if self._ignore_case:             # <<<<<<<<<<<<<<
- *             c_lcase(key);
- *         self._get_hash_buckets(key, _bucket_indexes, self._hashCount, self.buckets())
- */
-  }
-
-  /* "_hydra.pyx":397
- *         if self._ignore_case:
- *             c_lcase(key);
- *         self._get_hash_buckets(key, _bucket_indexes, self._hashCount, self.buckets())             # <<<<<<<<<<<<<<
- *         for i in range(self._hashCount):
- *             if not self._bitmap[_bucket_indexes[i]]:
- */
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_buckets); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 397, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_3);
-  __pyx_t_6 = NULL;
-  if (CYTHON_COMPILING_IN_CPYTHON && likely(PyMethod_Check(__pyx_t_3))) {
-    __pyx_t_6 = PyMethod_GET_SELF(__pyx_t_3);
-    if (likely(__pyx_t_6)) {
-      PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_3);
-      __Pyx_INCREF(__pyx_t_6);
-      __Pyx_INCREF(function);
-      __Pyx_DECREF_SET(__pyx_t_3, function);
-    }
-  }
-  if (__pyx_t_6) {
-    __pyx_t_4 = __Pyx_PyObject_CallOneArg(__pyx_t_3, __pyx_t_6); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 397, __pyx_L1_error)
-    __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-  } else {
-    __pyx_t_4 = __Pyx_PyObject_CallNoArg(__pyx_t_3); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 397, __pyx_L1_error)
-  }
-  __Pyx_GOTREF(__pyx_t_4);
-  __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  __pyx_t_7 = __Pyx_PyInt_As_unsigned_long(__pyx_t_4); if (unlikely((__pyx_t_7 == (unsigned long)-1) && PyErr_Occurred())) __PYX_ERR(0, 397, __pyx_L1_error)
-  __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-  ((struct __pyx_vtabstruct_6_hydra_BloomFilter *)__pyx_v_self->__pyx_vtab)->_get_hash_buckets(__pyx_v_self, __pyx_v_key, __pyx_v__bucket_indexes, __pyx_v_self->_hashCount, __pyx_t_7);
-
-  /* "_hydra.pyx":398
- *             c_lcase(key);
- *         self._get_hash_buckets(key, _bucket_indexes, self._hashCount, self.buckets())
- *         for i in range(self._hashCount):             # <<<<<<<<<<<<<<
- *             if not self._bitmap[_bucket_indexes[i]]:
- *                 return False
- */
-  __pyx_t_8 = __pyx_v_self->_hashCount;
-  for (__pyx_t_9 = 0; __pyx_t_9 < __pyx_t_8; __pyx_t_9+=1) {
-    __pyx_v_i = __pyx_t_9;
-
-    /* "_hydra.pyx":399
- *         self._get_hash_buckets(key, _bucket_indexes, self._hashCount, self.buckets())
- *         for i in range(self._hashCount):
- *             if not self._bitmap[_bucket_indexes[i]]:             # <<<<<<<<<<<<<<
- *                 return False
- *         return True
- */
-    __pyx_t_4 = __Pyx_GetItemInt(((PyObject *)__pyx_v_self->_bitmap), (__pyx_v__bucket_indexes[__pyx_v_i]), unsigned PY_LONG_LONG, 0, __Pyx_PyInt_From_unsigned_PY_LONG_LONG, 0, 0, 0); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 399, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_4);
-    __pyx_t_2 = __Pyx_PyObject_IsTrue(__pyx_t_4); if (unlikely(__pyx_t_2 < 0)) __PYX_ERR(0, 399, __pyx_L1_error)
-    __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-    __pyx_t_1 = ((!__pyx_t_2) != 0);
-    if (__pyx_t_1) {
-
-      /* "_hydra.pyx":400
- *         for i in range(self._hashCount):
- *             if not self._bitmap[_bucket_indexes[i]]:
- *                 return False             # <<<<<<<<<<<<<<
- *         return True
- * 
- */
-      __Pyx_XDECREF(__pyx_r);
-      __Pyx_INCREF(Py_False);
-      __pyx_r = Py_False;
-      goto __pyx_L0;
-
-      /* "_hydra.pyx":399
- *         self._get_hash_buckets(key, _bucket_indexes, self._hashCount, self.buckets())
- *         for i in range(self._hashCount):
- *             if not self._bitmap[_bucket_indexes[i]]:             # <<<<<<<<<<<<<<
- *                 return False
- *         return True
- */
-    }
-  }
-
-  /* "_hydra.pyx":401
- *             if not self._bitmap[_bucket_indexes[i]]:
- *                 return False
- *         return True             # <<<<<<<<<<<<<<
- * 
- *     def buckets(self):
- */
   __Pyx_XDECREF(__pyx_r);
-  __Pyx_INCREF(Py_True);
-  __pyx_r = Py_True;
+  __pyx_t_1 = __pyx_f_6_hydra_11BloomFilter_contains(__pyx_v_self, __pyx_v_ustring, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 389, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __pyx_r = __pyx_t_1;
+  __pyx_t_1 = 0;
   goto __pyx_L0;
-
-  /* "_hydra.pyx":385
- * 
- *     @cython.boundscheck(False)
- *     def contains(self, ustring):             # <<<<<<<<<<<<<<
- *         """ Check if a key is in the bloom filter.  May return a false positive. """
- *         cdef unsigned long long _bucket_indexes[1000]
- */
 
   /* function exit code */
   __pyx_L1_error:;
-  __Pyx_XDECREF(__pyx_t_3);
-  __Pyx_XDECREF(__pyx_t_4);
-  __Pyx_XDECREF(__pyx_t_6);
+  __Pyx_XDECREF(__pyx_t_1);
   __Pyx_AddTraceback("_hydra.BloomFilter.contains", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
-  __Pyx_XDECREF(__pyx_v_key);
   __Pyx_XGIVEREF(__pyx_r);
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-/* "_hydra.pyx":403
+/* "_hydra.pyx":407
  *         return True
  * 
- *     def buckets(self):             # <<<<<<<<<<<<<<
+ *     cpdef buckets(self):             # <<<<<<<<<<<<<<
  *         """ Return the number of total buckets (bits) in the bloom filter """
- *         return len(self._bitmap)
+ *         return self._bitmap.size()
  */
+
+static PyObject *__pyx_pw_6_hydra_11BloomFilter_29buckets(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused); /*proto*/
+static PyObject *__pyx_f_6_hydra_11BloomFilter_buckets(struct __pyx_obj_6_hydra_BloomFilter *__pyx_v_self, int __pyx_skip_dispatch) {
+  PyObject *__pyx_r = NULL;
+  __Pyx_RefNannyDeclarations
+  PyObject *__pyx_t_1 = NULL;
+  PyObject *__pyx_t_2 = NULL;
+  PyObject *__pyx_t_3 = NULL;
+  PyObject *__pyx_t_4 = NULL;
+  __Pyx_RefNannySetupContext("buckets", 0);
+  /* Check if called by wrapper */
+  if (unlikely(__pyx_skip_dispatch)) ;
+  /* Check if overridden in Python */
+  else if (unlikely(Py_TYPE(((PyObject *)__pyx_v_self))->tp_dictoffset != 0)) {
+    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_buckets); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 407, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_1);
+    if (!PyCFunction_Check(__pyx_t_1) || (PyCFunction_GET_FUNCTION(__pyx_t_1) != (PyCFunction)__pyx_pw_6_hydra_11BloomFilter_29buckets)) {
+      __Pyx_XDECREF(__pyx_r);
+      __Pyx_INCREF(__pyx_t_1);
+      __pyx_t_3 = __pyx_t_1; __pyx_t_4 = NULL;
+      if (CYTHON_COMPILING_IN_CPYTHON && unlikely(PyMethod_Check(__pyx_t_3))) {
+        __pyx_t_4 = PyMethod_GET_SELF(__pyx_t_3);
+        if (likely(__pyx_t_4)) {
+          PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_3);
+          __Pyx_INCREF(__pyx_t_4);
+          __Pyx_INCREF(function);
+          __Pyx_DECREF_SET(__pyx_t_3, function);
+        }
+      }
+      if (__pyx_t_4) {
+        __pyx_t_2 = __Pyx_PyObject_CallOneArg(__pyx_t_3, __pyx_t_4); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 407, __pyx_L1_error)
+        __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+      } else {
+        __pyx_t_2 = __Pyx_PyObject_CallNoArg(__pyx_t_3); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 407, __pyx_L1_error)
+      }
+      __Pyx_GOTREF(__pyx_t_2);
+      __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+      __pyx_r = __pyx_t_2;
+      __pyx_t_2 = 0;
+      __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+      goto __pyx_L0;
+    }
+    __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+  }
+
+  /* "_hydra.pyx":409
+ *     cpdef buckets(self):
+ *         """ Return the number of total buckets (bits) in the bloom filter """
+ *         return self._bitmap.size()             # <<<<<<<<<<<<<<
+ * 
+ *     def getHashBuckets(self, ustring, unsigned int hashCount, unsigned long long max):
+ */
+  __Pyx_XDECREF(__pyx_r);
+  __pyx_t_1 = ((struct __pyx_vtabstruct_6_hydra_MMapBitField *)__pyx_v_self->_bitmap->__pyx_vtab)->size(__pyx_v_self->_bitmap, 0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 409, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __pyx_r = __pyx_t_1;
+  __pyx_t_1 = 0;
+  goto __pyx_L0;
+
+  /* "_hydra.pyx":407
+ *         return True
+ * 
+ *     cpdef buckets(self):             # <<<<<<<<<<<<<<
+ *         """ Return the number of total buckets (bits) in the bloom filter """
+ *         return self._bitmap.size()
+ */
+
+  /* function exit code */
+  __pyx_L1_error:;
+  __Pyx_XDECREF(__pyx_t_1);
+  __Pyx_XDECREF(__pyx_t_2);
+  __Pyx_XDECREF(__pyx_t_3);
+  __Pyx_XDECREF(__pyx_t_4);
+  __Pyx_AddTraceback("_hydra.BloomFilter.buckets", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = 0;
+  __pyx_L0:;
+  __Pyx_XGIVEREF(__pyx_r);
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
 
 /* Python wrapper */
 static PyObject *__pyx_pw_6_hydra_11BloomFilter_29buckets(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused); /*proto*/
@@ -6380,34 +6793,13 @@ static PyObject *__pyx_pf_6_hydra_11BloomFilter_28buckets(struct __pyx_obj_6_hyd
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
-  Py_ssize_t __pyx_t_2;
   __Pyx_RefNannySetupContext("buckets", 0);
-
-  /* "_hydra.pyx":405
- *     def buckets(self):
- *         """ Return the number of total buckets (bits) in the bloom filter """
- *         return len(self._bitmap)             # <<<<<<<<<<<<<<
- * 
- *     def getHashBuckets(self, key, unsigned int hashCount, unsigned long long max):
- */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = ((PyObject *)__pyx_v_self->_bitmap);
-  __Pyx_INCREF(__pyx_t_1);
-  __pyx_t_2 = PyObject_Length(__pyx_t_1); if (unlikely(__pyx_t_2 == -1)) __PYX_ERR(0, 405, __pyx_L1_error)
-  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __pyx_t_1 = PyInt_FromSsize_t(__pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 405, __pyx_L1_error)
+  __pyx_t_1 = __pyx_f_6_hydra_11BloomFilter_buckets(__pyx_v_self, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 407, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
   goto __pyx_L0;
-
-  /* "_hydra.pyx":403
- *         return True
- * 
- *     def buckets(self):             # <<<<<<<<<<<<<<
- *         """ Return the number of total buckets (bits) in the bloom filter """
- *         return len(self._bitmap)
- */
 
   /* function exit code */
   __pyx_L1_error:;
@@ -6420,10 +6812,10 @@ static PyObject *__pyx_pf_6_hydra_11BloomFilter_28buckets(struct __pyx_obj_6_hyd
   return __pyx_r;
 }
 
-/* "_hydra.pyx":407
- *         return len(self._bitmap)
+/* "_hydra.pyx":411
+ *         return self._bitmap.size()
  * 
- *     def getHashBuckets(self, key, unsigned int hashCount, unsigned long long max):             # <<<<<<<<<<<<<<
+ *     def getHashBuckets(self, ustring, unsigned int hashCount, unsigned long long max):             # <<<<<<<<<<<<<<
  *         """ This method is just available for test purposes.  Not actually useful for normal users. """
  *         cdef unsigned long long _bucket_indexes[1000]
  */
@@ -6432,14 +6824,14 @@ static PyObject *__pyx_pf_6_hydra_11BloomFilter_28buckets(struct __pyx_obj_6_hyd
 static PyObject *__pyx_pw_6_hydra_11BloomFilter_31getHashBuckets(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
 static char __pyx_doc_6_hydra_11BloomFilter_30getHashBuckets[] = " This method is just available for test purposes.  Not actually useful for normal users. ";
 static PyObject *__pyx_pw_6_hydra_11BloomFilter_31getHashBuckets(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
-  PyObject *__pyx_v_key = 0;
+  PyObject *__pyx_v_ustring = 0;
   unsigned int __pyx_v_hashCount;
   unsigned PY_LONG_LONG __pyx_v_max;
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("getHashBuckets (wrapper)", 0);
   {
-    static PyObject **__pyx_pyargnames[] = {&__pyx_n_s_key,&__pyx_n_s_hashCount,&__pyx_n_s_max,0};
+    static PyObject **__pyx_pyargnames[] = {&__pyx_n_s_ustring,&__pyx_n_s_hashCount,&__pyx_n_s_max,0};
     PyObject* values[3] = {0,0,0};
     if (unlikely(__pyx_kwds)) {
       Py_ssize_t kw_args;
@@ -6454,21 +6846,21 @@ static PyObject *__pyx_pw_6_hydra_11BloomFilter_31getHashBuckets(PyObject *__pyx
       kw_args = PyDict_Size(__pyx_kwds);
       switch (pos_args) {
         case  0:
-        if (likely((values[0] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_key)) != 0)) kw_args--;
+        if (likely((values[0] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_ustring)) != 0)) kw_args--;
         else goto __pyx_L5_argtuple_error;
         case  1:
         if (likely((values[1] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_hashCount)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("getHashBuckets", 1, 3, 3, 1); __PYX_ERR(0, 407, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("getHashBuckets", 1, 3, 3, 1); __PYX_ERR(0, 411, __pyx_L3_error)
         }
         case  2:
         if (likely((values[2] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_max)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("getHashBuckets", 1, 3, 3, 2); __PYX_ERR(0, 407, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("getHashBuckets", 1, 3, 3, 2); __PYX_ERR(0, 411, __pyx_L3_error)
         }
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "getHashBuckets") < 0)) __PYX_ERR(0, 407, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "getHashBuckets") < 0)) __PYX_ERR(0, 411, __pyx_L3_error)
       }
     } else if (PyTuple_GET_SIZE(__pyx_args) != 3) {
       goto __pyx_L5_argtuple_error;
@@ -6477,83 +6869,137 @@ static PyObject *__pyx_pw_6_hydra_11BloomFilter_31getHashBuckets(PyObject *__pyx
       values[1] = PyTuple_GET_ITEM(__pyx_args, 1);
       values[2] = PyTuple_GET_ITEM(__pyx_args, 2);
     }
-    __pyx_v_key = values[0];
-    __pyx_v_hashCount = __Pyx_PyInt_As_unsigned_int(values[1]); if (unlikely((__pyx_v_hashCount == (unsigned int)-1) && PyErr_Occurred())) __PYX_ERR(0, 407, __pyx_L3_error)
-    __pyx_v_max = __Pyx_PyInt_As_unsigned_PY_LONG_LONG(values[2]); if (unlikely((__pyx_v_max == (unsigned PY_LONG_LONG)-1) && PyErr_Occurred())) __PYX_ERR(0, 407, __pyx_L3_error)
+    __pyx_v_ustring = values[0];
+    __pyx_v_hashCount = __Pyx_PyInt_As_unsigned_int(values[1]); if (unlikely((__pyx_v_hashCount == (unsigned int)-1) && PyErr_Occurred())) __PYX_ERR(0, 411, __pyx_L3_error)
+    __pyx_v_max = __Pyx_PyInt_As_unsigned_PY_LONG_LONG(values[2]); if (unlikely((__pyx_v_max == (unsigned PY_LONG_LONG)-1) && PyErr_Occurred())) __PYX_ERR(0, 411, __pyx_L3_error)
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("getHashBuckets", 1, 3, 3, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 407, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("getHashBuckets", 1, 3, 3, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 411, __pyx_L3_error)
   __pyx_L3_error:;
   __Pyx_AddTraceback("_hydra.BloomFilter.getHashBuckets", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_6_hydra_11BloomFilter_30getHashBuckets(((struct __pyx_obj_6_hydra_BloomFilter *)__pyx_v_self), __pyx_v_key, __pyx_v_hashCount, __pyx_v_max);
+  __pyx_r = __pyx_pf_6_hydra_11BloomFilter_30getHashBuckets(((struct __pyx_obj_6_hydra_BloomFilter *)__pyx_v_self), __pyx_v_ustring, __pyx_v_hashCount, __pyx_v_max);
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_6_hydra_11BloomFilter_30getHashBuckets(struct __pyx_obj_6_hydra_BloomFilter *__pyx_v_self, PyObject *__pyx_v_key, unsigned int __pyx_v_hashCount, unsigned PY_LONG_LONG __pyx_v_max) {
+static PyObject *__pyx_pf_6_hydra_11BloomFilter_30getHashBuckets(struct __pyx_obj_6_hydra_BloomFilter *__pyx_v_self, PyObject *__pyx_v_ustring, unsigned int __pyx_v_hashCount, unsigned PY_LONG_LONG __pyx_v_max) {
   unsigned PY_LONG_LONG __pyx_v__bucket_indexes[0x3E8];
+  PyObject *__pyx_v_key = NULL;
   PyObject *__pyx_v_result = NULL;
   unsigned int __pyx_v_i;
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
-  PyObject *__pyx_t_1 = NULL;
-  unsigned int __pyx_t_2;
-  unsigned int __pyx_t_3;
-  int __pyx_t_4;
+  int __pyx_t_1;
+  int __pyx_t_2;
+  PyObject *__pyx_t_3 = NULL;
+  PyObject *__pyx_t_4 = NULL;
+  unsigned int __pyx_t_5;
+  unsigned int __pyx_t_6;
+  int __pyx_t_7;
   __Pyx_RefNannySetupContext("getHashBuckets", 0);
 
-  /* "_hydra.pyx":411
+  /* "_hydra.pyx":415
  *         cdef unsigned long long _bucket_indexes[1000]
+ * 
+ *         if isinstance(ustring, unicode):             # <<<<<<<<<<<<<<
+ *             key = ustring.encode('utf8')
+ *         else:
+ */
+  __pyx_t_1 = PyUnicode_Check(__pyx_v_ustring); 
+  __pyx_t_2 = (__pyx_t_1 != 0);
+  if (__pyx_t_2) {
+
+    /* "_hydra.pyx":416
+ * 
+ *         if isinstance(ustring, unicode):
+ *             key = ustring.encode('utf8')             # <<<<<<<<<<<<<<
+ *         else:
+ *             key = ustring
+ */
+    __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_ustring, __pyx_n_s_encode); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 416, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_3);
+    __pyx_t_4 = __Pyx_PyObject_Call(__pyx_t_3, __pyx_tuple__13, NULL); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 416, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_4);
+    __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+    __pyx_v_key = __pyx_t_4;
+    __pyx_t_4 = 0;
+
+    /* "_hydra.pyx":415
+ *         cdef unsigned long long _bucket_indexes[1000]
+ * 
+ *         if isinstance(ustring, unicode):             # <<<<<<<<<<<<<<
+ *             key = ustring.encode('utf8')
+ *         else:
+ */
+    goto __pyx_L3;
+  }
+
+  /* "_hydra.pyx":418
+ *             key = ustring.encode('utf8')
+ *         else:
+ *             key = ustring             # <<<<<<<<<<<<<<
+ * 
+ *         self._get_hash_buckets(key, _bucket_indexes, hashCount, max)
+ */
+  /*else*/ {
+    __Pyx_INCREF(__pyx_v_ustring);
+    __pyx_v_key = __pyx_v_ustring;
+  }
+  __pyx_L3:;
+
+  /* "_hydra.pyx":420
+ *             key = ustring
  * 
  *         self._get_hash_buckets(key, _bucket_indexes, hashCount, max)             # <<<<<<<<<<<<<<
  *         result = []
  *         for i in range(hashCount):
  */
-  ((struct __pyx_vtabstruct_6_hydra_BloomFilter *)__pyx_v_self->__pyx_vtab)->_get_hash_buckets(__pyx_v_self, __pyx_v_key, __pyx_v__bucket_indexes, __pyx_v_hashCount, __pyx_v_max);
+  if (!(likely(PyBytes_CheckExact(__pyx_v_key))||((__pyx_v_key) == Py_None)||(PyErr_Format(PyExc_TypeError, "Expected %.16s, got %.200s", "bytes", Py_TYPE(__pyx_v_key)->tp_name), 0))) __PYX_ERR(0, 420, __pyx_L1_error)
+  ((struct __pyx_vtabstruct_6_hydra_BloomFilter *)__pyx_v_self->__pyx_vtab)->_get_hash_buckets(__pyx_v_self, ((PyObject*)__pyx_v_key), __pyx_v__bucket_indexes, __pyx_v_hashCount, __pyx_v_max);
 
-  /* "_hydra.pyx":412
+  /* "_hydra.pyx":421
  * 
  *         self._get_hash_buckets(key, _bucket_indexes, hashCount, max)
  *         result = []             # <<<<<<<<<<<<<<
  *         for i in range(hashCount):
  *             result.append(_bucket_indexes[i])
  */
-  __pyx_t_1 = PyList_New(0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 412, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_1);
-  __pyx_v_result = ((PyObject*)__pyx_t_1);
-  __pyx_t_1 = 0;
+  __pyx_t_4 = PyList_New(0); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 421, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_4);
+  __pyx_v_result = ((PyObject*)__pyx_t_4);
+  __pyx_t_4 = 0;
 
-  /* "_hydra.pyx":413
+  /* "_hydra.pyx":422
  *         self._get_hash_buckets(key, _bucket_indexes, hashCount, max)
  *         result = []
  *         for i in range(hashCount):             # <<<<<<<<<<<<<<
  *             result.append(_bucket_indexes[i])
  *         return result
  */
-  __pyx_t_2 = __pyx_v_hashCount;
-  for (__pyx_t_3 = 0; __pyx_t_3 < __pyx_t_2; __pyx_t_3+=1) {
-    __pyx_v_i = __pyx_t_3;
+  __pyx_t_5 = __pyx_v_hashCount;
+  for (__pyx_t_6 = 0; __pyx_t_6 < __pyx_t_5; __pyx_t_6+=1) {
+    __pyx_v_i = __pyx_t_6;
 
-    /* "_hydra.pyx":414
+    /* "_hydra.pyx":423
  *         result = []
  *         for i in range(hashCount):
  *             result.append(_bucket_indexes[i])             # <<<<<<<<<<<<<<
  *         return result
  * 
  */
-    __pyx_t_1 = __Pyx_PyInt_From_unsigned_PY_LONG_LONG((__pyx_v__bucket_indexes[__pyx_v_i])); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 414, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_1);
-    __pyx_t_4 = __Pyx_PyList_Append(__pyx_v_result, __pyx_t_1); if (unlikely(__pyx_t_4 == -1)) __PYX_ERR(0, 414, __pyx_L1_error)
-    __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+    __pyx_t_4 = __Pyx_PyInt_From_unsigned_PY_LONG_LONG((__pyx_v__bucket_indexes[__pyx_v_i])); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 423, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_4);
+    __pyx_t_7 = __Pyx_PyList_Append(__pyx_v_result, __pyx_t_4); if (unlikely(__pyx_t_7 == -1)) __PYX_ERR(0, 423, __pyx_L1_error)
+    __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
   }
 
-  /* "_hydra.pyx":415
+  /* "_hydra.pyx":424
  *         for i in range(hashCount):
  *             result.append(_bucket_indexes[i])
  *         return result             # <<<<<<<<<<<<<<
@@ -6565,30 +7011,32 @@ static PyObject *__pyx_pf_6_hydra_11BloomFilter_30getHashBuckets(struct __pyx_ob
   __pyx_r = __pyx_v_result;
   goto __pyx_L0;
 
-  /* "_hydra.pyx":407
- *         return len(self._bitmap)
+  /* "_hydra.pyx":411
+ *         return self._bitmap.size()
  * 
- *     def getHashBuckets(self, key, unsigned int hashCount, unsigned long long max):             # <<<<<<<<<<<<<<
+ *     def getHashBuckets(self, ustring, unsigned int hashCount, unsigned long long max):             # <<<<<<<<<<<<<<
  *         """ This method is just available for test purposes.  Not actually useful for normal users. """
  *         cdef unsigned long long _bucket_indexes[1000]
  */
 
   /* function exit code */
   __pyx_L1_error:;
-  __Pyx_XDECREF(__pyx_t_1);
+  __Pyx_XDECREF(__pyx_t_3);
+  __Pyx_XDECREF(__pyx_t_4);
   __Pyx_AddTraceback("_hydra.BloomFilter.getHashBuckets", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
+  __Pyx_XDECREF(__pyx_v_key);
   __Pyx_XDECREF(__pyx_v_result);
   __Pyx_XGIVEREF(__pyx_r);
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-/* "_hydra.pyx":418
+/* "_hydra.pyx":427
  * 
  *     @cython.boundscheck(False)
- *     cdef void _get_hash_buckets(self, key, unsigned long long * _bucket_indexes, unsigned int hashCount, unsigned long max):             # <<<<<<<<<<<<<<
+ *     cdef void _get_hash_buckets(self, bytes key, unsigned long long * _bucket_indexes, unsigned int hashCount, unsigned long max):             # <<<<<<<<<<<<<<
  *         """
  *         Murmur is faster than an SHA-based approach and provides as-good collision
  */
@@ -6599,65 +7047,31 @@ static void __pyx_f_6_hydra_11BloomFilter__get_hash_buckets(CYTHON_UNUSED struct
   unsigned long __pyx_v_hash2;
   unsigned long __pyx_v_i;
   __Pyx_RefNannyDeclarations
-  int __pyx_t_1;
-  int __pyx_t_2;
+  char *__pyx_t_1;
+  Py_ssize_t __pyx_t_2;
   PyObject *__pyx_t_3 = NULL;
   PyObject *__pyx_t_4 = NULL;
-  char *__pyx_t_5;
-  Py_ssize_t __pyx_t_6;
-  unsigned int __pyx_t_7;
-  unsigned long __pyx_t_8;
-  unsigned long __pyx_t_9;
+  unsigned int __pyx_t_5;
+  unsigned long __pyx_t_6;
+  unsigned long __pyx_t_7;
   __Pyx_RefNannySetupContext("_get_hash_buckets", 0);
-  __Pyx_INCREF(__pyx_v_key);
 
-  /* "_hydra.pyx":430
+  /* "_hydra.pyx":439
  *         cdef unsigned long i
- * 
- *         if isinstance(key, unicode):             # <<<<<<<<<<<<<<
- *             key = key.encode('utf8')
- * 
- */
-  __pyx_t_1 = PyUnicode_Check(__pyx_v_key); 
-  __pyx_t_2 = (__pyx_t_1 != 0);
-  if (__pyx_t_2) {
-
-    /* "_hydra.pyx":431
- * 
- *         if isinstance(key, unicode):
- *             key = key.encode('utf8')             # <<<<<<<<<<<<<<
- * 
- *         MurmurHash3_x64_128(<char*>key, len(key), 0, result)
- */
-    __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_key, __pyx_n_s_encode); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 431, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_3);
-    __pyx_t_4 = __Pyx_PyObject_Call(__pyx_t_3, __pyx_tuple__13, NULL); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 431, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_4);
-    __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-    __Pyx_DECREF_SET(__pyx_v_key, __pyx_t_4);
-    __pyx_t_4 = 0;
-
-    /* "_hydra.pyx":430
- *         cdef unsigned long i
- * 
- *         if isinstance(key, unicode):             # <<<<<<<<<<<<<<
- *             key = key.encode('utf8')
- * 
- */
-  }
-
-  /* "_hydra.pyx":433
- *             key = key.encode('utf8')
  * 
  *         MurmurHash3_x64_128(<char*>key, len(key), 0, result)             # <<<<<<<<<<<<<<
  *         hash1 = result[0]
  *         MurmurHash3_x64_128(<char*>key, len(key), result[1] & 0xFFFFFFFF, result)
  */
-  __pyx_t_5 = __Pyx_PyObject_AsString(__pyx_v_key); if (unlikely((!__pyx_t_5) && PyErr_Occurred())) __PYX_ERR(0, 433, __pyx_L1_error)
-  __pyx_t_6 = PyObject_Length(__pyx_v_key); if (unlikely(__pyx_t_6 == -1)) __PYX_ERR(0, 433, __pyx_L1_error)
-  MurmurHash3_x64_128(((char *)__pyx_t_5), __pyx_t_6, 0, __pyx_v_result);
+  __pyx_t_1 = __Pyx_PyObject_AsString(__pyx_v_key); if (unlikely((!__pyx_t_1) && PyErr_Occurred())) __PYX_ERR(0, 439, __pyx_L1_error)
+  if (unlikely(__pyx_v_key == Py_None)) {
+    PyErr_SetString(PyExc_TypeError, "object of type 'NoneType' has no len()");
+    __PYX_ERR(0, 439, __pyx_L1_error)
+  }
+  __pyx_t_2 = PyBytes_GET_SIZE(__pyx_v_key); if (unlikely(__pyx_t_2 == -1)) __PYX_ERR(0, 439, __pyx_L1_error)
+  MurmurHash3_x64_128(((char *)__pyx_t_1), __pyx_t_2, 0, __pyx_v_result);
 
-  /* "_hydra.pyx":434
+  /* "_hydra.pyx":440
  * 
  *         MurmurHash3_x64_128(<char*>key, len(key), 0, result)
  *         hash1 = result[0]             # <<<<<<<<<<<<<<
@@ -6666,25 +7080,29 @@ static void __pyx_f_6_hydra_11BloomFilter__get_hash_buckets(CYTHON_UNUSED struct
  */
   __pyx_v_hash1 = (__pyx_v_result[0]);
 
-  /* "_hydra.pyx":435
+  /* "_hydra.pyx":441
  *         MurmurHash3_x64_128(<char*>key, len(key), 0, result)
  *         hash1 = result[0]
  *         MurmurHash3_x64_128(<char*>key, len(key), result[1] & 0xFFFFFFFF, result)             # <<<<<<<<<<<<<<
  *         hash2 = result[0]
  * 
  */
-  __pyx_t_5 = __Pyx_PyObject_AsString(__pyx_v_key); if (unlikely((!__pyx_t_5) && PyErr_Occurred())) __PYX_ERR(0, 435, __pyx_L1_error)
-  __pyx_t_6 = PyObject_Length(__pyx_v_key); if (unlikely(__pyx_t_6 == -1)) __PYX_ERR(0, 435, __pyx_L1_error)
-  __pyx_t_4 = __Pyx_PyInt_From_unsigned_long((__pyx_v_result[1])); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 435, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_4);
-  __pyx_t_3 = PyNumber_And(__pyx_t_4, __pyx_int_4294967295); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 435, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_AsString(__pyx_v_key); if (unlikely((!__pyx_t_1) && PyErr_Occurred())) __PYX_ERR(0, 441, __pyx_L1_error)
+  if (unlikely(__pyx_v_key == Py_None)) {
+    PyErr_SetString(PyExc_TypeError, "object of type 'NoneType' has no len()");
+    __PYX_ERR(0, 441, __pyx_L1_error)
+  }
+  __pyx_t_2 = PyBytes_GET_SIZE(__pyx_v_key); if (unlikely(__pyx_t_2 == -1)) __PYX_ERR(0, 441, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyInt_From_unsigned_long((__pyx_v_result[1])); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 441, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-  __pyx_t_7 = __Pyx_PyInt_As_unsigned_int(__pyx_t_3); if (unlikely((__pyx_t_7 == (unsigned int)-1) && PyErr_Occurred())) __PYX_ERR(0, 435, __pyx_L1_error)
+  __pyx_t_4 = PyNumber_And(__pyx_t_3, __pyx_int_4294967295); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 441, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_4);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  MurmurHash3_x64_128(((char *)__pyx_t_5), __pyx_t_6, __pyx_t_7, __pyx_v_result);
+  __pyx_t_5 = __Pyx_PyInt_As_unsigned_int(__pyx_t_4); if (unlikely((__pyx_t_5 == (unsigned int)-1) && PyErr_Occurred())) __PYX_ERR(0, 441, __pyx_L1_error)
+  __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+  MurmurHash3_x64_128(((char *)__pyx_t_1), __pyx_t_2, __pyx_t_5, __pyx_v_result);
 
-  /* "_hydra.pyx":436
+  /* "_hydra.pyx":442
  *         hash1 = result[0]
  *         MurmurHash3_x64_128(<char*>key, len(key), result[1] & 0xFFFFFFFF, result)
  *         hash2 = result[0]             # <<<<<<<<<<<<<<
@@ -6693,36 +7111,36 @@ static void __pyx_f_6_hydra_11BloomFilter__get_hash_buckets(CYTHON_UNUSED struct
  */
   __pyx_v_hash2 = (__pyx_v_result[0]);
 
-  /* "_hydra.pyx":438
+  /* "_hydra.pyx":444
  *         hash2 = result[0]
  * 
  *         for i in range(hashCount):             # <<<<<<<<<<<<<<
  *             _bucket_indexes[i] = llabs((hash1 + i * hash2) % max)
  * 
  */
-  __pyx_t_7 = __pyx_v_hashCount;
-  for (__pyx_t_8 = 0; __pyx_t_8 < __pyx_t_7; __pyx_t_8+=1) {
-    __pyx_v_i = __pyx_t_8;
+  __pyx_t_5 = __pyx_v_hashCount;
+  for (__pyx_t_6 = 0; __pyx_t_6 < __pyx_t_5; __pyx_t_6+=1) {
+    __pyx_v_i = __pyx_t_6;
 
-    /* "_hydra.pyx":439
+    /* "_hydra.pyx":445
  * 
  *         for i in range(hashCount):
  *             _bucket_indexes[i] = llabs((hash1 + i * hash2) % max)             # <<<<<<<<<<<<<<
  * 
  *     cdef void _strip_newline(self, char *buffer, unsigned int size):
  */
-    __pyx_t_9 = (__pyx_v_hash1 + (__pyx_v_i * __pyx_v_hash2));
+    __pyx_t_7 = (__pyx_v_hash1 + (__pyx_v_i * __pyx_v_hash2));
     if (unlikely(__pyx_v_max == 0)) {
       PyErr_SetString(PyExc_ZeroDivisionError, "integer division or modulo by zero");
-      __PYX_ERR(0, 439, __pyx_L1_error)
+      __PYX_ERR(0, 445, __pyx_L1_error)
     }
-    (__pyx_v__bucket_indexes[__pyx_v_i]) = llabs((__pyx_t_9 % __pyx_v_max));
+    (__pyx_v__bucket_indexes[__pyx_v_i]) = llabs((__pyx_t_7 % __pyx_v_max));
   }
 
-  /* "_hydra.pyx":418
+  /* "_hydra.pyx":427
  * 
  *     @cython.boundscheck(False)
- *     cdef void _get_hash_buckets(self, key, unsigned long long * _bucket_indexes, unsigned int hashCount, unsigned long max):             # <<<<<<<<<<<<<<
+ *     cdef void _get_hash_buckets(self, bytes key, unsigned long long * _bucket_indexes, unsigned int hashCount, unsigned long max):             # <<<<<<<<<<<<<<
  *         """
  *         Murmur is faster than an SHA-based approach and provides as-good collision
  */
@@ -6734,11 +7152,10 @@ static void __pyx_f_6_hydra_11BloomFilter__get_hash_buckets(CYTHON_UNUSED struct
   __Pyx_XDECREF(__pyx_t_4);
   __Pyx_WriteUnraisable("_hydra.BloomFilter._get_hash_buckets", __pyx_clineno, __pyx_lineno, __pyx_filename, 0, 0);
   __pyx_L0:;
-  __Pyx_XDECREF(__pyx_v_key);
   __Pyx_RefNannyFinishContext();
 }
 
-/* "_hydra.pyx":441
+/* "_hydra.pyx":447
  *             _bucket_indexes[i] = llabs((hash1 + i * hash2) % max)
  * 
  *     cdef void _strip_newline(self, char *buffer, unsigned int size):             # <<<<<<<<<<<<<<
@@ -6754,7 +7171,7 @@ static void __pyx_f_6_hydra_11BloomFilter__strip_newline(CYTHON_UNUSED struct __
   int __pyx_t_3;
   __Pyx_RefNannySetupContext("_strip_newline", 0);
 
-  /* "_hydra.pyx":446
+  /* "_hydra.pyx":452
  *         """
  *         cdef unsigned int i
  *         for i in range(size):             # <<<<<<<<<<<<<<
@@ -6765,7 +7182,7 @@ static void __pyx_f_6_hydra_11BloomFilter__strip_newline(CYTHON_UNUSED struct __
   for (__pyx_t_2 = 0; __pyx_t_2 < __pyx_t_1; __pyx_t_2+=1) {
     __pyx_v_i = __pyx_t_2;
 
-    /* "_hydra.pyx":447
+    /* "_hydra.pyx":453
  *         cdef unsigned int i
  *         for i in range(size):
  *             if buffer[i] == '\n':             # <<<<<<<<<<<<<<
@@ -6775,7 +7192,7 @@ static void __pyx_f_6_hydra_11BloomFilter__strip_newline(CYTHON_UNUSED struct __
     __pyx_t_3 = (((__pyx_v_buffer[__pyx_v_i]) == '\n') != 0);
     if (__pyx_t_3) {
 
-      /* "_hydra.pyx":448
+      /* "_hydra.pyx":454
  *         for i in range(size):
  *             if buffer[i] == '\n':
  *                 buffer[i] = '\x00'             # <<<<<<<<<<<<<<
@@ -6784,7 +7201,7 @@ static void __pyx_f_6_hydra_11BloomFilter__strip_newline(CYTHON_UNUSED struct __
  */
       (__pyx_v_buffer[__pyx_v_i]) = '\x00';
 
-      /* "_hydra.pyx":449
+      /* "_hydra.pyx":455
  *             if buffer[i] == '\n':
  *                 buffer[i] = '\x00'
  *                 return             # <<<<<<<<<<<<<<
@@ -6793,7 +7210,7 @@ static void __pyx_f_6_hydra_11BloomFilter__strip_newline(CYTHON_UNUSED struct __
  */
       goto __pyx_L0;
 
-      /* "_hydra.pyx":447
+      /* "_hydra.pyx":453
  *         cdef unsigned int i
  *         for i in range(size):
  *             if buffer[i] == '\n':             # <<<<<<<<<<<<<<
@@ -6803,7 +7220,7 @@ static void __pyx_f_6_hydra_11BloomFilter__strip_newline(CYTHON_UNUSED struct __
     }
   }
 
-  /* "_hydra.pyx":441
+  /* "_hydra.pyx":447
  *             _bucket_indexes[i] = llabs((hash1 + i * hash2) % max)
  * 
  *     cdef void _strip_newline(self, char *buffer, unsigned int size):             # <<<<<<<<<<<<<<
@@ -6816,7 +7233,7 @@ static void __pyx_f_6_hydra_11BloomFilter__strip_newline(CYTHON_UNUSED struct __
   __Pyx_RefNannyFinishContext();
 }
 
-/* "_hydra.pyx":451
+/* "_hydra.pyx":457
  *                 return
  * 
  *     def bulkload_text(self, char* filename):             # <<<<<<<<<<<<<<
@@ -6832,7 +7249,7 @@ static PyObject *__pyx_pw_6_hydra_11BloomFilter_33bulkload_text(PyObject *__pyx_
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("bulkload_text (wrapper)", 0);
   assert(__pyx_arg_filename); {
-    __pyx_v_filename = __Pyx_PyObject_AsString(__pyx_arg_filename); if (unlikely((!__pyx_v_filename) && PyErr_Occurred())) __PYX_ERR(0, 451, __pyx_L3_error)
+    __pyx_v_filename = __Pyx_PyObject_AsString(__pyx_arg_filename); if (unlikely((!__pyx_v_filename) && PyErr_Occurred())) __PYX_ERR(0, 457, __pyx_L3_error)
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -6856,12 +7273,9 @@ static PyObject *__pyx_pf_6_hydra_11BloomFilter_32bulkload_text(struct __pyx_obj
   size_t __pyx_t_2;
   PyObject *__pyx_t_3 = NULL;
   PyObject *__pyx_t_4 = NULL;
-  PyObject *__pyx_t_5 = NULL;
-  PyObject *__pyx_t_6 = NULL;
-  PyObject *__pyx_t_7 = NULL;
   __Pyx_RefNannySetupContext("bulkload_text", 0);
 
-  /* "_hydra.pyx":452
+  /* "_hydra.pyx":458
  * 
  *     def bulkload_text(self, char* filename):
  *         cdef FILE* file_in = fopen( filename, "r")             # <<<<<<<<<<<<<<
@@ -6870,7 +7284,7 @@ static PyObject *__pyx_pf_6_hydra_11BloomFilter_32bulkload_text(struct __pyx_obj
  */
   __pyx_v_file_in = fopen(__pyx_v_filename, ((char *)"r"));
 
-  /* "_hydra.pyx":454
+  /* "_hydra.pyx":460
  *         cdef FILE* file_in = fopen( filename, "r")
  *         cdef char line[128]
  *         if file_in:             # <<<<<<<<<<<<<<
@@ -6880,7 +7294,7 @@ static PyObject *__pyx_pf_6_hydra_11BloomFilter_32bulkload_text(struct __pyx_obj
   __pyx_t_1 = (__pyx_v_file_in != 0);
   if (__pyx_t_1) {
 
-    /* "_hydra.pyx":455
+    /* "_hydra.pyx":461
  *         cdef char line[128]
  *         if file_in:
  *             while fgets(line, 128, file_in):             # <<<<<<<<<<<<<<
@@ -6891,7 +7305,7 @@ static PyObject *__pyx_pf_6_hydra_11BloomFilter_32bulkload_text(struct __pyx_obj
       __pyx_t_1 = (fgets(__pyx_v_line, 0x80, __pyx_v_file_in) != 0);
       if (!__pyx_t_1) break;
 
-      /* "_hydra.pyx":456
+      /* "_hydra.pyx":462
  *         if file_in:
  *             while fgets(line, 128, file_in):
  *                 self._strip_newline(line, len(line))             # <<<<<<<<<<<<<<
@@ -6901,47 +7315,22 @@ static PyObject *__pyx_pf_6_hydra_11BloomFilter_32bulkload_text(struct __pyx_obj
       __pyx_t_2 = strlen(__pyx_v_line); 
       ((struct __pyx_vtabstruct_6_hydra_BloomFilter *)__pyx_v_self->__pyx_vtab)->_strip_newline(__pyx_v_self, __pyx_v_line, __pyx_t_2);
 
-      /* "_hydra.pyx":457
+      /* "_hydra.pyx":463
  *             while fgets(line, 128, file_in):
  *                 self._strip_newline(line, len(line))
  *                 self.add(line)             # <<<<<<<<<<<<<<
  *             # Yeah, i should check for errors. sosumi.
  *             fclose(file_in)
  */
-      __pyx_t_4 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_add); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 457, __pyx_L1_error)
+      __pyx_t_3 = __Pyx_PyObject_FromString(__pyx_v_line); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 463, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_3);
+      __pyx_t_4 = ((struct __pyx_vtabstruct_6_hydra_BloomFilter *)__pyx_v_self->__pyx_vtab)->add(__pyx_v_self, __pyx_t_3, 0); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 463, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_4);
-      __pyx_t_5 = __Pyx_PyObject_FromString(__pyx_v_line); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 457, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_5);
-      __pyx_t_6 = NULL;
-      if (CYTHON_COMPILING_IN_CPYTHON && likely(PyMethod_Check(__pyx_t_4))) {
-        __pyx_t_6 = PyMethod_GET_SELF(__pyx_t_4);
-        if (likely(__pyx_t_6)) {
-          PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_4);
-          __Pyx_INCREF(__pyx_t_6);
-          __Pyx_INCREF(function);
-          __Pyx_DECREF_SET(__pyx_t_4, function);
-        }
-      }
-      if (!__pyx_t_6) {
-        __pyx_t_3 = __Pyx_PyObject_CallOneArg(__pyx_t_4, __pyx_t_5); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 457, __pyx_L1_error)
-        __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-        __Pyx_GOTREF(__pyx_t_3);
-      } else {
-        __pyx_t_7 = PyTuple_New(1+1); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 457, __pyx_L1_error)
-        __Pyx_GOTREF(__pyx_t_7);
-        __Pyx_GIVEREF(__pyx_t_6); PyTuple_SET_ITEM(__pyx_t_7, 0, __pyx_t_6); __pyx_t_6 = NULL;
-        __Pyx_GIVEREF(__pyx_t_5);
-        PyTuple_SET_ITEM(__pyx_t_7, 0+1, __pyx_t_5);
-        __pyx_t_5 = 0;
-        __pyx_t_3 = __Pyx_PyObject_Call(__pyx_t_4, __pyx_t_7, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 457, __pyx_L1_error)
-        __Pyx_GOTREF(__pyx_t_3);
-        __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
-      }
-      __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+      __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
     }
 
-    /* "_hydra.pyx":459
+    /* "_hydra.pyx":465
  *                 self.add(line)
  *             # Yeah, i should check for errors. sosumi.
  *             fclose(file_in)             # <<<<<<<<<<<<<<
@@ -6950,7 +7339,7 @@ static PyObject *__pyx_pf_6_hydra_11BloomFilter_32bulkload_text(struct __pyx_obj
  */
     fclose(__pyx_v_file_in);
 
-    /* "_hydra.pyx":454
+    /* "_hydra.pyx":460
  *         cdef FILE* file_in = fopen( filename, "r")
  *         cdef char line[128]
  *         if file_in:             # <<<<<<<<<<<<<<
@@ -6959,7 +7348,7 @@ static PyObject *__pyx_pf_6_hydra_11BloomFilter_32bulkload_text(struct __pyx_obj
  */
   }
 
-  /* "_hydra.pyx":451
+  /* "_hydra.pyx":457
  *                 return
  * 
  *     def bulkload_text(self, char* filename):             # <<<<<<<<<<<<<<
@@ -6973,9 +7362,6 @@ static PyObject *__pyx_pf_6_hydra_11BloomFilter_32bulkload_text(struct __pyx_obj
   __pyx_L1_error:;
   __Pyx_XDECREF(__pyx_t_3);
   __Pyx_XDECREF(__pyx_t_4);
-  __Pyx_XDECREF(__pyx_t_5);
-  __Pyx_XDECREF(__pyx_t_6);
-  __Pyx_XDECREF(__pyx_t_7);
   __Pyx_AddTraceback("_hydra.BloomFilter.bulkload_text", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
@@ -6984,7 +7370,7 @@ static PyObject *__pyx_pf_6_hydra_11BloomFilter_32bulkload_text(struct __pyx_obj
   return __pyx_r;
 }
 
-/* "_hydra.pyx":461
+/* "_hydra.pyx":467
  *             fclose(file_in)
  * 
  * cdef void c_lcase(char* buffer):             # <<<<<<<<<<<<<<
@@ -6999,7 +7385,7 @@ static void __pyx_f_6_hydra_c_lcase(char *__pyx_v_buffer) {
   unsigned int __pyx_t_2;
   __Pyx_RefNannySetupContext("c_lcase", 0);
 
-  /* "_hydra.pyx":466
+  /* "_hydra.pyx":472
  *     """
  *     cdef unsigned int i
  *     for i in range(len(buffer)):             # <<<<<<<<<<<<<<
@@ -7009,7 +7395,7 @@ static void __pyx_f_6_hydra_c_lcase(char *__pyx_v_buffer) {
   for (__pyx_t_2 = 0; __pyx_t_2 < __pyx_t_1; __pyx_t_2+=1) {
     __pyx_v_i = __pyx_t_2;
 
-    /* "_hydra.pyx":467
+    /* "_hydra.pyx":473
  *     cdef unsigned int i
  *     for i in range(len(buffer)):
  *         buffer[i] = <char> tolower(buffer[i])             # <<<<<<<<<<<<<<
@@ -7017,7 +7403,7 @@ static void __pyx_f_6_hydra_c_lcase(char *__pyx_v_buffer) {
     (__pyx_v_buffer[__pyx_v_i]) = ((char)tolower((__pyx_v_buffer[__pyx_v_i])));
   }
 
-  /* "_hydra.pyx":461
+  /* "_hydra.pyx":467
  *             fclose(file_in)
  * 
  * cdef void c_lcase(char* buffer):             # <<<<<<<<<<<<<<
@@ -7085,6 +7471,7 @@ static int __pyx_mp_ass_subscript_6_hydra_MMapBitField(PyObject *o, PyObject *i,
 static PyMethodDef __pyx_methods_6_hydra_MMapBitField[] = {
   {"close", (PyCFunction)__pyx_pw_6_hydra_12MMapBitField_5close, METH_NOARGS, 0},
   {"fdatasync", (PyCFunction)__pyx_pw_6_hydra_12MMapBitField_7fdatasync, METH_NOARGS, __pyx_doc_6_hydra_12MMapBitField_6fdatasync},
+  {"size", (PyCFunction)__pyx_pw_6_hydra_12MMapBitField_17size, METH_NOARGS, 0},
   {0, 0, 0, 0}
 };
 
@@ -7633,21 +8020,23 @@ static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {&__pyx_n_s_result, __pyx_k_result, sizeof(__pyx_k_result), 0, 0, 1, 1},
   {&__pyx_n_s_seed, __pyx_k_seed, sizeof(__pyx_k_seed), 0, 0, 1, 1},
   {&__pyx_n_s_self, __pyx_k_self, sizeof(__pyx_k_self), 0, 0, 1, 1},
+  {&__pyx_n_s_size, __pyx_k_size, sizeof(__pyx_k_size), 0, 0, 1, 1},
   {&__pyx_n_s_sys, __pyx_k_sys, sizeof(__pyx_k_sys), 0, 0, 1, 1},
   {&__pyx_n_s_tempfile, __pyx_k_tempfile, sizeof(__pyx_k_tempfile), 0, 0, 1, 1},
   {&__pyx_n_s_test, __pyx_k_test, sizeof(__pyx_k_test), 0, 0, 1, 1},
+  {&__pyx_n_s_ustring, __pyx_k_ustring, sizeof(__pyx_k_ustring), 0, 0, 1, 1},
   {&__pyx_n_s_utf8, __pyx_k_utf8, sizeof(__pyx_k_utf8), 0, 0, 1, 1},
   {&__pyx_n_s_want_lock, __pyx_k_want_lock, sizeof(__pyx_k_want_lock), 0, 0, 1, 1},
   {0, 0, 0, 0, 0, 0, 0}
 };
 static int __Pyx_InitCachedBuiltins(void) {
-  __pyx_builtin_Exception = __Pyx_GetBuiltinName(__pyx_n_s_Exception); if (!__pyx_builtin_Exception) __PYX_ERR(0, 152, __pyx_L1_error)
-  __pyx_builtin_min = __Pyx_GetBuiltinName(__pyx_n_s_min); if (!__pyx_builtin_min) __PYX_ERR(0, 200, __pyx_L1_error)
-  __pyx_builtin_enumerate = __Pyx_GetBuiltinName(__pyx_n_s_enumerate); if (!__pyx_builtin_enumerate) __PYX_ERR(0, 200, __pyx_L1_error)
+  __pyx_builtin_Exception = __Pyx_GetBuiltinName(__pyx_n_s_Exception); if (!__pyx_builtin_Exception) __PYX_ERR(0, 156, __pyx_L1_error)
+  __pyx_builtin_min = __Pyx_GetBuiltinName(__pyx_n_s_min); if (!__pyx_builtin_min) __PYX_ERR(0, 204, __pyx_L1_error)
+  __pyx_builtin_enumerate = __Pyx_GetBuiltinName(__pyx_n_s_enumerate); if (!__pyx_builtin_enumerate) __PYX_ERR(0, 204, __pyx_L1_error)
   __pyx_builtin_ValueError = __Pyx_GetBuiltinName(__pyx_n_s_ValueError); if (!__pyx_builtin_ValueError) __PYX_ERR(0, 89, __pyx_L1_error)
-  __pyx_builtin_StopIteration = __Pyx_GetBuiltinName(__pyx_n_s_StopIteration); if (!__pyx_builtin_StopIteration) __PYX_ERR(0, 149, __pyx_L1_error)
-  __pyx_builtin_RuntimeError = __Pyx_GetBuiltinName(__pyx_n_s_RuntimeError); if (!__pyx_builtin_RuntimeError) __PYX_ERR(0, 341, __pyx_L1_error)
-  __pyx_builtin_range = __Pyx_GetBuiltinName(__pyx_n_s_range); if (!__pyx_builtin_range) __PYX_ERR(0, 381, __pyx_L1_error)
+  __pyx_builtin_StopIteration = __Pyx_GetBuiltinName(__pyx_n_s_StopIteration); if (!__pyx_builtin_StopIteration) __PYX_ERR(0, 153, __pyx_L1_error)
+  __pyx_builtin_RuntimeError = __Pyx_GetBuiltinName(__pyx_n_s_RuntimeError); if (!__pyx_builtin_RuntimeError) __PYX_ERR(0, 345, __pyx_L1_error)
+  __pyx_builtin_range = __Pyx_GetBuiltinName(__pyx_n_s_range); if (!__pyx_builtin_range) __PYX_ERR(0, 385, __pyx_L1_error)
   return 0;
   __pyx_L1_error:;
   return -1;
@@ -7745,58 +8134,58 @@ static int __Pyx_InitCachedConstants(void) {
   __Pyx_GOTREF(__pyx_tuple__8);
   __Pyx_GIVEREF(__pyx_tuple__8);
 
-  /* "_hydra.pyx":132
- *     def __len__(self):
+  /* "_hydra.pyx":135
+ *     cpdef size(self):
  *         if self._fd < 0 or not self._buffer:
  *             raise ValueError('I/O operation on closed file')             # <<<<<<<<<<<<<<
  * 
  *         return self._bitsize
  */
-  __pyx_tuple__9 = PyTuple_Pack(1, __pyx_kp_s_I_O_operation_on_closed_file); if (unlikely(!__pyx_tuple__9)) __PYX_ERR(0, 132, __pyx_L1_error)
+  __pyx_tuple__9 = PyTuple_Pack(1, __pyx_kp_s_I_O_operation_on_closed_file); if (unlikely(!__pyx_tuple__9)) __PYX_ERR(0, 135, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__9);
   __Pyx_GIVEREF(__pyx_tuple__9);
 
-  /* "_hydra.pyx":337
+  /* "_hydra.pyx":341
  *         fdatasync_on_close = kwargs.get('fdatasync_on_close', True)
  * 
  *         for k in ['filename', 'ignore_case', 'read_only', 'want_lock', 'fdatasync_on_close']:             # <<<<<<<<<<<<<<
  *             if kwargs.has_key(k):
  *                 del kwargs[k]
  */
-  __pyx_tuple__10 = PyTuple_Pack(5, __pyx_n_s_filename, __pyx_n_s_ignore_case, __pyx_n_s_read_only, __pyx_n_s_want_lock, __pyx_n_s_fdatasync_on_close); if (unlikely(!__pyx_tuple__10)) __PYX_ERR(0, 337, __pyx_L1_error)
+  __pyx_tuple__10 = PyTuple_Pack(5, __pyx_n_s_filename, __pyx_n_s_ignore_case, __pyx_n_s_read_only, __pyx_n_s_want_lock, __pyx_n_s_fdatasync_on_close); if (unlikely(!__pyx_tuple__10)) __PYX_ERR(0, 341, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__10);
   __Pyx_GIVEREF(__pyx_tuple__10);
 
-  /* "_hydra.pyx":373
+  /* "_hydra.pyx":377
  * 
  *         if isinstance(ustring, unicode):
  *             key = ustring.encode('utf8')             # <<<<<<<<<<<<<<
  *         else:
  *             key = ustring
  */
-  __pyx_tuple__11 = PyTuple_Pack(1, __pyx_n_s_utf8); if (unlikely(!__pyx_tuple__11)) __PYX_ERR(0, 373, __pyx_L1_error)
+  __pyx_tuple__11 = PyTuple_Pack(1, __pyx_n_s_utf8); if (unlikely(!__pyx_tuple__11)) __PYX_ERR(0, 377, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__11);
   __Pyx_GIVEREF(__pyx_tuple__11);
 
-  /* "_hydra.pyx":391
+  /* "_hydra.pyx":395
  * 
  *         if isinstance(ustring, unicode):
  *             key = ustring.encode('utf8')             # <<<<<<<<<<<<<<
  *         else:
  *             key = ustring
  */
-  __pyx_tuple__12 = PyTuple_Pack(1, __pyx_n_s_utf8); if (unlikely(!__pyx_tuple__12)) __PYX_ERR(0, 391, __pyx_L1_error)
+  __pyx_tuple__12 = PyTuple_Pack(1, __pyx_n_s_utf8); if (unlikely(!__pyx_tuple__12)) __PYX_ERR(0, 395, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__12);
   __Pyx_GIVEREF(__pyx_tuple__12);
 
-  /* "_hydra.pyx":431
+  /* "_hydra.pyx":416
  * 
- *         if isinstance(key, unicode):
- *             key = key.encode('utf8')             # <<<<<<<<<<<<<<
- * 
- *         MurmurHash3_x64_128(<char*>key, len(key), 0, result)
+ *         if isinstance(ustring, unicode):
+ *             key = ustring.encode('utf8')             # <<<<<<<<<<<<<<
+ *         else:
+ *             key = ustring
  */
-  __pyx_tuple__13 = PyTuple_Pack(1, __pyx_n_s_utf8); if (unlikely(!__pyx_tuple__13)) __PYX_ERR(0, 431, __pyx_L1_error)
+  __pyx_tuple__13 = PyTuple_Pack(1, __pyx_n_s_utf8); if (unlikely(!__pyx_tuple__13)) __PYX_ERR(0, 416, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__13);
   __Pyx_GIVEREF(__pyx_tuple__13);
 
@@ -7812,38 +8201,38 @@ static int __Pyx_InitCachedConstants(void) {
   __Pyx_GIVEREF(__pyx_tuple__14);
   __pyx_codeobj__15 = (PyObject*)__Pyx_PyCode_New(2, 0, 3, 0, 0, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__14, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_opt_mozilla_hydra_src__hydra_py, __pyx_n_s_hash, 34, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__15)) __PYX_ERR(0, 34, __pyx_L1_error)
 
-  /* "_hydra.pyx":160
+  /* "_hydra.pyx":164
  *     """
  * 
  *     def __init__(self, k, bucketsPerElement):             # <<<<<<<<<<<<<<
  *         self.K = k
  *         self.bucketsPerElement = bucketsPerElement
  */
-  __pyx_tuple__16 = PyTuple_Pack(3, __pyx_n_s_self, __pyx_n_s_k, __pyx_n_s_bucketsPerElement); if (unlikely(!__pyx_tuple__16)) __PYX_ERR(0, 160, __pyx_L1_error)
+  __pyx_tuple__16 = PyTuple_Pack(3, __pyx_n_s_self, __pyx_n_s_k, __pyx_n_s_bucketsPerElement); if (unlikely(!__pyx_tuple__16)) __PYX_ERR(0, 164, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__16);
   __Pyx_GIVEREF(__pyx_tuple__16);
-  __pyx_codeobj__17 = (PyObject*)__Pyx_PyCode_New(3, 0, 3, 0, 0, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__16, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_opt_mozilla_hydra_src__hydra_py, __pyx_n_s_init, 160, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__17)) __PYX_ERR(0, 160, __pyx_L1_error)
+  __pyx_codeobj__17 = (PyObject*)__Pyx_PyCode_New(3, 0, 3, 0, 0, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__16, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_opt_mozilla_hydra_src__hydra_py, __pyx_n_s_init, 164, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__17)) __PYX_ERR(0, 164, __pyx_L1_error)
 
-  /* "_hydra.pyx":164
+  /* "_hydra.pyx":168
  *         self.bucketsPerElement = bucketsPerElement
  * 
  *     def __eq__(self, other):             # <<<<<<<<<<<<<<
  *         c1 = getattr(other, 'K', None) == self.K
  *         c2 = getattr(other, 'bucketsPerElement', None) == self.bucketsPerElement
  */
-  __pyx_tuple__18 = PyTuple_Pack(4, __pyx_n_s_self, __pyx_n_s_other, __pyx_n_s_c1, __pyx_n_s_c2); if (unlikely(!__pyx_tuple__18)) __PYX_ERR(0, 164, __pyx_L1_error)
+  __pyx_tuple__18 = PyTuple_Pack(4, __pyx_n_s_self, __pyx_n_s_other, __pyx_n_s_c1, __pyx_n_s_c2); if (unlikely(!__pyx_tuple__18)) __PYX_ERR(0, 168, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__18);
   __Pyx_GIVEREF(__pyx_tuple__18);
-  __pyx_codeobj__19 = (PyObject*)__Pyx_PyCode_New(2, 0, 4, 0, 0, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__18, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_opt_mozilla_hydra_src__hydra_py, __pyx_n_s_eq, 164, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__19)) __PYX_ERR(0, 164, __pyx_L1_error)
+  __pyx_codeobj__19 = (PyObject*)__Pyx_PyCode_New(2, 0, 4, 0, 0, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__18, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_opt_mozilla_hydra_src__hydra_py, __pyx_n_s_eq, 168, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__19)) __PYX_ERR(0, 168, __pyx_L1_error)
 
-  /* "_hydra.pyx":200
+  /* "_hydra.pyx":204
  *             ]
  * 
  *     optKPerBuckets = [max(1, min(enumerate(probs), key=operator.itemgetter(1))[0]) for probs in PROBS]             # <<<<<<<<<<<<<<
  * 
  *     @classmethod
  */
-  __pyx_tuple__20 = PyTuple_Pack(1, __pyx_int_1); if (unlikely(!__pyx_tuple__20)) __PYX_ERR(0, 200, __pyx_L1_error)
+  __pyx_tuple__20 = PyTuple_Pack(1, __pyx_int_1); if (unlikely(!__pyx_tuple__20)) __PYX_ERR(0, 204, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__20);
   __Pyx_GIVEREF(__pyx_tuple__20);
   __Pyx_RefNannyFinishContext();
@@ -8134,26 +8523,34 @@ PyMODINIT_FUNC PyInit__hydra(void)
   __pyx_vtabptr_6_hydra_MMapBitField = &__pyx_vtable_6_hydra_MMapBitField;
   __pyx_vtable_6_hydra_MMapBitField.open_rw_buffer = (void (*)(struct __pyx_obj_6_hydra_MMapBitField *, struct __pyx_opt_args_6_hydra_12MMapBitField_open_rw_buffer *__pyx_optional_args))__pyx_f_6_hydra_12MMapBitField_open_rw_buffer;
   __pyx_vtable_6_hydra_MMapBitField.open_ro_buffer = (void (*)(struct __pyx_obj_6_hydra_MMapBitField *, struct __pyx_opt_args_6_hydra_12MMapBitField_open_ro_buffer *__pyx_optional_args))__pyx_f_6_hydra_12MMapBitField_open_ro_buffer;
+  __pyx_vtable_6_hydra_MMapBitField.close = (PyObject *(*)(struct __pyx_obj_6_hydra_MMapBitField *, int __pyx_skip_dispatch))__pyx_f_6_hydra_12MMapBitField_close;
+  __pyx_vtable_6_hydra_MMapBitField.fdatasync = (PyObject *(*)(struct __pyx_obj_6_hydra_MMapBitField *, int __pyx_skip_dispatch))__pyx_f_6_hydra_12MMapBitField_fdatasync;
+  __pyx_vtable_6_hydra_MMapBitField.size = (PyObject *(*)(struct __pyx_obj_6_hydra_MMapBitField *, int __pyx_skip_dispatch))__pyx_f_6_hydra_12MMapBitField_size;
   if (PyType_Ready(&__pyx_type_6_hydra_MMapBitField) < 0) __PYX_ERR(0, 42, __pyx_L1_error)
   __pyx_type_6_hydra_MMapBitField.tp_print = 0;
   if (__Pyx_SetVtable(__pyx_type_6_hydra_MMapBitField.tp_dict, __pyx_vtabptr_6_hydra_MMapBitField) < 0) __PYX_ERR(0, 42, __pyx_L1_error)
   if (PyObject_SetAttrString(__pyx_m, "MMapBitField", (PyObject *)&__pyx_type_6_hydra_MMapBitField) < 0) __PYX_ERR(0, 42, __pyx_L1_error)
   __pyx_ptype_6_hydra_MMapBitField = &__pyx_type_6_hydra_MMapBitField;
-  if (PyType_Ready(&__pyx_type_6_hydra_MMapIter) < 0) __PYX_ERR(0, 136, __pyx_L1_error)
+  if (PyType_Ready(&__pyx_type_6_hydra_MMapIter) < 0) __PYX_ERR(0, 140, __pyx_L1_error)
   __pyx_type_6_hydra_MMapIter.tp_print = 0;
-  if (PyObject_SetAttrString(__pyx_m, "MMapIter", (PyObject *)&__pyx_type_6_hydra_MMapIter) < 0) __PYX_ERR(0, 136, __pyx_L1_error)
+  if (PyObject_SetAttrString(__pyx_m, "MMapIter", (PyObject *)&__pyx_type_6_hydra_MMapIter) < 0) __PYX_ERR(0, 140, __pyx_L1_error)
   __pyx_ptype_6_hydra_MMapIter = &__pyx_type_6_hydra_MMapIter;
-  if (PyType_Ready(&__pyx_type_6_hydra_BloomCalculations) < 0) __PYX_ERR(0, 169, __pyx_L1_error)
+  if (PyType_Ready(&__pyx_type_6_hydra_BloomCalculations) < 0) __PYX_ERR(0, 173, __pyx_L1_error)
   __pyx_type_6_hydra_BloomCalculations.tp_print = 0;
-  if (PyObject_SetAttrString(__pyx_m, "BloomCalculations", (PyObject *)&__pyx_type_6_hydra_BloomCalculations) < 0) __PYX_ERR(0, 169, __pyx_L1_error)
+  if (PyObject_SetAttrString(__pyx_m, "BloomCalculations", (PyObject *)&__pyx_type_6_hydra_BloomCalculations) < 0) __PYX_ERR(0, 173, __pyx_L1_error)
   __pyx_ptype_6_hydra_BloomCalculations = &__pyx_type_6_hydra_BloomCalculations;
   __pyx_vtabptr_6_hydra_BloomFilter = &__pyx_vtable_6_hydra_BloomFilter;
+  __pyx_vtable_6_hydra_BloomFilter.close = (PyObject *(*)(struct __pyx_obj_6_hydra_BloomFilter *, int __pyx_skip_dispatch))__pyx_f_6_hydra_11BloomFilter_close;
+  __pyx_vtable_6_hydra_BloomFilter.fdatasync = (PyObject *(*)(struct __pyx_obj_6_hydra_BloomFilter *, int __pyx_skip_dispatch))__pyx_f_6_hydra_11BloomFilter_fdatasync;
+  __pyx_vtable_6_hydra_BloomFilter.add = (PyObject *(*)(struct __pyx_obj_6_hydra_BloomFilter *, PyObject *, int __pyx_skip_dispatch))__pyx_f_6_hydra_11BloomFilter_add;
+  __pyx_vtable_6_hydra_BloomFilter.contains = (PyObject *(*)(struct __pyx_obj_6_hydra_BloomFilter *, PyObject *, int __pyx_skip_dispatch))__pyx_f_6_hydra_11BloomFilter_contains;
+  __pyx_vtable_6_hydra_BloomFilter.buckets = (PyObject *(*)(struct __pyx_obj_6_hydra_BloomFilter *, int __pyx_skip_dispatch))__pyx_f_6_hydra_11BloomFilter_buckets;
   __pyx_vtable_6_hydra_BloomFilter._get_hash_buckets = (void (*)(struct __pyx_obj_6_hydra_BloomFilter *, PyObject *, unsigned PY_LONG_LONG *, unsigned int, unsigned long))__pyx_f_6_hydra_11BloomFilter__get_hash_buckets;
   __pyx_vtable_6_hydra_BloomFilter._strip_newline = (void (*)(struct __pyx_obj_6_hydra_BloomFilter *, char *, unsigned int))__pyx_f_6_hydra_11BloomFilter__strip_newline;
-  if (PyType_Ready(&__pyx_type_6_hydra_BloomFilter) < 0) __PYX_ERR(0, 257, __pyx_L1_error)
+  if (PyType_Ready(&__pyx_type_6_hydra_BloomFilter) < 0) __PYX_ERR(0, 261, __pyx_L1_error)
   __pyx_type_6_hydra_BloomFilter.tp_print = 0;
-  if (__Pyx_SetVtable(__pyx_type_6_hydra_BloomFilter.tp_dict, __pyx_vtabptr_6_hydra_BloomFilter) < 0) __PYX_ERR(0, 257, __pyx_L1_error)
-  if (PyObject_SetAttrString(__pyx_m, "BloomFilter", (PyObject *)&__pyx_type_6_hydra_BloomFilter) < 0) __PYX_ERR(0, 257, __pyx_L1_error)
+  if (__Pyx_SetVtable(__pyx_type_6_hydra_BloomFilter.tp_dict, __pyx_vtabptr_6_hydra_BloomFilter) < 0) __PYX_ERR(0, 261, __pyx_L1_error)
+  if (PyObject_SetAttrString(__pyx_m, "BloomFilter", (PyObject *)&__pyx_type_6_hydra_BloomFilter) < 0) __PYX_ERR(0, 261, __pyx_L1_error)
   __pyx_ptype_6_hydra_BloomFilter = &__pyx_type_6_hydra_BloomFilter;
   /*--- Type import code ---*/
   /*--- Variable import code ---*/
@@ -8222,118 +8619,118 @@ PyMODINIT_FUNC PyInit__hydra(void)
   if (PyDict_SetItem(__pyx_d, __pyx_n_s_hash, __pyx_t_1) < 0) __PYX_ERR(0, 34, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "_hydra.pyx":152
+  /* "_hydra.pyx":156
  * 
  * 
  * class UnsupportedOperationException(Exception): pass             # <<<<<<<<<<<<<<
  * 
  * class BloomSpecification:
  */
-  __pyx_t_1 = PyTuple_New(1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 152, __pyx_L1_error)
+  __pyx_t_1 = PyTuple_New(1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 156, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_INCREF(__pyx_builtin_Exception);
   __Pyx_GIVEREF(__pyx_builtin_Exception);
   PyTuple_SET_ITEM(__pyx_t_1, 0, __pyx_builtin_Exception);
-  __pyx_t_2 = __Pyx_CalculateMetaclass(NULL, __pyx_t_1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 152, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_CalculateMetaclass(NULL, __pyx_t_1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 156, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_3 = __Pyx_Py3MetaclassPrepare(__pyx_t_2, __pyx_t_1, __pyx_n_s_UnsupportedOperationException, __pyx_n_s_UnsupportedOperationException, (PyObject *) NULL, __pyx_n_s_hydra, (PyObject *) NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 152, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_Py3MetaclassPrepare(__pyx_t_2, __pyx_t_1, __pyx_n_s_UnsupportedOperationException, __pyx_n_s_UnsupportedOperationException, (PyObject *) NULL, __pyx_n_s_hydra, (PyObject *) NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 156, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  __pyx_t_4 = __Pyx_Py3ClassCreate(__pyx_t_2, __pyx_n_s_UnsupportedOperationException, __pyx_t_1, __pyx_t_3, NULL, 0, 1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 152, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_Py3ClassCreate(__pyx_t_2, __pyx_n_s_UnsupportedOperationException, __pyx_t_1, __pyx_t_3, NULL, 0, 1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 156, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_UnsupportedOperationException, __pyx_t_4) < 0) __PYX_ERR(0, 152, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_UnsupportedOperationException, __pyx_t_4) < 0) __PYX_ERR(0, 156, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "_hydra.pyx":154
+  /* "_hydra.pyx":158
  * class UnsupportedOperationException(Exception): pass
  * 
  * class BloomSpecification:             # <<<<<<<<<<<<<<
  *     """
  *     A wrapper class that holds two key parameters for a Bloom Filter: the
  */
-  __pyx_t_1 = __Pyx_Py3MetaclassPrepare((PyObject *) NULL, __pyx_empty_tuple, __pyx_n_s_BloomSpecification, __pyx_n_s_BloomSpecification, (PyObject *) NULL, __pyx_n_s_hydra, __pyx_kp_s_A_wrapper_class_that_holds_two); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 154, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_Py3MetaclassPrepare((PyObject *) NULL, __pyx_empty_tuple, __pyx_n_s_BloomSpecification, __pyx_n_s_BloomSpecification, (PyObject *) NULL, __pyx_n_s_hydra, __pyx_kp_s_A_wrapper_class_that_holds_two); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 158, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
 
-  /* "_hydra.pyx":160
+  /* "_hydra.pyx":164
  *     """
  * 
  *     def __init__(self, k, bucketsPerElement):             # <<<<<<<<<<<<<<
  *         self.K = k
  *         self.bucketsPerElement = bucketsPerElement
  */
-  __pyx_t_2 = __Pyx_CyFunction_NewEx(&__pyx_mdef_6_hydra_18BloomSpecification_1__init__, 0, __pyx_n_s_BloomSpecification___init, NULL, __pyx_n_s_hydra, __pyx_d, ((PyObject *)__pyx_codeobj__17)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 160, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_CyFunction_NewEx(&__pyx_mdef_6_hydra_18BloomSpecification_1__init__, 0, __pyx_n_s_BloomSpecification___init, NULL, __pyx_n_s_hydra, __pyx_d, ((PyObject *)__pyx_codeobj__17)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 164, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  if (PyObject_SetItem(__pyx_t_1, __pyx_n_s_init, __pyx_t_2) < 0) __PYX_ERR(0, 160, __pyx_L1_error)
+  if (PyObject_SetItem(__pyx_t_1, __pyx_n_s_init, __pyx_t_2) < 0) __PYX_ERR(0, 164, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "_hydra.pyx":164
+  /* "_hydra.pyx":168
  *         self.bucketsPerElement = bucketsPerElement
  * 
  *     def __eq__(self, other):             # <<<<<<<<<<<<<<
  *         c1 = getattr(other, 'K', None) == self.K
  *         c2 = getattr(other, 'bucketsPerElement', None) == self.bucketsPerElement
  */
-  __pyx_t_2 = __Pyx_CyFunction_NewEx(&__pyx_mdef_6_hydra_18BloomSpecification_3__eq__, 0, __pyx_n_s_BloomSpecification___eq, NULL, __pyx_n_s_hydra, __pyx_d, ((PyObject *)__pyx_codeobj__19)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 164, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_CyFunction_NewEx(&__pyx_mdef_6_hydra_18BloomSpecification_3__eq__, 0, __pyx_n_s_BloomSpecification___eq, NULL, __pyx_n_s_hydra, __pyx_d, ((PyObject *)__pyx_codeobj__19)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 168, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  if (PyObject_SetItem(__pyx_t_1, __pyx_n_s_eq, __pyx_t_2) < 0) __PYX_ERR(0, 164, __pyx_L1_error)
+  if (PyObject_SetItem(__pyx_t_1, __pyx_n_s_eq, __pyx_t_2) < 0) __PYX_ERR(0, 168, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "_hydra.pyx":154
+  /* "_hydra.pyx":158
  * class UnsupportedOperationException(Exception): pass
  * 
  * class BloomSpecification:             # <<<<<<<<<<<<<<
  *     """
  *     A wrapper class that holds two key parameters for a Bloom Filter: the
  */
-  __pyx_t_2 = __Pyx_Py3ClassCreate(((PyObject*)&__Pyx_DefaultClassType), __pyx_n_s_BloomSpecification, __pyx_empty_tuple, __pyx_t_1, NULL, 0, 1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 154, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_Py3ClassCreate(((PyObject*)&__Pyx_DefaultClassType), __pyx_n_s_BloomSpecification, __pyx_empty_tuple, __pyx_t_1, NULL, 0, 1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 158, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_BloomSpecification, __pyx_t_2) < 0) __PYX_ERR(0, 154, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_BloomSpecification, __pyx_t_2) < 0) __PYX_ERR(0, 158, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "_hydra.pyx":173
+  /* "_hydra.pyx":177
  *     This calculation class is ported straight from Cassandra.
  *     """
  *     minBuckets = 2             # <<<<<<<<<<<<<<
  *     minK = 1
  * 
  */
-  if (PyDict_SetItem((PyObject *)__pyx_ptype_6_hydra_BloomCalculations->tp_dict, __pyx_n_s_minBuckets, __pyx_int_2) < 0) __PYX_ERR(0, 173, __pyx_L1_error)
+  if (PyDict_SetItem((PyObject *)__pyx_ptype_6_hydra_BloomCalculations->tp_dict, __pyx_n_s_minBuckets, __pyx_int_2) < 0) __PYX_ERR(0, 177, __pyx_L1_error)
   PyType_Modified(__pyx_ptype_6_hydra_BloomCalculations);
 
-  /* "_hydra.pyx":174
+  /* "_hydra.pyx":178
  *     """
  *     minBuckets = 2
  *     minK = 1             # <<<<<<<<<<<<<<
  * 
  *     PROBS = [
  */
-  if (PyDict_SetItem((PyObject *)__pyx_ptype_6_hydra_BloomCalculations->tp_dict, __pyx_n_s_minK, __pyx_int_1) < 0) __PYX_ERR(0, 174, __pyx_L1_error)
+  if (PyDict_SetItem((PyObject *)__pyx_ptype_6_hydra_BloomCalculations->tp_dict, __pyx_n_s_minK, __pyx_int_1) < 0) __PYX_ERR(0, 178, __pyx_L1_error)
   PyType_Modified(__pyx_ptype_6_hydra_BloomCalculations);
 
-  /* "_hydra.pyx":177
+  /* "_hydra.pyx":181
  * 
  *     PROBS = [
  *             [1.0], #  dummy row representing 0 buckets per element             # <<<<<<<<<<<<<<
  *             [1.0, 1.0], #  dummy row representing 1 buckets per element
  *             [1.0, 0.393,  0.400],
  */
-  __pyx_t_1 = PyList_New(1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 177, __pyx_L1_error)
+  __pyx_t_1 = PyList_New(1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 181, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_INCREF(__pyx_float_1_0);
   __Pyx_GIVEREF(__pyx_float_1_0);
   PyList_SET_ITEM(__pyx_t_1, 0, __pyx_float_1_0);
 
-  /* "_hydra.pyx":178
+  /* "_hydra.pyx":182
  *     PROBS = [
  *             [1.0], #  dummy row representing 0 buckets per element
  *             [1.0, 1.0], #  dummy row representing 1 buckets per element             # <<<<<<<<<<<<<<
  *             [1.0, 0.393,  0.400],
  *             [1.0, 0.283,  0.237,   0.253],
  */
-  __pyx_t_2 = PyList_New(2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 178, __pyx_L1_error)
+  __pyx_t_2 = PyList_New(2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 182, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_INCREF(__pyx_float_1_0);
   __Pyx_GIVEREF(__pyx_float_1_0);
@@ -8342,14 +8739,14 @@ PyMODINIT_FUNC PyInit__hydra(void)
   __Pyx_GIVEREF(__pyx_float_1_0);
   PyList_SET_ITEM(__pyx_t_2, 1, __pyx_float_1_0);
 
-  /* "_hydra.pyx":179
+  /* "_hydra.pyx":183
  *             [1.0], #  dummy row representing 0 buckets per element
  *             [1.0, 1.0], #  dummy row representing 1 buckets per element
  *             [1.0, 0.393,  0.400],             # <<<<<<<<<<<<<<
  *             [1.0, 0.283,  0.237,   0.253],
  *             [1.0, 0.221,  0.155,   0.147,   0.160],
  */
-  __pyx_t_3 = PyList_New(3); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 179, __pyx_L1_error)
+  __pyx_t_3 = PyList_New(3); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 183, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_INCREF(__pyx_float_1_0);
   __Pyx_GIVEREF(__pyx_float_1_0);
@@ -8361,14 +8758,14 @@ PyMODINIT_FUNC PyInit__hydra(void)
   __Pyx_GIVEREF(__pyx_float_0_400);
   PyList_SET_ITEM(__pyx_t_3, 2, __pyx_float_0_400);
 
-  /* "_hydra.pyx":180
+  /* "_hydra.pyx":184
  *             [1.0, 1.0], #  dummy row representing 1 buckets per element
  *             [1.0, 0.393,  0.400],
  *             [1.0, 0.283,  0.237,   0.253],             # <<<<<<<<<<<<<<
  *             [1.0, 0.221,  0.155,   0.147,   0.160],
  *             [1.0, 0.181,  0.109,   0.092,   0.092,   0.101], # 5
  */
-  __pyx_t_4 = PyList_New(4); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 180, __pyx_L1_error)
+  __pyx_t_4 = PyList_New(4); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 184, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __Pyx_INCREF(__pyx_float_1_0);
   __Pyx_GIVEREF(__pyx_float_1_0);
@@ -8383,14 +8780,14 @@ PyMODINIT_FUNC PyInit__hydra(void)
   __Pyx_GIVEREF(__pyx_float_0_253);
   PyList_SET_ITEM(__pyx_t_4, 3, __pyx_float_0_253);
 
-  /* "_hydra.pyx":181
+  /* "_hydra.pyx":185
  *             [1.0, 0.393,  0.400],
  *             [1.0, 0.283,  0.237,   0.253],
  *             [1.0, 0.221,  0.155,   0.147,   0.160],             # <<<<<<<<<<<<<<
  *             [1.0, 0.181,  0.109,   0.092,   0.092,   0.101], # 5
  *             [1.0, 0.154,  0.0804,  0.0609,  0.0561,  0.0578,   0.0638],
  */
-  __pyx_t_5 = PyList_New(5); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 181, __pyx_L1_error)
+  __pyx_t_5 = PyList_New(5); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 185, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_INCREF(__pyx_float_1_0);
   __Pyx_GIVEREF(__pyx_float_1_0);
@@ -8408,14 +8805,14 @@ PyMODINIT_FUNC PyInit__hydra(void)
   __Pyx_GIVEREF(__pyx_float_0_160);
   PyList_SET_ITEM(__pyx_t_5, 4, __pyx_float_0_160);
 
-  /* "_hydra.pyx":182
+  /* "_hydra.pyx":186
  *             [1.0, 0.283,  0.237,   0.253],
  *             [1.0, 0.221,  0.155,   0.147,   0.160],
  *             [1.0, 0.181,  0.109,   0.092,   0.092,   0.101], # 5             # <<<<<<<<<<<<<<
  *             [1.0, 0.154,  0.0804,  0.0609,  0.0561,  0.0578,   0.0638],
  *             [1.0, 0.133,  0.0618,  0.0423,  0.0359,  0.0347,   0.0364],
  */
-  __pyx_t_6 = PyList_New(6); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 182, __pyx_L1_error)
+  __pyx_t_6 = PyList_New(6); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 186, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
   __Pyx_INCREF(__pyx_float_1_0);
   __Pyx_GIVEREF(__pyx_float_1_0);
@@ -8436,14 +8833,14 @@ PyMODINIT_FUNC PyInit__hydra(void)
   __Pyx_GIVEREF(__pyx_float_0_101);
   PyList_SET_ITEM(__pyx_t_6, 5, __pyx_float_0_101);
 
-  /* "_hydra.pyx":183
+  /* "_hydra.pyx":187
  *             [1.0, 0.221,  0.155,   0.147,   0.160],
  *             [1.0, 0.181,  0.109,   0.092,   0.092,   0.101], # 5
  *             [1.0, 0.154,  0.0804,  0.0609,  0.0561,  0.0578,   0.0638],             # <<<<<<<<<<<<<<
  *             [1.0, 0.133,  0.0618,  0.0423,  0.0359,  0.0347,   0.0364],
  *             [1.0, 0.118,  0.0489,  0.0306,  0.024,   0.0217,   0.0216,   0.0229],
  */
-  __pyx_t_7 = PyList_New(7); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 183, __pyx_L1_error)
+  __pyx_t_7 = PyList_New(7); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 187, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_7);
   __Pyx_INCREF(__pyx_float_1_0);
   __Pyx_GIVEREF(__pyx_float_1_0);
@@ -8467,14 +8864,14 @@ PyMODINIT_FUNC PyInit__hydra(void)
   __Pyx_GIVEREF(__pyx_float_0_0638);
   PyList_SET_ITEM(__pyx_t_7, 6, __pyx_float_0_0638);
 
-  /* "_hydra.pyx":184
+  /* "_hydra.pyx":188
  *             [1.0, 0.181,  0.109,   0.092,   0.092,   0.101], # 5
  *             [1.0, 0.154,  0.0804,  0.0609,  0.0561,  0.0578,   0.0638],
  *             [1.0, 0.133,  0.0618,  0.0423,  0.0359,  0.0347,   0.0364],             # <<<<<<<<<<<<<<
  *             [1.0, 0.118,  0.0489,  0.0306,  0.024,   0.0217,   0.0216,   0.0229],
  *             [1.0, 0.105,  0.0397,  0.0228,  0.0166,  0.0141,   0.0133,   0.0135,   0.0145],
  */
-  __pyx_t_8 = PyList_New(7); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 184, __pyx_L1_error)
+  __pyx_t_8 = PyList_New(7); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 188, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_8);
   __Pyx_INCREF(__pyx_float_1_0);
   __Pyx_GIVEREF(__pyx_float_1_0);
@@ -8498,14 +8895,14 @@ PyMODINIT_FUNC PyInit__hydra(void)
   __Pyx_GIVEREF(__pyx_float_0_0364);
   PyList_SET_ITEM(__pyx_t_8, 6, __pyx_float_0_0364);
 
-  /* "_hydra.pyx":185
+  /* "_hydra.pyx":189
  *             [1.0, 0.154,  0.0804,  0.0609,  0.0561,  0.0578,   0.0638],
  *             [1.0, 0.133,  0.0618,  0.0423,  0.0359,  0.0347,   0.0364],
  *             [1.0, 0.118,  0.0489,  0.0306,  0.024,   0.0217,   0.0216,   0.0229],             # <<<<<<<<<<<<<<
  *             [1.0, 0.105,  0.0397,  0.0228,  0.0166,  0.0141,   0.0133,   0.0135,   0.0145],
  *             [1.0, 0.0952, 0.0329,  0.0174,  0.0118,  0.00943,  0.00844,  0.00819,  0.00846], # 10
  */
-  __pyx_t_9 = PyList_New(8); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 185, __pyx_L1_error)
+  __pyx_t_9 = PyList_New(8); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 189, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_9);
   __Pyx_INCREF(__pyx_float_1_0);
   __Pyx_GIVEREF(__pyx_float_1_0);
@@ -8532,14 +8929,14 @@ PyMODINIT_FUNC PyInit__hydra(void)
   __Pyx_GIVEREF(__pyx_float_0_0229);
   PyList_SET_ITEM(__pyx_t_9, 7, __pyx_float_0_0229);
 
-  /* "_hydra.pyx":186
+  /* "_hydra.pyx":190
  *             [1.0, 0.133,  0.0618,  0.0423,  0.0359,  0.0347,   0.0364],
  *             [1.0, 0.118,  0.0489,  0.0306,  0.024,   0.0217,   0.0216,   0.0229],
  *             [1.0, 0.105,  0.0397,  0.0228,  0.0166,  0.0141,   0.0133,   0.0135,   0.0145],             # <<<<<<<<<<<<<<
  *             [1.0, 0.0952, 0.0329,  0.0174,  0.0118,  0.00943,  0.00844,  0.00819,  0.00846], # 10
  *             [1.0, 0.0869, 0.0276,  0.0136,  0.00864, 0.0065,   0.00552,  0.00513,  0.00509],
  */
-  __pyx_t_10 = PyList_New(9); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 186, __pyx_L1_error)
+  __pyx_t_10 = PyList_New(9); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 190, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_10);
   __Pyx_INCREF(__pyx_float_1_0);
   __Pyx_GIVEREF(__pyx_float_1_0);
@@ -8569,14 +8966,14 @@ PyMODINIT_FUNC PyInit__hydra(void)
   __Pyx_GIVEREF(__pyx_float_0_0145);
   PyList_SET_ITEM(__pyx_t_10, 8, __pyx_float_0_0145);
 
-  /* "_hydra.pyx":187
+  /* "_hydra.pyx":191
  *             [1.0, 0.118,  0.0489,  0.0306,  0.024,   0.0217,   0.0216,   0.0229],
  *             [1.0, 0.105,  0.0397,  0.0228,  0.0166,  0.0141,   0.0133,   0.0135,   0.0145],
  *             [1.0, 0.0952, 0.0329,  0.0174,  0.0118,  0.00943,  0.00844,  0.00819,  0.00846], # 10             # <<<<<<<<<<<<<<
  *             [1.0, 0.0869, 0.0276,  0.0136,  0.00864, 0.0065,   0.00552,  0.00513,  0.00509],
  *             [1.0, 0.08,   0.0236,  0.0108,  0.00646, 0.00459,  0.00371,  0.00329,  0.00314],
  */
-  __pyx_t_11 = PyList_New(9); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 187, __pyx_L1_error)
+  __pyx_t_11 = PyList_New(9); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 191, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_11);
   __Pyx_INCREF(__pyx_float_1_0);
   __Pyx_GIVEREF(__pyx_float_1_0);
@@ -8606,14 +9003,14 @@ PyMODINIT_FUNC PyInit__hydra(void)
   __Pyx_GIVEREF(__pyx_float_0_00846);
   PyList_SET_ITEM(__pyx_t_11, 8, __pyx_float_0_00846);
 
-  /* "_hydra.pyx":188
+  /* "_hydra.pyx":192
  *             [1.0, 0.105,  0.0397,  0.0228,  0.0166,  0.0141,   0.0133,   0.0135,   0.0145],
  *             [1.0, 0.0952, 0.0329,  0.0174,  0.0118,  0.00943,  0.00844,  0.00819,  0.00846], # 10
  *             [1.0, 0.0869, 0.0276,  0.0136,  0.00864, 0.0065,   0.00552,  0.00513,  0.00509],             # <<<<<<<<<<<<<<
  *             [1.0, 0.08,   0.0236,  0.0108,  0.00646, 0.00459,  0.00371,  0.00329,  0.00314],
  *             [1.0, 0.074,  0.0203,  0.00875, 0.00492, 0.00332,  0.00255,  0.00217,  0.00199,  0.00194],
  */
-  __pyx_t_12 = PyList_New(9); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 188, __pyx_L1_error)
+  __pyx_t_12 = PyList_New(9); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 192, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_12);
   __Pyx_INCREF(__pyx_float_1_0);
   __Pyx_GIVEREF(__pyx_float_1_0);
@@ -8643,14 +9040,14 @@ PyMODINIT_FUNC PyInit__hydra(void)
   __Pyx_GIVEREF(__pyx_float_0_00509);
   PyList_SET_ITEM(__pyx_t_12, 8, __pyx_float_0_00509);
 
-  /* "_hydra.pyx":189
+  /* "_hydra.pyx":193
  *             [1.0, 0.0952, 0.0329,  0.0174,  0.0118,  0.00943,  0.00844,  0.00819,  0.00846], # 10
  *             [1.0, 0.0869, 0.0276,  0.0136,  0.00864, 0.0065,   0.00552,  0.00513,  0.00509],
  *             [1.0, 0.08,   0.0236,  0.0108,  0.00646, 0.00459,  0.00371,  0.00329,  0.00314],             # <<<<<<<<<<<<<<
  *             [1.0, 0.074,  0.0203,  0.00875, 0.00492, 0.00332,  0.00255,  0.00217,  0.00199,  0.00194],
  *             [1.0, 0.0689, 0.0177,  0.00718, 0.00381, 0.00244,  0.00179,  0.00146,  0.00129,  0.00121,  0.0012],
  */
-  __pyx_t_13 = PyList_New(9); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 189, __pyx_L1_error)
+  __pyx_t_13 = PyList_New(9); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 193, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_13);
   __Pyx_INCREF(__pyx_float_1_0);
   __Pyx_GIVEREF(__pyx_float_1_0);
@@ -8680,14 +9077,14 @@ PyMODINIT_FUNC PyInit__hydra(void)
   __Pyx_GIVEREF(__pyx_float_0_00314);
   PyList_SET_ITEM(__pyx_t_13, 8, __pyx_float_0_00314);
 
-  /* "_hydra.pyx":190
+  /* "_hydra.pyx":194
  *             [1.0, 0.0869, 0.0276,  0.0136,  0.00864, 0.0065,   0.00552,  0.00513,  0.00509],
  *             [1.0, 0.08,   0.0236,  0.0108,  0.00646, 0.00459,  0.00371,  0.00329,  0.00314],
  *             [1.0, 0.074,  0.0203,  0.00875, 0.00492, 0.00332,  0.00255,  0.00217,  0.00199,  0.00194],             # <<<<<<<<<<<<<<
  *             [1.0, 0.0689, 0.0177,  0.00718, 0.00381, 0.00244,  0.00179,  0.00146,  0.00129,  0.00121,  0.0012],
  *             [1.0, 0.0645, 0.0156,  0.00596, 0.003,   0.00183,  0.00128,  0.001,    0.000852, 0.000775, 0.000744], # 15
  */
-  __pyx_t_14 = PyList_New(10); if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 190, __pyx_L1_error)
+  __pyx_t_14 = PyList_New(10); if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 194, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_14);
   __Pyx_INCREF(__pyx_float_1_0);
   __Pyx_GIVEREF(__pyx_float_1_0);
@@ -8720,14 +9117,14 @@ PyMODINIT_FUNC PyInit__hydra(void)
   __Pyx_GIVEREF(__pyx_float_0_00194);
   PyList_SET_ITEM(__pyx_t_14, 9, __pyx_float_0_00194);
 
-  /* "_hydra.pyx":191
+  /* "_hydra.pyx":195
  *             [1.0, 0.08,   0.0236,  0.0108,  0.00646, 0.00459,  0.00371,  0.00329,  0.00314],
  *             [1.0, 0.074,  0.0203,  0.00875, 0.00492, 0.00332,  0.00255,  0.00217,  0.00199,  0.00194],
  *             [1.0, 0.0689, 0.0177,  0.00718, 0.00381, 0.00244,  0.00179,  0.00146,  0.00129,  0.00121,  0.0012],             # <<<<<<<<<<<<<<
  *             [1.0, 0.0645, 0.0156,  0.00596, 0.003,   0.00183,  0.00128,  0.001,    0.000852, 0.000775, 0.000744], # 15
  *             [1.0, 0.0606, 0.0138,  0.005,   0.00239, 0.00139,  0.000935, 0.000702, 0.000574, 0.000505, 0.00047,  0.000459],
  */
-  __pyx_t_15 = PyList_New(11); if (unlikely(!__pyx_t_15)) __PYX_ERR(0, 191, __pyx_L1_error)
+  __pyx_t_15 = PyList_New(11); if (unlikely(!__pyx_t_15)) __PYX_ERR(0, 195, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_15);
   __Pyx_INCREF(__pyx_float_1_0);
   __Pyx_GIVEREF(__pyx_float_1_0);
@@ -8763,14 +9160,14 @@ PyMODINIT_FUNC PyInit__hydra(void)
   __Pyx_GIVEREF(__pyx_float_0_0012);
   PyList_SET_ITEM(__pyx_t_15, 10, __pyx_float_0_0012);
 
-  /* "_hydra.pyx":192
+  /* "_hydra.pyx":196
  *             [1.0, 0.074,  0.0203,  0.00875, 0.00492, 0.00332,  0.00255,  0.00217,  0.00199,  0.00194],
  *             [1.0, 0.0689, 0.0177,  0.00718, 0.00381, 0.00244,  0.00179,  0.00146,  0.00129,  0.00121,  0.0012],
  *             [1.0, 0.0645, 0.0156,  0.00596, 0.003,   0.00183,  0.00128,  0.001,    0.000852, 0.000775, 0.000744], # 15             # <<<<<<<<<<<<<<
  *             [1.0, 0.0606, 0.0138,  0.005,   0.00239, 0.00139,  0.000935, 0.000702, 0.000574, 0.000505, 0.00047,  0.000459],
  *             [1.0, 0.0571, 0.0123,  0.00423, 0.00193, 0.00107,  0.000692, 0.000499, 0.000394, 0.000335, 0.000302, 0.000287, 0.000284],
  */
-  __pyx_t_16 = PyList_New(11); if (unlikely(!__pyx_t_16)) __PYX_ERR(0, 192, __pyx_L1_error)
+  __pyx_t_16 = PyList_New(11); if (unlikely(!__pyx_t_16)) __PYX_ERR(0, 196, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_16);
   __Pyx_INCREF(__pyx_float_1_0);
   __Pyx_GIVEREF(__pyx_float_1_0);
@@ -8806,14 +9203,14 @@ PyMODINIT_FUNC PyInit__hydra(void)
   __Pyx_GIVEREF(__pyx_float_0_000744);
   PyList_SET_ITEM(__pyx_t_16, 10, __pyx_float_0_000744);
 
-  /* "_hydra.pyx":193
+  /* "_hydra.pyx":197
  *             [1.0, 0.0689, 0.0177,  0.00718, 0.00381, 0.00244,  0.00179,  0.00146,  0.00129,  0.00121,  0.0012],
  *             [1.0, 0.0645, 0.0156,  0.00596, 0.003,   0.00183,  0.00128,  0.001,    0.000852, 0.000775, 0.000744], # 15
  *             [1.0, 0.0606, 0.0138,  0.005,   0.00239, 0.00139,  0.000935, 0.000702, 0.000574, 0.000505, 0.00047,  0.000459],             # <<<<<<<<<<<<<<
  *             [1.0, 0.0571, 0.0123,  0.00423, 0.00193, 0.00107,  0.000692, 0.000499, 0.000394, 0.000335, 0.000302, 0.000287, 0.000284],
  *             [1.0, 0.054,  0.0111,  0.00362, 0.00158, 0.000839, 0.000519, 0.00036,  0.000275, 0.000226, 0.000198, 0.000183, 0.000176],
  */
-  __pyx_t_17 = PyList_New(12); if (unlikely(!__pyx_t_17)) __PYX_ERR(0, 193, __pyx_L1_error)
+  __pyx_t_17 = PyList_New(12); if (unlikely(!__pyx_t_17)) __PYX_ERR(0, 197, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_17);
   __Pyx_INCREF(__pyx_float_1_0);
   __Pyx_GIVEREF(__pyx_float_1_0);
@@ -8852,14 +9249,14 @@ PyMODINIT_FUNC PyInit__hydra(void)
   __Pyx_GIVEREF(__pyx_float_0_000459);
   PyList_SET_ITEM(__pyx_t_17, 11, __pyx_float_0_000459);
 
-  /* "_hydra.pyx":194
+  /* "_hydra.pyx":198
  *             [1.0, 0.0645, 0.0156,  0.00596, 0.003,   0.00183,  0.00128,  0.001,    0.000852, 0.000775, 0.000744], # 15
  *             [1.0, 0.0606, 0.0138,  0.005,   0.00239, 0.00139,  0.000935, 0.000702, 0.000574, 0.000505, 0.00047,  0.000459],
  *             [1.0, 0.0571, 0.0123,  0.00423, 0.00193, 0.00107,  0.000692, 0.000499, 0.000394, 0.000335, 0.000302, 0.000287, 0.000284],             # <<<<<<<<<<<<<<
  *             [1.0, 0.054,  0.0111,  0.00362, 0.00158, 0.000839, 0.000519, 0.00036,  0.000275, 0.000226, 0.000198, 0.000183, 0.000176],
  *             [1.0, 0.0513, 0.00998, 0.00312, 0.0013,  0.000663, 0.000394, 0.000264, 0.000194, 0.000155, 0.000132, 0.000118, 0.000111, 0.000109],
  */
-  __pyx_t_18 = PyList_New(13); if (unlikely(!__pyx_t_18)) __PYX_ERR(0, 194, __pyx_L1_error)
+  __pyx_t_18 = PyList_New(13); if (unlikely(!__pyx_t_18)) __PYX_ERR(0, 198, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_18);
   __Pyx_INCREF(__pyx_float_1_0);
   __Pyx_GIVEREF(__pyx_float_1_0);
@@ -8901,14 +9298,14 @@ PyMODINIT_FUNC PyInit__hydra(void)
   __Pyx_GIVEREF(__pyx_float_0_000284);
   PyList_SET_ITEM(__pyx_t_18, 12, __pyx_float_0_000284);
 
-  /* "_hydra.pyx":195
+  /* "_hydra.pyx":199
  *             [1.0, 0.0606, 0.0138,  0.005,   0.00239, 0.00139,  0.000935, 0.000702, 0.000574, 0.000505, 0.00047,  0.000459],
  *             [1.0, 0.0571, 0.0123,  0.00423, 0.00193, 0.00107,  0.000692, 0.000499, 0.000394, 0.000335, 0.000302, 0.000287, 0.000284],
  *             [1.0, 0.054,  0.0111,  0.00362, 0.00158, 0.000839, 0.000519, 0.00036,  0.000275, 0.000226, 0.000198, 0.000183, 0.000176],             # <<<<<<<<<<<<<<
  *             [1.0, 0.0513, 0.00998, 0.00312, 0.0013,  0.000663, 0.000394, 0.000264, 0.000194, 0.000155, 0.000132, 0.000118, 0.000111, 0.000109],
  *             [1.0, 0.0488, 0.00906, 0.0027,  0.00108, 0.00053,  0.000303, 0.000196, 0.00014,  0.000108, 8.89e-05, 7.77e-05, 7.12e-05, 6.79e-05, 6.71e-05] # 20
  */
-  __pyx_t_19 = PyList_New(13); if (unlikely(!__pyx_t_19)) __PYX_ERR(0, 195, __pyx_L1_error)
+  __pyx_t_19 = PyList_New(13); if (unlikely(!__pyx_t_19)) __PYX_ERR(0, 199, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_19);
   __Pyx_INCREF(__pyx_float_1_0);
   __Pyx_GIVEREF(__pyx_float_1_0);
@@ -8950,14 +9347,14 @@ PyMODINIT_FUNC PyInit__hydra(void)
   __Pyx_GIVEREF(__pyx_float_0_000176);
   PyList_SET_ITEM(__pyx_t_19, 12, __pyx_float_0_000176);
 
-  /* "_hydra.pyx":196
+  /* "_hydra.pyx":200
  *             [1.0, 0.0571, 0.0123,  0.00423, 0.00193, 0.00107,  0.000692, 0.000499, 0.000394, 0.000335, 0.000302, 0.000287, 0.000284],
  *             [1.0, 0.054,  0.0111,  0.00362, 0.00158, 0.000839, 0.000519, 0.00036,  0.000275, 0.000226, 0.000198, 0.000183, 0.000176],
  *             [1.0, 0.0513, 0.00998, 0.00312, 0.0013,  0.000663, 0.000394, 0.000264, 0.000194, 0.000155, 0.000132, 0.000118, 0.000111, 0.000109],             # <<<<<<<<<<<<<<
  *             [1.0, 0.0488, 0.00906, 0.0027,  0.00108, 0.00053,  0.000303, 0.000196, 0.00014,  0.000108, 8.89e-05, 7.77e-05, 7.12e-05, 6.79e-05, 6.71e-05] # 20
  *             ]
  */
-  __pyx_t_20 = PyList_New(14); if (unlikely(!__pyx_t_20)) __PYX_ERR(0, 196, __pyx_L1_error)
+  __pyx_t_20 = PyList_New(14); if (unlikely(!__pyx_t_20)) __PYX_ERR(0, 200, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_20);
   __Pyx_INCREF(__pyx_float_1_0);
   __Pyx_GIVEREF(__pyx_float_1_0);
@@ -9002,14 +9399,14 @@ PyMODINIT_FUNC PyInit__hydra(void)
   __Pyx_GIVEREF(__pyx_float_0_000109);
   PyList_SET_ITEM(__pyx_t_20, 13, __pyx_float_0_000109);
 
-  /* "_hydra.pyx":197
+  /* "_hydra.pyx":201
  *             [1.0, 0.054,  0.0111,  0.00362, 0.00158, 0.000839, 0.000519, 0.00036,  0.000275, 0.000226, 0.000198, 0.000183, 0.000176],
  *             [1.0, 0.0513, 0.00998, 0.00312, 0.0013,  0.000663, 0.000394, 0.000264, 0.000194, 0.000155, 0.000132, 0.000118, 0.000111, 0.000109],
  *             [1.0, 0.0488, 0.00906, 0.0027,  0.00108, 0.00053,  0.000303, 0.000196, 0.00014,  0.000108, 8.89e-05, 7.77e-05, 7.12e-05, 6.79e-05, 6.71e-05] # 20             # <<<<<<<<<<<<<<
  *             ]
  * 
  */
-  __pyx_t_21 = PyList_New(15); if (unlikely(!__pyx_t_21)) __PYX_ERR(0, 197, __pyx_L1_error)
+  __pyx_t_21 = PyList_New(15); if (unlikely(!__pyx_t_21)) __PYX_ERR(0, 201, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_21);
   __Pyx_INCREF(__pyx_float_1_0);
   __Pyx_GIVEREF(__pyx_float_1_0);
@@ -9057,14 +9454,14 @@ PyMODINIT_FUNC PyInit__hydra(void)
   __Pyx_GIVEREF(__pyx_float_6_71eneg_05);
   PyList_SET_ITEM(__pyx_t_21, 14, __pyx_float_6_71eneg_05);
 
-  /* "_hydra.pyx":176
+  /* "_hydra.pyx":180
  *     minK = 1
  * 
  *     PROBS = [             # <<<<<<<<<<<<<<
  *             [1.0], #  dummy row representing 0 buckets per element
  *             [1.0, 1.0], #  dummy row representing 1 buckets per element
  */
-  __pyx_t_22 = PyList_New(21); if (unlikely(!__pyx_t_22)) __PYX_ERR(0, 176, __pyx_L1_error)
+  __pyx_t_22 = PyList_New(21); if (unlikely(!__pyx_t_22)) __PYX_ERR(0, 180, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_22);
   __Pyx_GIVEREF(__pyx_t_1);
   PyList_SET_ITEM(__pyx_t_22, 0, __pyx_t_1);
@@ -9129,28 +9526,28 @@ PyMODINIT_FUNC PyInit__hydra(void)
   __pyx_t_19 = 0;
   __pyx_t_20 = 0;
   __pyx_t_21 = 0;
-  if (PyDict_SetItem((PyObject *)__pyx_ptype_6_hydra_BloomCalculations->tp_dict, __pyx_n_s_PROBS, __pyx_t_22) < 0) __PYX_ERR(0, 176, __pyx_L1_error)
+  if (PyDict_SetItem((PyObject *)__pyx_ptype_6_hydra_BloomCalculations->tp_dict, __pyx_n_s_PROBS, __pyx_t_22) < 0) __PYX_ERR(0, 180, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_22); __pyx_t_22 = 0;
   PyType_Modified(__pyx_ptype_6_hydra_BloomCalculations);
 
-  /* "_hydra.pyx":200
+  /* "_hydra.pyx":204
  *             ]
  * 
  *     optKPerBuckets = [max(1, min(enumerate(probs), key=operator.itemgetter(1))[0]) for probs in PROBS]             # <<<<<<<<<<<<<<
  * 
  *     @classmethod
  */
-  __pyx_t_22 = PyList_New(0); if (unlikely(!__pyx_t_22)) __PYX_ERR(0, 200, __pyx_L1_error)
+  __pyx_t_22 = PyList_New(0); if (unlikely(!__pyx_t_22)) __PYX_ERR(0, 204, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_22);
-  __pyx_t_21 = __Pyx_GetNameInClass((PyObject *)__pyx_ptype_6_hydra_BloomCalculations, __pyx_n_s_PROBS); if (unlikely(!__pyx_t_21)) __PYX_ERR(0, 200, __pyx_L1_error)
+  __pyx_t_21 = __Pyx_GetNameInClass((PyObject *)__pyx_ptype_6_hydra_BloomCalculations, __pyx_n_s_PROBS); if (unlikely(!__pyx_t_21)) __PYX_ERR(0, 204, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_21);
   if (likely(PyList_CheckExact(__pyx_t_21)) || PyTuple_CheckExact(__pyx_t_21)) {
     __pyx_t_20 = __pyx_t_21; __Pyx_INCREF(__pyx_t_20); __pyx_t_23 = 0;
     __pyx_t_24 = NULL;
   } else {
-    __pyx_t_23 = -1; __pyx_t_20 = PyObject_GetIter(__pyx_t_21); if (unlikely(!__pyx_t_20)) __PYX_ERR(0, 200, __pyx_L1_error)
+    __pyx_t_23 = -1; __pyx_t_20 = PyObject_GetIter(__pyx_t_21); if (unlikely(!__pyx_t_20)) __PYX_ERR(0, 204, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_20);
-    __pyx_t_24 = Py_TYPE(__pyx_t_20)->tp_iternext; if (unlikely(!__pyx_t_24)) __PYX_ERR(0, 200, __pyx_L1_error)
+    __pyx_t_24 = Py_TYPE(__pyx_t_20)->tp_iternext; if (unlikely(!__pyx_t_24)) __PYX_ERR(0, 204, __pyx_L1_error)
   }
   __Pyx_DECREF(__pyx_t_21); __pyx_t_21 = 0;
   for (;;) {
@@ -9158,17 +9555,17 @@ PyMODINIT_FUNC PyInit__hydra(void)
       if (likely(PyList_CheckExact(__pyx_t_20))) {
         if (__pyx_t_23 >= PyList_GET_SIZE(__pyx_t_20)) break;
         #if CYTHON_COMPILING_IN_CPYTHON
-        __pyx_t_21 = PyList_GET_ITEM(__pyx_t_20, __pyx_t_23); __Pyx_INCREF(__pyx_t_21); __pyx_t_23++; if (unlikely(0 < 0)) __PYX_ERR(0, 200, __pyx_L1_error)
+        __pyx_t_21 = PyList_GET_ITEM(__pyx_t_20, __pyx_t_23); __Pyx_INCREF(__pyx_t_21); __pyx_t_23++; if (unlikely(0 < 0)) __PYX_ERR(0, 204, __pyx_L1_error)
         #else
-        __pyx_t_21 = PySequence_ITEM(__pyx_t_20, __pyx_t_23); __pyx_t_23++; if (unlikely(!__pyx_t_21)) __PYX_ERR(0, 200, __pyx_L1_error)
+        __pyx_t_21 = PySequence_ITEM(__pyx_t_20, __pyx_t_23); __pyx_t_23++; if (unlikely(!__pyx_t_21)) __PYX_ERR(0, 204, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_21);
         #endif
       } else {
         if (__pyx_t_23 >= PyTuple_GET_SIZE(__pyx_t_20)) break;
         #if CYTHON_COMPILING_IN_CPYTHON
-        __pyx_t_21 = PyTuple_GET_ITEM(__pyx_t_20, __pyx_t_23); __Pyx_INCREF(__pyx_t_21); __pyx_t_23++; if (unlikely(0 < 0)) __PYX_ERR(0, 200, __pyx_L1_error)
+        __pyx_t_21 = PyTuple_GET_ITEM(__pyx_t_20, __pyx_t_23); __Pyx_INCREF(__pyx_t_21); __pyx_t_23++; if (unlikely(0 < 0)) __PYX_ERR(0, 204, __pyx_L1_error)
         #else
-        __pyx_t_21 = PySequence_ITEM(__pyx_t_20, __pyx_t_23); __pyx_t_23++; if (unlikely(!__pyx_t_21)) __PYX_ERR(0, 200, __pyx_L1_error)
+        __pyx_t_21 = PySequence_ITEM(__pyx_t_20, __pyx_t_23); __pyx_t_23++; if (unlikely(!__pyx_t_21)) __PYX_ERR(0, 204, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_21);
         #endif
       }
@@ -9178,201 +9575,201 @@ PyMODINIT_FUNC PyInit__hydra(void)
         PyObject* exc_type = PyErr_Occurred();
         if (exc_type) {
           if (likely(exc_type == PyExc_StopIteration || PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) PyErr_Clear();
-          else __PYX_ERR(0, 200, __pyx_L1_error)
+          else __PYX_ERR(0, 204, __pyx_L1_error)
         }
         break;
       }
       __Pyx_GOTREF(__pyx_t_21);
     }
-    if (PyDict_SetItem((PyObject *)__pyx_ptype_6_hydra_BloomCalculations->tp_dict, __pyx_n_s_probs, __pyx_t_21) < 0) __PYX_ERR(0, 200, __pyx_L1_error)
+    if (PyDict_SetItem((PyObject *)__pyx_ptype_6_hydra_BloomCalculations->tp_dict, __pyx_n_s_probs, __pyx_t_21) < 0) __PYX_ERR(0, 204, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_21); __pyx_t_21 = 0;
     PyType_Modified(__pyx_ptype_6_hydra_BloomCalculations);
-    __pyx_t_21 = __Pyx_GetNameInClass((PyObject *)__pyx_ptype_6_hydra_BloomCalculations, __pyx_n_s_probs); if (unlikely(!__pyx_t_21)) __PYX_ERR(0, 200, __pyx_L1_error)
+    __pyx_t_21 = __Pyx_GetNameInClass((PyObject *)__pyx_ptype_6_hydra_BloomCalculations, __pyx_n_s_probs); if (unlikely(!__pyx_t_21)) __PYX_ERR(0, 204, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_21);
-    __pyx_t_19 = PyTuple_New(1); if (unlikely(!__pyx_t_19)) __PYX_ERR(0, 200, __pyx_L1_error)
+    __pyx_t_19 = PyTuple_New(1); if (unlikely(!__pyx_t_19)) __PYX_ERR(0, 204, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_19);
     __Pyx_GIVEREF(__pyx_t_21);
     PyTuple_SET_ITEM(__pyx_t_19, 0, __pyx_t_21);
     __pyx_t_21 = 0;
-    __pyx_t_21 = __Pyx_PyObject_Call(__pyx_builtin_enumerate, __pyx_t_19, NULL); if (unlikely(!__pyx_t_21)) __PYX_ERR(0, 200, __pyx_L1_error)
+    __pyx_t_21 = __Pyx_PyObject_Call(__pyx_builtin_enumerate, __pyx_t_19, NULL); if (unlikely(!__pyx_t_21)) __PYX_ERR(0, 204, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_21);
     __Pyx_DECREF(__pyx_t_19); __pyx_t_19 = 0;
-    __pyx_t_19 = PyTuple_New(1); if (unlikely(!__pyx_t_19)) __PYX_ERR(0, 200, __pyx_L1_error)
+    __pyx_t_19 = PyTuple_New(1); if (unlikely(!__pyx_t_19)) __PYX_ERR(0, 204, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_19);
     __Pyx_GIVEREF(__pyx_t_21);
     PyTuple_SET_ITEM(__pyx_t_19, 0, __pyx_t_21);
     __pyx_t_21 = 0;
-    __pyx_t_21 = PyDict_New(); if (unlikely(!__pyx_t_21)) __PYX_ERR(0, 200, __pyx_L1_error)
+    __pyx_t_21 = PyDict_New(); if (unlikely(!__pyx_t_21)) __PYX_ERR(0, 204, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_21);
-    __pyx_t_18 = __Pyx_GetModuleGlobalName(__pyx_n_s_operator); if (unlikely(!__pyx_t_18)) __PYX_ERR(0, 200, __pyx_L1_error)
+    __pyx_t_18 = __Pyx_GetModuleGlobalName(__pyx_n_s_operator); if (unlikely(!__pyx_t_18)) __PYX_ERR(0, 204, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_18);
-    __pyx_t_17 = __Pyx_PyObject_GetAttrStr(__pyx_t_18, __pyx_n_s_itemgetter); if (unlikely(!__pyx_t_17)) __PYX_ERR(0, 200, __pyx_L1_error)
+    __pyx_t_17 = __Pyx_PyObject_GetAttrStr(__pyx_t_18, __pyx_n_s_itemgetter); if (unlikely(!__pyx_t_17)) __PYX_ERR(0, 204, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_17);
     __Pyx_DECREF(__pyx_t_18); __pyx_t_18 = 0;
-    __pyx_t_18 = __Pyx_PyObject_Call(__pyx_t_17, __pyx_tuple__20, NULL); if (unlikely(!__pyx_t_18)) __PYX_ERR(0, 200, __pyx_L1_error)
+    __pyx_t_18 = __Pyx_PyObject_Call(__pyx_t_17, __pyx_tuple__20, NULL); if (unlikely(!__pyx_t_18)) __PYX_ERR(0, 204, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_18);
     __Pyx_DECREF(__pyx_t_17); __pyx_t_17 = 0;
-    if (PyDict_SetItem(__pyx_t_21, __pyx_n_s_key, __pyx_t_18) < 0) __PYX_ERR(0, 200, __pyx_L1_error)
+    if (PyDict_SetItem(__pyx_t_21, __pyx_n_s_key, __pyx_t_18) < 0) __PYX_ERR(0, 204, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_18); __pyx_t_18 = 0;
-    __pyx_t_18 = __Pyx_PyObject_Call(__pyx_builtin_min, __pyx_t_19, __pyx_t_21); if (unlikely(!__pyx_t_18)) __PYX_ERR(0, 200, __pyx_L1_error)
+    __pyx_t_18 = __Pyx_PyObject_Call(__pyx_builtin_min, __pyx_t_19, __pyx_t_21); if (unlikely(!__pyx_t_18)) __PYX_ERR(0, 204, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_18);
     __Pyx_DECREF(__pyx_t_19); __pyx_t_19 = 0;
     __Pyx_DECREF(__pyx_t_21); __pyx_t_21 = 0;
-    __pyx_t_21 = __Pyx_GetItemInt(__pyx_t_18, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_21)) __PYX_ERR(0, 200, __pyx_L1_error)
+    __pyx_t_21 = __Pyx_GetItemInt(__pyx_t_18, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_21)) __PYX_ERR(0, 204, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_21);
     __Pyx_DECREF(__pyx_t_18); __pyx_t_18 = 0;
     __pyx_t_25 = 1;
-    __pyx_t_19 = __Pyx_PyInt_From_long(__pyx_t_25); if (unlikely(!__pyx_t_19)) __PYX_ERR(0, 200, __pyx_L1_error)
+    __pyx_t_19 = __Pyx_PyInt_From_long(__pyx_t_25); if (unlikely(!__pyx_t_19)) __PYX_ERR(0, 204, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_19);
-    __pyx_t_17 = PyObject_RichCompare(__pyx_t_21, __pyx_t_19, Py_GT); __Pyx_XGOTREF(__pyx_t_17); if (unlikely(!__pyx_t_17)) __PYX_ERR(0, 200, __pyx_L1_error)
+    __pyx_t_17 = PyObject_RichCompare(__pyx_t_21, __pyx_t_19, Py_GT); __Pyx_XGOTREF(__pyx_t_17); if (unlikely(!__pyx_t_17)) __PYX_ERR(0, 204, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_19); __pyx_t_19 = 0;
-    __pyx_t_26 = __Pyx_PyObject_IsTrue(__pyx_t_17); if (unlikely(__pyx_t_26 < 0)) __PYX_ERR(0, 200, __pyx_L1_error)
+    __pyx_t_26 = __Pyx_PyObject_IsTrue(__pyx_t_17); if (unlikely(__pyx_t_26 < 0)) __PYX_ERR(0, 204, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_17); __pyx_t_17 = 0;
     if (__pyx_t_26) {
       __Pyx_INCREF(__pyx_t_21);
       __pyx_t_18 = __pyx_t_21;
     } else {
-      __pyx_t_17 = __Pyx_PyInt_From_long(__pyx_t_25); if (unlikely(!__pyx_t_17)) __PYX_ERR(0, 200, __pyx_L1_error)
+      __pyx_t_17 = __Pyx_PyInt_From_long(__pyx_t_25); if (unlikely(!__pyx_t_17)) __PYX_ERR(0, 204, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_17);
       __pyx_t_18 = __pyx_t_17;
       __pyx_t_17 = 0;
     }
     __Pyx_DECREF(__pyx_t_21); __pyx_t_21 = 0;
-    if (unlikely(__Pyx_ListComp_Append(__pyx_t_22, (PyObject*)__pyx_t_18))) __PYX_ERR(0, 200, __pyx_L1_error)
+    if (unlikely(__Pyx_ListComp_Append(__pyx_t_22, (PyObject*)__pyx_t_18))) __PYX_ERR(0, 204, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_18); __pyx_t_18 = 0;
   }
   __Pyx_DECREF(__pyx_t_20); __pyx_t_20 = 0;
-  if (PyDict_SetItem((PyObject *)__pyx_ptype_6_hydra_BloomCalculations->tp_dict, __pyx_n_s_optKPerBuckets, __pyx_t_22) < 0) __PYX_ERR(0, 200, __pyx_L1_error)
+  if (PyDict_SetItem((PyObject *)__pyx_ptype_6_hydra_BloomCalculations->tp_dict, __pyx_n_s_optKPerBuckets, __pyx_t_22) < 0) __PYX_ERR(0, 204, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_22); __pyx_t_22 = 0;
   PyType_Modified(__pyx_ptype_6_hydra_BloomCalculations);
 
-  /* "_hydra.pyx":203
+  /* "_hydra.pyx":207
  * 
  *     @classmethod
  *     def computeBloomSpec1(cls, bucketsPerElement):             # <<<<<<<<<<<<<<
  *         """
  *         Given the number of buckets that can be used per element, return a
  */
-  __pyx_t_22 = __Pyx_GetNameInClass((PyObject *)__pyx_ptype_6_hydra_BloomCalculations, __pyx_n_s_computeBloomSpec1); if (unlikely(!__pyx_t_22)) __PYX_ERR(0, 203, __pyx_L1_error)
+  __pyx_t_22 = __Pyx_GetNameInClass((PyObject *)__pyx_ptype_6_hydra_BloomCalculations, __pyx_n_s_computeBloomSpec1); if (unlikely(!__pyx_t_22)) __PYX_ERR(0, 207, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_22);
 
-  /* "_hydra.pyx":202
+  /* "_hydra.pyx":206
  *     optKPerBuckets = [max(1, min(enumerate(probs), key=operator.itemgetter(1))[0]) for probs in PROBS]
  * 
  *     @classmethod             # <<<<<<<<<<<<<<
  *     def computeBloomSpec1(cls, bucketsPerElement):
  *         """
  */
-  __pyx_t_20 = __Pyx_Method_ClassMethod(__pyx_t_22); if (unlikely(!__pyx_t_20)) __PYX_ERR(0, 202, __pyx_L1_error)
+  __pyx_t_20 = __Pyx_Method_ClassMethod(__pyx_t_22); if (unlikely(!__pyx_t_20)) __PYX_ERR(0, 206, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_20);
   __Pyx_DECREF(__pyx_t_22); __pyx_t_22 = 0;
-  if (PyDict_SetItem((PyObject *)__pyx_ptype_6_hydra_BloomCalculations->tp_dict, __pyx_n_s_computeBloomSpec1, __pyx_t_20) < 0) __PYX_ERR(0, 203, __pyx_L1_error)
+  if (PyDict_SetItem((PyObject *)__pyx_ptype_6_hydra_BloomCalculations->tp_dict, __pyx_n_s_computeBloomSpec1, __pyx_t_20) < 0) __PYX_ERR(0, 207, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_20); __pyx_t_20 = 0;
   PyType_Modified(__pyx_ptype_6_hydra_BloomCalculations);
 
-  /* "_hydra.pyx":217
+  /* "_hydra.pyx":221
  * 
  *     @classmethod
  *     def computeBloomSpec2(cls, maxBucketsPerElement, maxFalsePosProb):             # <<<<<<<<<<<<<<
  *         """
  *         Given a maximum tolerable false positive probability, compute a Bloom
  */
-  __pyx_t_20 = __Pyx_GetNameInClass((PyObject *)__pyx_ptype_6_hydra_BloomCalculations, __pyx_n_s_computeBloomSpec2); if (unlikely(!__pyx_t_20)) __PYX_ERR(0, 217, __pyx_L1_error)
+  __pyx_t_20 = __Pyx_GetNameInClass((PyObject *)__pyx_ptype_6_hydra_BloomCalculations, __pyx_n_s_computeBloomSpec2); if (unlikely(!__pyx_t_20)) __PYX_ERR(0, 221, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_20);
 
-  /* "_hydra.pyx":216
+  /* "_hydra.pyx":220
  * 
  * 
  *     @classmethod             # <<<<<<<<<<<<<<
  *     def computeBloomSpec2(cls, maxBucketsPerElement, maxFalsePosProb):
  *         """
  */
-  __pyx_t_22 = __Pyx_Method_ClassMethod(__pyx_t_20); if (unlikely(!__pyx_t_22)) __PYX_ERR(0, 216, __pyx_L1_error)
+  __pyx_t_22 = __Pyx_Method_ClassMethod(__pyx_t_20); if (unlikely(!__pyx_t_22)) __PYX_ERR(0, 220, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_22);
   __Pyx_DECREF(__pyx_t_20); __pyx_t_20 = 0;
-  if (PyDict_SetItem((PyObject *)__pyx_ptype_6_hydra_BloomCalculations->tp_dict, __pyx_n_s_computeBloomSpec2, __pyx_t_22) < 0) __PYX_ERR(0, 217, __pyx_L1_error)
+  if (PyDict_SetItem((PyObject *)__pyx_ptype_6_hydra_BloomCalculations->tp_dict, __pyx_n_s_computeBloomSpec2, __pyx_t_22) < 0) __PYX_ERR(0, 221, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_22); __pyx_t_22 = 0;
   PyType_Modified(__pyx_ptype_6_hydra_BloomCalculations);
 
-  /* "_hydra.pyx":258
+  /* "_hydra.pyx":262
  * 
  * cdef class BloomFilter:
  *     EXCESS = 20             # <<<<<<<<<<<<<<
  *     cdef unsigned int _hashCount
  *     cdef MMapBitField _bitmap
  */
-  if (PyDict_SetItem((PyObject *)__pyx_ptype_6_hydra_BloomFilter->tp_dict, __pyx_n_s_EXCESS, __pyx_int_20) < 0) __PYX_ERR(0, 258, __pyx_L1_error)
+  if (PyDict_SetItem((PyObject *)__pyx_ptype_6_hydra_BloomFilter->tp_dict, __pyx_n_s_EXCESS, __pyx_int_20) < 0) __PYX_ERR(0, 262, __pyx_L1_error)
   PyType_Modified(__pyx_ptype_6_hydra_BloomFilter);
 
-  /* "_hydra.pyx":292
+  /* "_hydra.pyx":296
  * 
  *     @classmethod
  *     def _maxBucketsPerElement(cls, numElements):             # <<<<<<<<<<<<<<
  *         numElements = max(1, numElements)
  *         v = (sys.maxsize - cls.EXCESS) / float(numElements)
  */
-  __pyx_t_22 = __Pyx_GetNameInClass((PyObject *)__pyx_ptype_6_hydra_BloomFilter, __pyx_n_s_maxBucketsPerElement_2); if (unlikely(!__pyx_t_22)) __PYX_ERR(0, 292, __pyx_L1_error)
+  __pyx_t_22 = __Pyx_GetNameInClass((PyObject *)__pyx_ptype_6_hydra_BloomFilter, __pyx_n_s_maxBucketsPerElement_2); if (unlikely(!__pyx_t_22)) __PYX_ERR(0, 296, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_22);
 
-  /* "_hydra.pyx":291
+  /* "_hydra.pyx":295
  *         return self._bitmap._filename
  * 
  *     @classmethod             # <<<<<<<<<<<<<<
  *     def _maxBucketsPerElement(cls, numElements):
  *         numElements = max(1, numElements)
  */
-  __pyx_t_20 = __Pyx_Method_ClassMethod(__pyx_t_22); if (unlikely(!__pyx_t_20)) __PYX_ERR(0, 291, __pyx_L1_error)
+  __pyx_t_20 = __Pyx_Method_ClassMethod(__pyx_t_22); if (unlikely(!__pyx_t_20)) __PYX_ERR(0, 295, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_20);
   __Pyx_DECREF(__pyx_t_22); __pyx_t_22 = 0;
-  if (PyDict_SetItem((PyObject *)__pyx_ptype_6_hydra_BloomFilter->tp_dict, __pyx_n_s_maxBucketsPerElement_2, __pyx_t_20) < 0) __PYX_ERR(0, 292, __pyx_L1_error)
+  if (PyDict_SetItem((PyObject *)__pyx_ptype_6_hydra_BloomFilter->tp_dict, __pyx_n_s_maxBucketsPerElement_2, __pyx_t_20) < 0) __PYX_ERR(0, 296, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_20); __pyx_t_20 = 0;
   PyType_Modified(__pyx_ptype_6_hydra_BloomFilter);
 
-  /* "_hydra.pyx":301
+  /* "_hydra.pyx":305
  * 
  *     @classmethod
  *     def _bucketsFor(cls, numElements, bucketsPer, filename, read_only, want_lock=False, fdatasync_on_close=True):             # <<<<<<<<<<<<<<
  *         numBits = numElements * bucketsPer + cls.EXCESS
  *         bf_size = min(sys.maxsize, numBits)
  */
-  __pyx_t_20 = __Pyx_GetNameInClass((PyObject *)__pyx_ptype_6_hydra_BloomFilter, __pyx_n_s_bucketsFor); if (unlikely(!__pyx_t_20)) __PYX_ERR(0, 301, __pyx_L1_error)
+  __pyx_t_20 = __Pyx_GetNameInClass((PyObject *)__pyx_ptype_6_hydra_BloomFilter, __pyx_n_s_bucketsFor); if (unlikely(!__pyx_t_20)) __PYX_ERR(0, 305, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_20);
 
-  /* "_hydra.pyx":300
+  /* "_hydra.pyx":304
  *         return min(len(BloomCalculations.PROBS) - 1, int(v))
  * 
  *     @classmethod             # <<<<<<<<<<<<<<
  *     def _bucketsFor(cls, numElements, bucketsPer, filename, read_only, want_lock=False, fdatasync_on_close=True):
  *         numBits = numElements * bucketsPer + cls.EXCESS
  */
-  __pyx_t_22 = __Pyx_Method_ClassMethod(__pyx_t_20); if (unlikely(!__pyx_t_22)) __PYX_ERR(0, 300, __pyx_L1_error)
+  __pyx_t_22 = __Pyx_Method_ClassMethod(__pyx_t_20); if (unlikely(!__pyx_t_22)) __PYX_ERR(0, 304, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_22);
   __Pyx_DECREF(__pyx_t_20); __pyx_t_20 = 0;
-  if (PyDict_SetItem((PyObject *)__pyx_ptype_6_hydra_BloomFilter->tp_dict, __pyx_n_s_bucketsFor, __pyx_t_22) < 0) __PYX_ERR(0, 301, __pyx_L1_error)
+  if (PyDict_SetItem((PyObject *)__pyx_ptype_6_hydra_BloomFilter->tp_dict, __pyx_n_s_bucketsFor, __pyx_t_22) < 0) __PYX_ERR(0, 305, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_22); __pyx_t_22 = 0;
   PyType_Modified(__pyx_ptype_6_hydra_BloomFilter);
 
-  /* "_hydra.pyx":309
+  /* "_hydra.pyx":313
  * 
  *     @classmethod
  *     def getFilter(cls, numElements, maxFalsePosProbability, **kwargs):             # <<<<<<<<<<<<<<
  *         """
  *         Create a bloom filter.
  */
-  __pyx_t_22 = __Pyx_GetNameInClass((PyObject *)__pyx_ptype_6_hydra_BloomFilter, __pyx_n_s_getFilter); if (unlikely(!__pyx_t_22)) __PYX_ERR(0, 309, __pyx_L1_error)
+  __pyx_t_22 = __Pyx_GetNameInClass((PyObject *)__pyx_ptype_6_hydra_BloomFilter, __pyx_n_s_getFilter); if (unlikely(!__pyx_t_22)) __PYX_ERR(0, 313, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_22);
 
-  /* "_hydra.pyx":308
+  /* "_hydra.pyx":312
  *                             fdatasync_on_close=fdatasync_on_close)
  * 
  *     @classmethod             # <<<<<<<<<<<<<<
  *     def getFilter(cls, numElements, maxFalsePosProbability, **kwargs):
  *         """
  */
-  __pyx_t_20 = __Pyx_Method_ClassMethod(__pyx_t_22); if (unlikely(!__pyx_t_20)) __PYX_ERR(0, 308, __pyx_L1_error)
+  __pyx_t_20 = __Pyx_Method_ClassMethod(__pyx_t_22); if (unlikely(!__pyx_t_20)) __PYX_ERR(0, 312, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_20);
   __Pyx_DECREF(__pyx_t_22); __pyx_t_22 = 0;
-  if (PyDict_SetItem((PyObject *)__pyx_ptype_6_hydra_BloomFilter->tp_dict, __pyx_n_s_getFilter, __pyx_t_20) < 0) __PYX_ERR(0, 309, __pyx_L1_error)
+  if (PyDict_SetItem((PyObject *)__pyx_ptype_6_hydra_BloomFilter->tp_dict, __pyx_n_s_getFilter, __pyx_t_20) < 0) __PYX_ERR(0, 313, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_20); __pyx_t_20 = 0;
   PyType_Modified(__pyx_ptype_6_hydra_BloomFilter);
 

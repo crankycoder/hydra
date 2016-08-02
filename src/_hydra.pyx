@@ -74,7 +74,7 @@ cdef class MMapBitField:
     def __dealloc__(self):
         self.close()
 
-    def close(self):
+    cpdef close(self):
         if self._fd >= 0 and self._buffer:
             if not self._read_only and self._fdatasync_on_close:
                 flush_to_disk(self._fd)
@@ -83,7 +83,7 @@ cdef class MMapBitField:
             self._fd = -1
             self._buffer = NULL
 
-    def fdatasync(self):
+    cpdef fdatasync(self):
         """ Flush everything to disk """
         if self._fd < 0 or not self._buffer:
             raise ValueError('I/O operation on closed file')
@@ -128,10 +128,14 @@ cdef class MMapBitField:
         return MMapIter(self)
 
     def __len__(self):
+        return self.size()
+
+    cpdef size(self):
         if self._fd < 0 or not self._buffer:
             raise ValueError('I/O operation on closed file')
 
         return self._bitsize
+
 
 cdef class MMapIter:
     cdef size_t _idx
@@ -275,10 +279,10 @@ cdef class BloomFilter:
         self.close()
         return None
 
-    def close(self):
+    cpdef close(self):
         self._bitmap.close()
 
-    def fdatasync(self):
+    cpdef fdatasync(self):
         """ Flush everything to disk """
         self._bitmap.fdatasync()
 
@@ -364,7 +368,7 @@ cdef class BloomFilter:
         return self.contains(ustring)
 
     @cython.boundscheck(False)
-    def add(self, ustring):
+    cpdef add(self, ustring):
         """ Add a key into the filter.  Just like a set.  """
         cdef unsigned long long i
         cdef unsigned long long _bucket_indexes[1000]
@@ -382,7 +386,7 @@ cdef class BloomFilter:
             self._bitmap[_bucket_indexes[i]] = 1
 
     @cython.boundscheck(False)
-    def contains(self, ustring):
+    cpdef contains(self, ustring):
         """ Check if a key is in the bloom filter.  May return a false positive. """
         cdef unsigned long long _bucket_indexes[1000]
         cdef unsigned long long i
@@ -400,13 +404,18 @@ cdef class BloomFilter:
                 return False
         return True
 
-    def buckets(self):
+    cpdef buckets(self):
         """ Return the number of total buckets (bits) in the bloom filter """
-        return len(self._bitmap)
+        return self._bitmap.size()
 
-    def getHashBuckets(self, key, unsigned int hashCount, unsigned long long max):
+    def getHashBuckets(self, ustring, unsigned int hashCount, unsigned long long max):
         """ This method is just available for test purposes.  Not actually useful for normal users. """
         cdef unsigned long long _bucket_indexes[1000]
+
+        if isinstance(ustring, unicode):
+            key = ustring.encode('utf8')
+        else:
+            key = ustring
 
         self._get_hash_buckets(key, _bucket_indexes, hashCount, max)
         result = []
@@ -415,7 +424,7 @@ cdef class BloomFilter:
         return result
 
     @cython.boundscheck(False)
-    cdef void _get_hash_buckets(self, key, unsigned long long * _bucket_indexes, unsigned int hashCount, unsigned long max):
+    cdef void _get_hash_buckets(self, bytes key, unsigned long long * _bucket_indexes, unsigned int hashCount, unsigned long max):
         """
         Murmur is faster than an SHA-based approach and provides as-good collision
         resistance.  The combinatorial generation approach described in
@@ -426,9 +435,6 @@ cdef class BloomFilter:
         cdef unsigned long result[2]
         cdef unsigned long hash1, hash2
         cdef unsigned long i
-
-        if isinstance(key, unicode):
-            key = key.encode('utf8')
 
         MurmurHash3_x64_128(<char*>key, len(key), 0, result)
         hash1 = result[0]

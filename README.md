@@ -2,7 +2,7 @@
 
 Hydra: The Python Bloom Filter.
 
-Compile with Cython 0.22 or higher.
+Compile with Cython 0.24 or higher.
 
 ---
 

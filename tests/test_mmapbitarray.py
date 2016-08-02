@@ -36,13 +36,13 @@ def test_setitem():
         assert not bf[idx]
 
     # verify set at end twice
-    bf[len(bf)-1] = 1
-    assert bf[len(bf)-1]
-    bf[len(bf)-1] = 1
-    assert bf[len(bf)-1]
+    bf[len(bf) - 1] = 1
+    assert bf[len(bf) - 1]
+    bf[len(bf) - 1] = 1
+    assert bf[len(bf) - 1]
 
     # verify unset at end twice
-    bf[len(bf)-1] = 0
-    assert not bf[len(bf)-1]
-    bf[len(bf)-1] = 0
-    assert not bf[len(bf)-1]
+    bf[len(bf) - 1] = 0
+    assert not bf[len(bf) - 1]
+    bf[len(bf) - 1] = 0
+    assert not bf[len(bf) - 1]

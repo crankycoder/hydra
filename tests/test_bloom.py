@@ -17,8 +17,9 @@ def test_compute_spec():
     assert bs2 != bs3
 
 
-class TestFilter:
-    def testManyRandom(self):
+class TestFilter(object):
+
+    def test_many_random(self):
         keygen = KeyGenerator()
         MAX_HASH_COUNT = 128
         bloom = WritingBloomFilter(15, 0.0009)
@@ -32,7 +33,7 @@ class TestFilter:
             hashes.clear()
         assert collisions <= 100, "Got {} collisions.".format(collisions)
 
-    def testHashBuckets(self):
+    def test_hash_buckets(self):
         bloom = WritingBloomFilter(15, 0.0009)
         buckets = bloom.getHashBuckets('hydra', 128, 1024 * 1024)
         assert buckets == [
@@ -64,16 +65,16 @@ class TestBloomFilter(object):
     def setup(self):
         self.bf = WritingBloomFilter(self.ELEMENTS, self.MAX_FAILURE_RATE)
 
-    def _testFalsePositives(self, filter, keys, otherkeys):
+    def _test_false_positives(self, bf, keys, otherkeys):
         fp = 0
 
         assert len(keys) == len(otherkeys)
 
         for key in keys:
-            filter.add(key)
+            bf.add(key)
 
         for key in otherkeys:
-            if filter.contains(key):
+            if bf.contains(key):
                 fp += 1
 
         bucketsPerElement = BloomFilter._maxBucketsPerElement(self.ELEMENTS)
@@ -90,9 +91,9 @@ class TestBloomFilter(object):
 
         # False negatives never occur - this should always work
         for k in keys:
-            assert filter.contains(k)
+            assert bf.contains(k)
 
-    def testBloomLimits1(slef):
+    def test_bloom_limits1(self):
         maxBuckets = len(BloomCalculations.PROBS) - 1
         maxK = len(BloomCalculations.PROBS[maxBuckets]) - 1
 
@@ -110,32 +111,36 @@ class TestBloomFilter(object):
 
     def test_one(self):
         self.bf.add("a")
-        self.bf.contains("a")
+        self.bf["aa"] = 0
+        assert self.bf.contains("a")
+        assert "aa" in self.bf
         assert not self.bf.contains("b")
+        assert "b" not in self.bf
 
-    def testFalsePositivesInt(self):
+    def test_false_positives_int(self):
         keygen = KeyGenerator()
-        self._testFalsePositives(self.bf,
-                                 [str(x) for x in range(10000)],
-                                 keygen.randomKeys(10000))
+        self._test_false_positives(
+            self.bf,
+            [str(x) for x in range(10000)],
+            keygen.randomKeys(10000))
 
-    def testFalsePositivesRandom(self):
+    def test_false_positives_random(self):
         keygen1 = KeyGenerator(314159)
-        self._testFalsePositives(
+        self._test_false_positives(
             self.bf,
             [keygen1.random_string() for i in range(10000)],
             [keygen1.random_string() for i in range(10000)],)
 
-    def testWords(self):
+    def test_words(self):
         keygen1 = KeyGenerator()
         bf = WritingBloomFilter(
-            len(keygen1)/2, self.MAX_FAILURE_RATE, ignore_case=False)
+            len(keygen1) / 2, self.MAX_FAILURE_RATE, ignore_case=False)
 
         even_keys = keygen1[::2]
         odd_keys = keygen1[1::2]
-        self._testFalsePositives(bf, even_keys, odd_keys)
+        self._test_false_positives(bf, even_keys, odd_keys)
 
-    def testNullKeys(self):
+    def test_null_keys(self):
         assert 'foo' not in self.bf
         assert 'foo\0bar' not in self.bf
         assert 'foo\0baz' not in self.bf
@@ -156,7 +161,7 @@ class TestBloomFilter(object):
         assert 'foo\0baz' in self.bf
 
 
-class TestHugeBloom():
+class TestHugeBloom(object):
     ELEMENTS = 1000000000
     MAX_FAILURE_RATE = 0.001
 
@@ -178,19 +183,19 @@ def test_murmur():
 
 
 def test_unicrap():
-    filter = WritingBloomFilter(100000, 0.1)
-    assert u'\u2019' not in filter
-    assert u'\u2018' not in filter
+    bf = WritingBloomFilter(100000, 0.1)
+    assert u'\u2019' not in bf
+    assert u'\u2018' not in bf
 
-    filter.add(u'\u2018')
-    filter.add(u'\u2019')
+    bf.add(u'\u2018')
+    bf.add(u'\u2019')
 
-    filter.add('just a plain string')
+    bf.add('just a plain string')
 
-    assert u'\u2019' in filter
-    assert u'\u2018' in filter
-    assert 'just a plain string' in filter
+    assert u'\u2019' in bf
+    assert u'\u2018' in bf
+    assert 'just a plain string' in bf
 
-    assert filter[u'\u2019'] == 1
-    assert filter[u'\u2018'] == 1
-    assert filter['just a plain string'] == 1
+    assert bf[u'\u2019'] == 1
+    assert bf[u'\u2018'] == 1
+    assert bf['just a plain string'] == 1

@@ -24,7 +24,7 @@ class KeyGenerator(object):
         return self._lines[start:stop:step]
 
     def random_string(self, length=16):
-        return "".join([self._r1.choice(string.ascii_letters+string.digits)
+        return "".join([self._r1.choice(string.ascii_letters + string.digits)
                        for x in range(1, length)])
 
     def randomKeys(self, num_elem=None):

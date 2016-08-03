@@ -4,7 +4,7 @@ from os.path import join
 
 import os
 
-__version__ = '2.5'
+__version__ = '2.6.dev0'
 
 ext_modules = [Extension("_hydra",
                          extra_compile_args=['-std=gnu99',

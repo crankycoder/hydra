@@ -2,7 +2,7 @@
 Changelog
 =========
 
-2.5 (unreleased)
+2.5 (2016-08-02)
 ----------------
 
 - Close descriptor file in Reading/UpdatingBloomFilter.

@@ -5,6 +5,8 @@ Changelog
 2.5 (unreleased)
 ----------------
 
+- Close descriptor file in Reading/UpdatingBloomFilter.
+
 - Define some BloomFilter and MMapBitField methods as cpdef.
 
 2.4 (2016-08-02)

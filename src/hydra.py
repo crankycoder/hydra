@@ -7,10 +7,10 @@ def ReadingBloomFilter(filename, want_lock=False):
     (num_elements, max_fp_prob) as a specification and using filename
     as the backing datastore.
     """
-    descriptor = open('{}.desc'.format(filename), 'r')
-    num_elements = int(descriptor.readline())
-    max_fp_prob = float(descriptor.readline())
-    ignore_case = int(descriptor.readline())
+    with open('{}.desc'.format(filename), 'r') as descriptor:
+        num_elements = int(descriptor.readline())
+        max_fp_prob = float(descriptor.readline())
+        ignore_case = int(descriptor.readline())
 
     return _hydra.BloomFilter.getFilter(
         num_elements, max_fp_prob,
@@ -23,10 +23,10 @@ def UpdatingBloomFilter(filename, want_lock=False, fdatasync_on_close=True):
     Load an existing bloom filter in read-write mode using filename
     as the backing datastore.
     """
-    descriptor = open('{}.desc'.format(filename), 'r')
-    num_elements = int(descriptor.readline())
-    max_fp_prob = float(descriptor.readline())
-    ignore_case = int(descriptor.readline())
+    with open('{}.desc'.format(filename), 'r') as descriptor:
+        num_elements = int(descriptor.readline())
+        max_fp_prob = float(descriptor.readline())
+        ignore_case = int(descriptor.readline())
 
     return _hydra.BloomFilter.getFilter(
         num_elements, max_fp_prob,

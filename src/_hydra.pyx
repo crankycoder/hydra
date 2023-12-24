@@ -53,7 +53,7 @@ cdef class MMapBitField:
             filename = filename.encode('utf8')
         self._filename = filename
         self._bitsize = bitsize
-        self._bytesize = (bitsize / 8) + 2
+        self._bytesize = (bitsize // 8) + 2
         self._read_only = read_only
         self._fdatasync_on_close = fdatasync_on_close
 
@@ -94,7 +94,7 @@ cdef class MMapBitField:
         flush_to_disk(self._fd)
 
     def __setitem__(self, size_t key, int value):
-        cdef size_t byte_offset = key / 8
+        cdef size_t byte_offset = key // 8
         cdef char bitmask
         cdef char bitval
 
@@ -113,7 +113,7 @@ cdef class MMapBitField:
             self._buffer[byte_offset] = bitval
 
     def __getitem__(self, size_t key):
-        cdef size_t byte_offset = key / 8
+        cdef size_t byte_offset = key // 8
 
         if self._fd < 0 or not self._buffer:
             raise ValueError('I/O operation on closed file')
